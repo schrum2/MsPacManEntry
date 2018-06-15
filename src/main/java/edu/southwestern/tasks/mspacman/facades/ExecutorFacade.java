@@ -12,7 +12,7 @@ import pacman.game.GameView;
 public class ExecutorFacade {
 
 	oldpacman.Executor oldE = null;
-	popacman.CustomExecutor poE = null;
+	pacman.CustomExecutor poE = null;
 	public GameView forceGameView = null;
 
 	/**
@@ -30,7 +30,7 @@ public class ExecutorFacade {
 	 * (thus why called facade)
 	 * @param e
 	 */
-	public ExecutorFacade(popacman.CustomExecutor e) {
+	public ExecutorFacade(pacman.CustomExecutor e) {
 		poE = e;
 	}
 

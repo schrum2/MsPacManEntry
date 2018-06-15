@@ -19,11 +19,11 @@ import edu.southwestern.tasks.popacman.controllers.OldToNewPacManIntermediaryCon
 import edu.southwestern.util.MiscUtil;
 import oldpacman.controllers.NewPacManController;
 import pacman.game.Game;
-import popacman.CustomExecutor.Builder;
-import popacman.DummyBlinkyForTesting;
-import popacman.DummyInkyForTesting;
-import popacman.DummyPinkyForTesting;
-import popacman.DummySueForTesting;
+import pacman.DummyBlinkyForTesting;
+import pacman.DummyInkyForTesting;
+import pacman.DummyPinkyForTesting;
+import pacman.DummySueForTesting;
+import pacman.CustomExecutor.Builder;
 import pacman.controllers.MASController;
 import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;

@@ -21,9 +21,9 @@ import edu.southwestern.util.datastructures.Pair;
 import edu.southwestern.util.datastructures.Triple;
 import edu.southwestern.util.stats.StatisticsUtilities;
 import pacman.game.Constants.MOVE;
-import popacman.prediction.GhostLocation;
-import popacman.prediction.PillModel;
-import popacman.prediction.fast.GhostPredictionsFast;
+import pacman.prediction.GhostLocation;
+import pacman.prediction.PillModel;
+import pacman.prediction.fast.GhostPredictionsFast;
 
 /**
  *Contains pac man game. Includes harnesses for both

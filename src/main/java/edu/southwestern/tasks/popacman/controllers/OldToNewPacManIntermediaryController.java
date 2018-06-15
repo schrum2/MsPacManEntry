@@ -15,11 +15,11 @@ import pacman.game.Constants.MOVE;
 //TODO: this could be useful
 import pacman.game.info.GameInfo;
 import pacman.game.internal.Maze;
+import pacman.prediction.GhostLocation;
+import pacman.prediction.PillModel;
+import pacman.prediction.fast.GhostPredictionsFast;
 import pacman.game.Drawable;
 import pacman.game.Game;
-import popacman.prediction.GhostLocation;
-import popacman.prediction.PillModel;
-import popacman.prediction.fast.GhostPredictionsFast;
 
 /**
  * a class that converts oldpacman controller information into popacman controller information
