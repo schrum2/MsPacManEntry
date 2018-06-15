@@ -2,13 +2,11 @@ package edu.southwestern.tasks.mspacman.agentcontroller.pacman;
 
 import edu.southwestern.evolution.genotypes.Genotype;
 import edu.southwestern.evolution.genotypes.TWEANNGenotype;
-import edu.southwestern.evolution.lineage.Offspring;
 import edu.southwestern.MMNEAT.MMNEAT;
 import edu.southwestern.networks.Network;
 import edu.southwestern.networks.TWEANN;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.parameters.Parameters;
-import edu.southwestern.tasks.mspacman.MsPacManTask;
 import edu.southwestern.tasks.mspacman.data.ScentPath;
 import edu.southwestern.tasks.mspacman.facades.GameFacade;
 import edu.southwestern.tasks.mspacman.sensors.VariableDirectionBlockLoadedInputOutputMediator;
@@ -94,13 +92,13 @@ public class NNCheckEachDirectionPacManController extends NNDirectionalPacManCon
 		chosenDirectionJunctionEdibleModeUsageCounts = new int[directionalNetworks[0].numModules()];
 		chosenDirectionThreatModeUsageCounts = new int[directionalNetworks[0].numModules()];
 		chosenDirectionJunctionThreatModeUsageCounts = new int[directionalNetworks[0].numModules()];
-		if (MMNEAT.ensembleArbitrator == null) {
+//		if (MMNEAT.ensembleArbitrator == null) {
 			multitask = directionalNetworks[0].isMultitask();
 			ensemble = false;
-		} else {
-			multitask = false;
-			ensemble = true;
-		}
+//		} else {
+//			multitask = false;
+//			ensemble = true;
+//		}
 		if (CommonConstants.monitorInputs) {
 			TWEANN.inputPanel.dispose();
 			// Dispose of existing panels
@@ -109,27 +107,27 @@ public class NNCheckEachDirectionPacManController extends NNDirectionalPacManCon
 					panels[i].dispose();
 				}
 			}
-			panels = new DrawingPanel[GameFacade.NUM_DIRS];
-			for (int i = 0; i < GameFacade.NUM_DIRS; i++) {
-				panels[i] = new DrawingPanel(Plot.BROWSE_DIM, (int) (Plot.BROWSE_DIM * 3.5), "Direction " + i);
-				panels[i].setLocation(i * (Plot.BROWSE_DIM + 10), 0);
-				Offspring.fillInputs(panels[i], (TWEANNGenotype) g);
-			}
+//			panels = new DrawingPanel[GameFacade.NUM_DIRS];
+//			for (int i = 0; i < GameFacade.NUM_DIRS; i++) {
+//				panels[i] = new DrawingPanel(Plot.BROWSE_DIM, (int) (Plot.BROWSE_DIM * 3.5), "Direction " + i);
+//				panels[i].setLocation(i * (Plot.BROWSE_DIM + 10), 0);
+//				Offspring.fillInputs(panels[i], (TWEANNGenotype) g);
+//			}
 		}
 		if (Parameters.parameters.booleanParameter("modePheremone")) {
 			System.out.println("Set up scent path for modes");
 			ScentPath.resetAll(directionalNetworks[0].numModules());
 			this.scentMode = Parameters.parameters.integerParameter("scentMode");
-			if (CommonConstants.recordPacman) {
-				try {
-					System.out.println("Create new mode file to record");
-					modeFile = new PrintStream(new FileOutputStream(new File(MsPacManTask.saveFilePrefix
-							+ Parameters.parameters.stringParameter("pacmanSaveFile") + ".modes")));
-				} catch (FileNotFoundException ex) {
-					System.out.println("Cannot track modes");
-					System.exit(1);
-				}
-			}
+//			if (CommonConstants.recordPacman) {
+//				try {
+//					System.out.println("Create new mode file to record");
+//					modeFile = new PrintStream(new FileOutputStream(new File(MsPacManTask.saveFilePrefix
+//							+ Parameters.parameters.stringParameter("pacmanSaveFile") + ".modes")));
+//				} catch (FileNotFoundException ex) {
+//					System.out.println("Cannot track modes");
+//					System.exit(1);
+//				}
+//			}
 		}
 	}
 
@@ -242,11 +240,11 @@ public class NNCheckEachDirectionPacManController extends NNDirectionalPacManCon
 			}
 		}
 
-		if (ensemble) {
-			// System.out.println("Change: " + Arrays.toString(preferences));
-			preferences = MMNEAT.ensembleArbitrator.newDirectionalPreferences(gf, fullPreferences);
-			// System.out.println("to " + Arrays.toString(preferences));
-		}
+//		if (ensemble) {
+//			// System.out.println("Change: " + Arrays.toString(preferences));
+//			preferences = MMNEAT.ensembleArbitrator.newDirectionalPreferences(gf, fullPreferences);
+//			// System.out.println("to " + Arrays.toString(preferences));
+//		}
 
 		int chosenMode = directionalNetworks[directionFromPreferences(preferences)].lastModule();
 		chosenDirectionModeUsageCounts[chosenMode]++;

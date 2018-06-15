@@ -2,7 +2,7 @@ package edu.southwestern.tasks.mspacman.agentcontroller.pacman;
 
 import edu.southwestern.evolution.genotypes.Genotype;
 import edu.southwestern.evolution.genotypes.TWEANNGenotype;
-import edu.southwestern.evolution.lineage.Offspring;
+//import edu.southwestern.evolution.lineage.Offspring;
 import edu.southwestern.networks.Network;
 import edu.southwestern.networks.TWEANN;
 import edu.southwestern.parameters.CommonConstants;
@@ -61,11 +61,11 @@ public class NNMultitaskSelectorCheckEachDirectionPacManController extends NNDir
 				}
 			}
 		}
-		for (int i = 0; i < GameFacade.NUM_DIRS; i++) {
-			panels[i] = new DrawingPanel(Plot.BROWSE_DIM, (int) (Plot.BROWSE_DIM * 3.5), label + " Direction " + i);
-			panels[i].setLocation(i * (Plot.BROWSE_DIM + 10), 0);
-			Offspring.fillInputs(panels[i], policy);
-		}
+//		for (int i = 0; i < GameFacade.NUM_DIRS; i++) {
+//			panels[i] = new DrawingPanel(Plot.BROWSE_DIM, (int) (Plot.BROWSE_DIM * 3.5), label + " Direction " + i);
+//			panels[i].setLocation(i * (Plot.BROWSE_DIM + 10), 0);
+//			Offspring.fillInputs(panels[i], policy);
+//		}
 	}
 
 	@Override
