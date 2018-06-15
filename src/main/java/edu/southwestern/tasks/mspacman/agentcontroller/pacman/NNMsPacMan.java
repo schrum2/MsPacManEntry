@@ -10,11 +10,8 @@ import edu.southwestern.networks.TWEANN;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.parameters.Parameters;
 import edu.southwestern.tasks.mspacman.sensors.ActionBlockLoadedInputOutputMediator;
-import edu.southwestern.tasks.mspacman.sensors.CombiningInputOutputMediator;
+//import edu.southwestern.tasks.mspacman.sensors.CombiningInputOutputMediator;
 import edu.southwestern.tasks.mspacman.sensors.VariableDirectionBlockLoadedInputOutputMediator;
-import edu.southwestern.tasks.mspacman.sensors.blocks.combining.GhostEatingNetworkBlock;
-import edu.southwestern.tasks.mspacman.sensors.blocks.combining.PillEatingNetworkBlock;
-import edu.southwestern.tasks.mspacman.sensors.blocks.combining.SubNetworkBlock;
 
 /**
  * Defines an evolved MsPacMan agent
