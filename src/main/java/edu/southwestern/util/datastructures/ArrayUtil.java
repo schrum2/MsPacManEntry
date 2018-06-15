@@ -10,8 +10,6 @@ import java.util.Set;
 import org.apache.commons.lang.ArrayUtils;
 import org.nd4j.linalg.api.ndarray.INDArray;
 
-import edu.southwestern.util.sound.SoundToArray;
-
 /**
  * Various useful methods with arrays
  *
@@ -677,14 +675,14 @@ public class ArrayUtil {
 	 * @param fileB Second audio file being overlapped
 	 * @return array of doubles with values that are the sum of the two input audio files at each index
 	 */
-	public static double[] overlap(String fileA, String fileB) {
-		double[] a = SoundToArray.read(fileA); //reads string files in as double arrays
-		double[] b = SoundToArray.read(fileB);
-		double[] adjustedA = Arrays.copyOf(a, Math.min(a.length, b.length)); //copy of itself but adjusted based on length of shortest array
-		double[] adjustedB = Arrays.copyOf(b, Math.min(a.length, b.length)); //copy of itself but adjusted based on length of shortest array
-		double[] overlapped = ArrayUtil.zipAdd(adjustedA, adjustedB); //zipAdd() is a method in ArrayUtil that adds values at each index of two arrays into a new array
-		return overlapped;
-	}
+//	public static double[] overlap(String fileA, String fileB) {
+//		double[] a = SoundToArray.read(fileA); //reads string files in as double arrays
+//		double[] b = SoundToArray.read(fileB);
+//		double[] adjustedA = Arrays.copyOf(a, Math.min(a.length, b.length)); //copy of itself but adjusted based on length of shortest array
+//		double[] adjustedB = Arrays.copyOf(b, Math.min(a.length, b.length)); //copy of itself but adjusted based on length of shortest array
+//		double[] overlapped = ArrayUtil.zipAdd(adjustedA, adjustedB); //zipAdd() is a method in ArrayUtil that adds values at each index of two arrays into a new array
+//		return overlapped;
+//	}
 
 
 	/**

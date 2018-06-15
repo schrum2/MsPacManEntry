@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.southwestern.evolution.ScoreHistory;
 import edu.southwestern.evolution.genotypes.Genotype;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.util.ClassCreation;
@@ -21,17 +20,17 @@ import edu.southwestern.util.stats.Statistic;
 public class Score<T> {
 	
 	// Use a scoreHistoryStat aggregation when averaging scores across whole score history
-	static {
-		if(CommonConstants.averageScoreHistory) {
-			try {
-				scoreHistoryStat = (Statistic) ClassCreation.createObject("noisyTaskStat");
-			} catch (NoSuchMethodException ex) {
-				ex.printStackTrace();
-				System.exit(1);
-			}	
-		} else scoreHistoryStat = null;
-	}
-	private static Statistic scoreHistoryStat;
+//	static {
+//		if(CommonConstants.averageScoreHistory) {
+//			try {
+//				scoreHistoryStat = (Statistic) ClassCreation.createObject("noisyTaskStat");
+//			} catch (NoSuchMethodException ex) {
+//				ex.printStackTrace();
+//				System.exit(1);
+//			}	
+//		} else scoreHistoryStat = null;
+//	}
+//	private static Statistic scoreHistoryStat;
 	
 	// number of evals performed to determine this agent's score
 	public int evals;
@@ -106,30 +105,30 @@ public class Score<T> {
 		// http://eplex.cs.ucf.edu/papers/morse_gecco16.pdf
 		// However, the original method proposed seems to cause fitness
 		// scores to grow without bound, so I've adjusted it.
-		if(CommonConstants.inheritFitness) {
-			List<Long> parentIDs = individual.getParentIDs();
-			// Get and average all parent scores if there are any
-			double[] adjustedLEEAScores = new double[scores.length];
-			for(Long id: parentIDs) {
-				double[] parentScores = ScoreHistory.getLast(id);
-				// Calculate sum
-				for(int i = 0; i < adjustedLEEAScores.length; i++) {
-					adjustedLEEAScores[i] += parentScores[i];
-				}
-			}
-			// divide for average, and incorporate inherited fitness
-			for(int i = 0; i < adjustedLEEAScores.length; i++) {
-				if(parentIDs.size() > 0) {
-					adjustedLEEAScores[i] /= parentIDs.size(); // average
-					adjustedLEEAScores[i] *= CommonConstants.inheritProportion; // decayed
-				}
-				//adjustedLEEAScores[i] += scores[i]; // original LEEA?
-				adjustedLEEAScores[i] += (1 - CommonConstants.inheritProportion)*scores[i]; // weighted average
-			}
-			// Save adjusted fitness
-			ScoreHistory.add(individual.getId(), adjustedLEEAScores);
-			this.scores = adjustedLEEAScores;
-		}
+//		if(CommonConstants.inheritFitness) {
+//			List<Long> parentIDs = individual.getParentIDs();
+//			// Get and average all parent scores if there are any
+//			double[] adjustedLEEAScores = new double[scores.length];
+//			for(Long id: parentIDs) {
+//				double[] parentScores = ScoreHistory.getLast(id);
+//				// Calculate sum
+//				for(int i = 0; i < adjustedLEEAScores.length; i++) {
+//					adjustedLEEAScores[i] += parentScores[i];
+//				}
+//			}
+//			// divide for average, and incorporate inherited fitness
+//			for(int i = 0; i < adjustedLEEAScores.length; i++) {
+//				if(parentIDs.size() > 0) {
+//					adjustedLEEAScores[i] /= parentIDs.size(); // average
+//					adjustedLEEAScores[i] *= CommonConstants.inheritProportion; // decayed
+//				}
+//				//adjustedLEEAScores[i] += scores[i]; // original LEEA?
+//				adjustedLEEAScores[i] += (1 - CommonConstants.inheritProportion)*scores[i]; // weighted average
+//			}
+//			// Save adjusted fitness
+//			ScoreHistory.add(individual.getId(), adjustedLEEAScores);
+//			this.scores = adjustedLEEAScores;
+//		}
 		
 		// Do not use both inheritFitness and averageScoreHistory
 		assert !(CommonConstants.inheritFitness && CommonConstants.averageScoreHistory) :
@@ -141,12 +140,12 @@ public class Score<T> {
 		// have noisy evaluations. However, this setting takes
 		// further advantage by averaging fitnesses across all
 		// evaluations from subsequent generations.
-		if(CommonConstants.averageScoreHistory) {
-			// Add the raw scores to the history
-			ScoreHistory.add(individual.getId(), scores);
-			// Get aggregation (default average) across all scores
-			this.scores = ScoreHistory.applyStat(individual.getId(), scoreHistoryStat);
-		}
+//		if(CommonConstants.averageScoreHistory) {
+//			// Add the raw scores to the history
+//			ScoreHistory.add(individual.getId(), scores);
+//			// Get aggregation (default average) across all scores
+//			this.scores = ScoreHistory.applyStat(individual.getId(), scoreHistoryStat);
+//		}
 	}
 
 	/**
