@@ -1,6 +1,6 @@
 package edu.southwestern.tasks.mspacman.agentcontroller.pacman;
 
-import edu.southwestern.evolution.genotypes.HyperNEATCPPNGenotype;
+//import edu.southwestern.evolution.genotypes.HyperNEATCPPNGenotype;
 
 import edu.southwestern.evolution.Organism;
 import edu.southwestern.evolution.genotypes.Genotype;
@@ -43,11 +43,11 @@ public class NNMsPacMan<T extends Network> extends Organism<T> {
 	public NNMsPacMan(Genotype<T> genotype) {
 		super(genotype);
 		if(CommonConstants.hyperNEAT) {
-			controller = new NNHyperNEATPacManController((HyperNEATCPPNGenotype) genotype);
+			//controller = new NNHyperNEATPacManController((HyperNEATCPPNGenotype) genotype);
 		} else {
 			Network net = (Network) this.getGenotype().getPhenotype();
 			boolean evolveNetworkSelector = Parameters.parameters.booleanParameter("evolveNetworkSelector");
-			try {
+//			try {
 				if (MMNEAT.pacmanInputOutputMediator instanceof ActionBlockLoadedInputOutputMediator) {
 					controller = new NNActionPacManController(net);
 				} else if (MMNEAT.pacmanInputOutputMediator instanceof VariableDirectionBlockLoadedInputOutputMediator) {
@@ -89,7 +89,7 @@ public class NNMsPacMan<T extends Network> extends Organism<T> {
 					// Assumes network is a TWEANN
 //					if (MMNEAT.genotypeExamples == null) {
 						// Evolving a selector with set subnetworks
-						controller = new MultinetworkSelectorNetworkMsPacManController((TWEANN) net);
+						//controller = new MultinetworkSelectorNetworkMsPacManController((TWEANN) net);
 //					} else {
 //						// Subnets come from coevolution task
 //						controller = new MultinetworkSelectorNetworkMsPacManController((TWEANN) net,
@@ -102,11 +102,11 @@ public class NNMsPacMan<T extends Network> extends Organism<T> {
 				} else {
 					controller = new ReactiveNNPacManController(net);
 				}
-			} catch (NoSuchMethodException e) {
-				System.out.println("Classes mediators not loading correctly");
-				e.printStackTrace();
-				System.exit(1);
-			}
+//			} catch (NoSuchMethodException e) {
+//				System.out.println("Classes mediators not loading correctly");
+//				e.printStackTrace();
+//				System.exit(1);
+//			}
 		}
 	}
 

@@ -1,10 +1,10 @@
 package edu.southwestern.networks;
 
 import edu.southwestern.evolution.EvolutionaryHistory;
-import edu.southwestern.evolution.genotypes.HyperNEATCPPNGenotype;
+//import edu.southwestern.evolution.genotypes.HyperNEATCPPNGenotype;
 import edu.southwestern.evolution.genotypes.TWEANNGenotype;
 import edu.southwestern.evolution.genotypes.TWEANNGenotype.LinkGene;
-import edu.southwestern.networks.hyperneat.HyperNEATUtil;
+//import edu.southwestern.networks.hyperneat.HyperNEATUtil;
 import edu.southwestern.MMNEAT.MMNEAT;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.parameters.Parameters;
@@ -756,9 +756,9 @@ public class TWEANN implements Network {
 			outputs = moduleOutput(chosenModule);
 		}
 		if (canDraw) {
-			if(!HyperNEATCPPNGenotype.constructingNetwork && CommonConstants.hyperNEAT && CommonConstants.monitorSubstrates) {
-				animateSubstrate();
-			}
+//			if(!HyperNEATCPPNGenotype.constructingNetwork && CommonConstants.hyperNEAT && CommonConstants.monitorSubstrates) {
+//				animateSubstrate();
+//			}
 				
 			if (panel != null && Parameters.parameters.booleanParameter("animateNetwork")) {
 				draw(panel);
@@ -857,15 +857,15 @@ public class TWEANN implements Network {
 	 * Creates and updates visuals of substrates used by h-neat tetris task 
 	 */
 	public void animateSubstrate() {
-			subsPanel = HyperNEATUtil.drawSubstrates(nodes);
+			//subsPanel = HyperNEATUtil.drawSubstrates(nodes);
 			//tweannGenotype has getLinkBetween
 			//just need to find a way to get neuron innovation numbers
 	}
 
 	private static void refreshActivation(DrawingPanel inputPanel, double[] inputs, double[] outputs, double[] preferences, boolean multitask, double[] preferenceFatigue) {
-		NetworkTask task = (NetworkTask) MMNEAT.task;
-		String[] labels = task.sensorLabels();
-		assert labels.length == inputs.length : "Need correspondence between inputs and labels: " + Arrays.toString(labels) + Arrays.toString(inputs);
+		//NetworkTask task = (NetworkTask) MMNEAT.task;
+		//String[] labels = task.sensorLabels();
+		//assert labels.length == inputs.length : "Need correspondence between inputs and labels: " + Arrays.toString(labels) + Arrays.toString(inputs);
 
 		Graphics2D g = inputPanel.getGraphics();
 		g.setColor(Color.white);
@@ -885,21 +885,21 @@ public class TWEANN implements Network {
 			g.fillRect(x, y - (Plot.OFFSET / 2), w, Plot.OFFSET / 2);
 			g.setColor(Color.black);
 			g.drawString(i + "", 1, y);
-			g.drawString(labels[i], Plot.OFFSET, y);
+			//g.drawString(labels[i], Plot.OFFSET, y);
 		}
 
 		g.setColor(Color.ORANGE);
 		g.drawString("OUTPUTS", Plot.OFFSET, (int) ((0 + (i * 0.5)) * Plot.OFFSET));
 		i++;
 
-		labels = task.outputLabels();
+		//labels = task.outputLabels();
 		if (MMNEAT.sharedMultitaskNetwork != null && !multitask) {
 			// This network determines preferences for the mode of a shared
 			// multitask network
-			labels = new String[outputs.length];
-			for (int j = 0; j < labels.length; j++) {
-				labels[j] = "Pref Mode " + j;
-			}
+			//labels = new String[outputs.length];
+			//for (int j = 0; j < labels.length; j++) {
+			//	labels[j] = "Pref Mode " + j;
+			//}
 		}
 		for (int j = 0; j < outputs.length; j++, i++) {
 			int y = (int) ((0 + (i * 0.5)) * Plot.OFFSET);
@@ -913,7 +913,7 @@ public class TWEANN implements Network {
 			}
 			g.fillRect(x, y - (Plot.OFFSET / 2), w, Plot.OFFSET / 2);
 			g.setColor(Color.black);
-			g.drawString(labels[j], Plot.OFFSET, y);
+			//g.drawString(labels[j], Plot.OFFSET, y);
 		}
 
 		g.setColor(Color.ORANGE);
@@ -943,7 +943,7 @@ public class TWEANN implements Network {
 
 		i++;
 		int y = (int) ((0 + (i * 0.5)) * Plot.OFFSET);
-		g.drawString("Time Stamp: " + MMNEAT.task.getTimeStamp(), Plot.OFFSET, y);
+		//g.drawString("Time Stamp: " + MMNEAT.task.getTimeStamp(), Plot.OFFSET, y);
 	}
 
 	//used in drawing class. Transient to avoid unnecessary saving to xml files

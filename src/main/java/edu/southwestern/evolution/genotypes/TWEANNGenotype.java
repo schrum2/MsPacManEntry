@@ -310,7 +310,7 @@ public class TWEANNGenotype implements NetworkGenotype<TWEANN> {
             this.frozen = frozen;
             this.moduleSource = moduleSource;
             // When constructing substrate network, each link must have a particular module as its source.
-            assert !(HyperNEATCPPNGenotype.constructingNetwork && moduleSource == -1) : sourceInnovation + " -> " + targetInnovation + " with weight " + weight + " innovation " + innovation + " active "+ active;
+           // assert !(HyperNEATCPPNGenotype.constructingNetwork && moduleSource == -1) : sourceInnovation + " -> " + targetInnovation + " with weight " + weight + " innovation " + innovation + " active "+ active;
         }
 
         @Override

@@ -2,13 +2,13 @@ package edu.southwestern.tasks;
 
 import edu.southwestern.MMNEAT.MMNEAT;
 import edu.southwestern.evolution.genotypes.Genotype;
-import edu.southwestern.evolution.genotypes.HyperNEATCPPNGenotype;
+//import edu.southwestern.evolution.genotypes.HyperNEATCPPNGenotype;
 //import edu.southwestern.evolution.genotypes.HyperNEATCPPNforDL4JGenotype;
 import edu.southwestern.evolution.genotypes.TWEANNGenotype;
 //import edu.southwestern.evolution.lineage.Offspring;
 import edu.southwestern.networks.TWEANN;
 import edu.southwestern.networks.hyperneat.HyperNEATTask;
-import edu.southwestern.networks.hyperneat.HyperNEATUtil;
+//import edu.southwestern.networks.hyperneat.HyperNEATUtil;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.parameters.Parameters;
 //import edu.southwestern.tasks.breve2D.Breve2DTask;
@@ -39,20 +39,20 @@ public class CommonTaskUtil {
 				TWEANN network = ((TWEANNGenotype) genotype).getPhenotype();
 				//System.out.println("Draw network with " + network.numInputs() + " inputs");
 				network.draw(panel);
-				if(genotype instanceof HyperNEATCPPNGenotype) {
-					HyperNEATCPPNGenotype hngt = (HyperNEATCPPNGenotype) genotype;
-					if( Parameters.parameters.booleanParameter("showCPPN")) {
-						cppnPanel = new DrawingPanel(500, 500, "Evolved CPPN");
-						cppnPanel.setLocation(TWEANN.NETWORK_VIEW_DIM + NETWORK_WINDOW_OFFSET, 0);
-						hngt.getCPPN().draw(cppnPanel);
-					}
-					if(Parameters.parameters.booleanParameter("showWeights")){
-						// Weight panels disposed of in HyperNEATUtil
-//						HyperNEATTask task = (HyperNEATTask) MMNEAT.task;
-//						HyperNEATUtil.drawWeight(hngt.getSubstrateGenotype(task),task,hngt.numModules()); 
-					}
-
-				}
+//				if(genotype instanceof HyperNEATCPPNGenotype) {
+//					HyperNEATCPPNGenotype hngt = (HyperNEATCPPNGenotype) genotype;
+//					if( Parameters.parameters.booleanParameter("showCPPN")) {
+//						cppnPanel = new DrawingPanel(500, 500, "Evolved CPPN");
+//						cppnPanel.setLocation(TWEANN.NETWORK_VIEW_DIM + NETWORK_WINDOW_OFFSET, 0);
+//						hngt.getCPPN().draw(cppnPanel);
+//					}
+//					if(Parameters.parameters.booleanParameter("showWeights")){
+//						// Weight panels disposed of in HyperNEATUtil
+////						HyperNEATTask task = (HyperNEATTask) MMNEAT.task;
+////						HyperNEATUtil.drawWeight(hngt.getSubstrateGenotype(task),task,hngt.numModules()); 
+//					}
+//
+//				}
 			}
 			if (CommonConstants.viewModePreference && TWEANN.preferenceNeuronPanel == null && TWEANN.preferenceNeuron()) {
 				TWEANN.preferenceNeuronPanel = new DrawingPanel(Plot.BROWSE_DIM, Plot.BROWSE_DIM, "Preference Neuron Activation");

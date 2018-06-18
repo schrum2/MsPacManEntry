@@ -10,28 +10,11 @@ import java.util.logging.Logger;
 
 import org.rlcommunity.rlglue.codec.taskspec.TaskSpec;
 
-import edu.southwestern.boardGame.BoardGame;
-import edu.southwestern.boardGame.TwoDimensionalBoardGame;
-import edu.southwestern.boardGame.TwoDimensionalBoardGameViewer;
-import edu.southwestern.breve2D.dynamics.Breve2DDynamics;
-import edu.southwestern.data.ResultSummaryUtilities;
-import edu.southwestern.evolution.EA;
 import edu.southwestern.evolution.EvolutionaryHistory;
-import edu.southwestern.evolution.ScoreHistory;
-import edu.southwestern.evolution.crossover.Crossover;
 import edu.southwestern.evolution.genotypes.CombinedGenotype;
 import edu.southwestern.evolution.genotypes.Genotype;
 import edu.southwestern.evolution.genotypes.HyperNEATCPPNGenotype;
-import edu.southwestern.evolution.genotypes.HyperNEATCPPNforDL4JGenotype;
 import edu.southwestern.evolution.genotypes.TWEANNGenotype;
-import edu.southwestern.evolution.halloffame.HallOfFame;
-import edu.southwestern.evolution.lineage.Offspring;
-import edu.southwestern.evolution.metaheuristics.AntiMaxModuleUsageFitness;
-import edu.southwestern.evolution.metaheuristics.FavorXModulesFitness;
-import edu.southwestern.evolution.metaheuristics.LinkPenalty;
-import edu.southwestern.evolution.metaheuristics.MaxModulesFitness;
-import edu.southwestern.evolution.metaheuristics.Metaheuristic;
-import edu.southwestern.evolution.metaheuristics.SubstrateLinkPenalty;
 import edu.southwestern.experiment.Experiment;
 import edu.southwestern.log.EvalLog;
 import edu.southwestern.log.MMNEATLog;
@@ -40,46 +23,12 @@ import edu.southwestern.networks.ActivationFunctions;
 import edu.southwestern.networks.NetworkTask;
 import edu.southwestern.networks.TWEANN;
 import edu.southwestern.networks.hyperneat.Bottom1DSubstrateMapping;
-import edu.southwestern.networks.hyperneat.HyperNEATDummyTask;
-import edu.southwestern.networks.hyperneat.HyperNEATSpeedTask;
 import edu.southwestern.networks.hyperneat.HyperNEATTask;
-import edu.southwestern.networks.hyperneat.HyperNEATUtil;
 import edu.southwestern.networks.hyperneat.SubstrateArchitectureDefinition;
 import edu.southwestern.networks.hyperneat.SubstrateCoordinateMapping;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.parameters.Parameters;
 import edu.southwestern.scores.Score;
-import edu.southwestern.tasks.MultiplePopulationTask;
-import edu.southwestern.tasks.Task;
-import edu.southwestern.tasks.boardGame.MultiPopulationCompetativeCoevolutionBoardGameTask;
-import edu.southwestern.tasks.boardGame.SinglePopulationCompetativeCoevolutionBoardGameTask;
-import edu.southwestern.tasks.boardGame.StaticOpponentBoardGameTask;
-import edu.southwestern.tasks.breve2D.Breve2DTask;
-import edu.southwestern.tasks.breve2D.NNBreve2DMonster;
-import edu.southwestern.tasks.gridTorus.GroupTorusPredPreyTask;
-import edu.southwestern.tasks.gridTorus.NNTorusPredPreyController;
-import edu.southwestern.tasks.gridTorus.TorusEvolvedPredatorsVsStaticPreyTask;
-import edu.southwestern.tasks.gridTorus.TorusPredPreyTask;
-import edu.southwestern.tasks.gridTorus.competitive.CompetitiveHomogeneousPredatorsVsPreyTask;
-import edu.southwestern.tasks.gridTorus.cooperative.CooperativePredatorsVsStaticPreyTask;
-import edu.southwestern.tasks.gridTorus.cooperativeAndCompetitive.CompetitiveAndCooperativePredatorsVsPreyTask;
-import edu.southwestern.tasks.gvgai.GVGAISinglePlayerTask;
-import edu.southwestern.tasks.innovationengines.PictureInnovationTask;
-import edu.southwestern.tasks.innovationengines.ShapeInnovationTask;
-import edu.southwestern.tasks.interactive.InteractiveEvolutionTask;
-import edu.southwestern.tasks.mario.MarioTask;
-import edu.southwestern.tasks.microrts.MicroRTSTask;
-import edu.southwestern.tasks.microrts.SinglePopulationCompetativeCoevolutionMicroRTSTask;
-import edu.southwestern.tasks.motests.FunctionOptimization;
-import edu.southwestern.tasks.motests.testfunctions.FunctionOptimizationSet;
-import edu.southwestern.tasks.mspacman.CooperativeCheckEachMultitaskSelectorMsPacManTask;
-import edu.southwestern.tasks.mspacman.CooperativeGhostMonitorNetworksMsPacManTask;
-import edu.southwestern.tasks.mspacman.CooperativeMsPacManTask;
-import edu.southwestern.tasks.mspacman.CooperativeNonHierarchicalMultiNetMsPacManTask;
-import edu.southwestern.tasks.mspacman.CooperativeSubtaskCombinerMsPacManTask;
-import edu.southwestern.tasks.mspacman.CooperativeSubtaskSelectorMsPacManTask;
-import edu.southwestern.tasks.mspacman.MsPacManTask;
-import edu.southwestern.tasks.mspacman.ensemble.MsPacManEnsembleArbitrator;
 import edu.southwestern.tasks.mspacman.facades.ExecutorFacade;
 import edu.southwestern.tasks.mspacman.init.MsPacManInitialization;
 import edu.southwestern.tasks.mspacman.multitask.MsPacManModeSelector;
@@ -87,17 +36,6 @@ import edu.southwestern.tasks.mspacman.sensors.MsPacManControllerInputOutputMedi
 import edu.southwestern.tasks.mspacman.sensors.MultipleInputOutputMediator;
 import edu.southwestern.tasks.mspacman.sensors.VariableDirectionBlockLoadedInputOutputMediator;
 import edu.southwestern.tasks.mspacman.sensors.directional.VariableDirectionBlock;
-import edu.southwestern.tasks.mspacman.sensors.ghosts.GhostControllerInputOutputMediator;
-import edu.southwestern.tasks.mspacman.sensors.ghosts.mediators.GhostsCheckEachDirectionMediator;
-import edu.southwestern.tasks.pinball.PinballTask;
-import edu.southwestern.tasks.rlglue.RLGlueEnvironment;
-import edu.southwestern.tasks.rlglue.RLGlueTask;
-import edu.southwestern.tasks.rlglue.featureextractors.FeatureExtractor;
-import edu.southwestern.tasks.rlglue.init.RLGlueInitialization;
-import edu.southwestern.tasks.rlglue.tetris.HyperNEATTetrisTask;
-import edu.southwestern.tasks.testmatch.MatchDataTask;
-import edu.southwestern.tasks.ut2004.UT2004Task;
-import edu.southwestern.tasks.vizdoom.VizDoomTask;
 import edu.southwestern.util.ClassCreation;
 import edu.southwestern.util.datastructures.Triple;
 import edu.southwestern.util.file.FileUtilities;
@@ -127,29 +65,29 @@ public class MMNEAT {
 	public static double[] upperInputBounds;
 	public static int[] discreteCeilings;
 	public static Experiment experiment;
-	public static Task task;
-	public static EA ea;
+	//public static Task task;
+	//public static EA ea;
 	@SuppressWarnings("rawtypes") // could hold any type, depending on command line
 	public static Genotype genotype;
 	@SuppressWarnings("rawtypes") // could hold any type, depending on command line
 	public static ArrayList<Genotype> genotypeExamples;
-	@SuppressWarnings("rawtypes") // can crossover any type, depending on command line
-	public static Crossover crossoverOperator;
-	public static FunctionOptimizationSet fos;
-	public static RLGlueEnvironment rlGlueEnvironment;
+	//@SuppressWarnings("rawtypes") // can crossover any type, depending on command line
+	//public static Crossover crossoverOperator;
+	//public static FunctionOptimizationSet fos;
+	//public static RLGlueEnvironment rlGlueEnvironment;
 	@SuppressWarnings("rawtypes") // depends on genotypes
-	public static ArrayList<Metaheuristic> metaheuristics;
+	//public static ArrayList<Metaheuristic> metaheuristics;
 	public static ArrayList<ArrayList<String>> fitnessFunctions;
 	public static ArrayList<Statistic> aggregationOverrides;
 	public static TaskSpec tso;
-	public static FeatureExtractor rlGlueExtractor;
+	//public static FeatureExtractor rlGlueExtractor;
 	public static boolean blueprints = false;
 	@SuppressWarnings("rawtypes") // applies to any population type
 	public static PerformanceLog performanceLog;
 	public static MsPacManControllerInputOutputMediator pacmanInputOutputMediator;
-	public static GhostControllerInputOutputMediator ghostsInputOutputMediator;
+	//public static GhostControllerInputOutputMediator ghostsInputOutputMediator;
 	public static MsPacManControllerInputOutputMediator[] coevolutionMediators = null;
-	public static MsPacManEnsembleArbitrator ensembleArbitrator = null;
+	//public static MsPacManEnsembleArbitrator ensembleArbitrator = null;
 	private static ArrayList<Integer> actualFitnessFunctions;
 	public static MsPacManModeSelector pacmanMultitaskScheme = null;
 	public static VariableDirectionBlock directionalSafetyFunction;
@@ -160,12 +98,12 @@ public class MMNEAT {
 	public static MMNEATLog ghostLocationsOnPowerPillEaten = null;
 	public static boolean browseLineage = false;
 	public static SubstrateCoordinateMapping substrateMapping = null;
-	@SuppressWarnings("rawtypes")
-	public static HallOfFame hallOfFame;
-	@SuppressWarnings("rawtypes")
-	public static BoardGame boardGame;
-	@SuppressWarnings("rawtypes")
-	public static TwoDimensionalBoardGameViewer boardGameViewer;
+	//@SuppressWarnings("rawtypes")
+	//public static HallOfFame hallOfFame;
+	//@SuppressWarnings("rawtypes")
+	//public static BoardGame boardGame;
+	//@SuppressWarnings("rawtypes")
+	//public static TwoDimensionalBoardGameViewer boardGameViewer;
 	public static SubstrateArchitectureDefinition substrateArchitectureDefinition;
 	
 	public static MMNEAT mmneat;
@@ -176,9 +114,9 @@ public class MMNEAT {
 		ArrayList<String> result = (ArrayList<String>) fitnessFunctions.get(pop).clone();
 		if(pop == 0) {
 			ArrayList<String> meta = new ArrayList<String>();
-			for (Metaheuristic m : metaheuristics) {
-				meta.add(m.getClass().getSimpleName());
-			}
+//			for (Metaheuristic m : metaheuristics) {
+//				meta.add(m.getClass().getSimpleName());
+//			}
 			result.addAll(actualFitnessFunctions.get(pop), meta);
 		}
 		return result;
@@ -198,17 +136,17 @@ public class MMNEAT {
 	@SuppressWarnings("rawtypes") // type of genotypes being crossed could be anything
 	private static void setupCrossover() throws NoSuchMethodException {
 		// Crossover operator
-		if (Parameters.parameters.booleanParameter("mating")) {
-			crossoverOperator = (Crossover) ClassCreation.createObject("crossover");
-		}
+//		if (Parameters.parameters.booleanParameter("mating")) {
+//			crossoverOperator = (Crossover) ClassCreation.createObject("crossover");
+//		}
 	}
 
 	private static void setupFunctionOptimization() throws NoSuchMethodException {
 		// Function minimization benchmarks, if they are used
-		fos = (FunctionOptimizationSet) ClassCreation.createObject("fos");
-		if (Parameters.parameters.booleanParameter("lengthDependentMutationRate") && fos != null) {
-			Parameters.parameters.setDouble("realMutateRate", 1.0 / fos.getLowerBounds().length);
-		}
+//		fos = (FunctionOptimizationSet) ClassCreation.createObject("fos");
+//		if (Parameters.parameters.booleanParameter("lengthDependentMutationRate") && fos != null) {
+//			Parameters.parameters.setDouble("realMutateRate", 1.0 / fos.getLowerBounds().length);
+//		}
 	}
 
 	@SuppressWarnings("rawtypes") // Metaheuristic can be applied to any type of population
@@ -216,53 +154,53 @@ public class MMNEAT {
 		// Metaheuristics are objectives that are not associated with the
 		// domain/task
 		System.out.println("Use meta-heuristics?");
-		metaheuristics = new ArrayList<Metaheuristic>();
-		if (Parameters.parameters.booleanParameter("antiMaxModeUsage")) {
-			System.out.println("Penalize Max Mode Usage");
-			metaheuristics.add(new AntiMaxModuleUsageFitness());
-		}
-		if (Parameters.parameters.integerParameter("numModesToPrefer") > 0) {
-			int target = Parameters.parameters.integerParameter("numModesToPrefer");
-			System.out.println("Prefer even usage of " + target + " modes");
-			metaheuristics.add(new FavorXModulesFitness(target));
-		}
-		if (Parameters.parameters.booleanParameter("penalizeLinks")) {
-			System.out.println("Penalize Links");
-			metaheuristics.add(new LinkPenalty());
-		}
-		if (Parameters.parameters.booleanParameter("maximizeModes")) {
-			System.out.println("Maximize Modes");
-			metaheuristics.add(new MaxModulesFitness());
-		}
-		if (Parameters.parameters.booleanParameter("penalizeSubstrateLinks")) {
-			System.out.println("Penalize Substrate Links");
-			metaheuristics.add(new SubstrateLinkPenalty());
-		}
+//		metaheuristics = new ArrayList<Metaheuristic>();
+//		if (Parameters.parameters.booleanParameter("antiMaxModeUsage")) {
+//			System.out.println("Penalize Max Mode Usage");
+//			metaheuristics.add(new AntiMaxModuleUsageFitness());
+//		}
+//		if (Parameters.parameters.integerParameter("numModesToPrefer") > 0) {
+//			int target = Parameters.parameters.integerParameter("numModesToPrefer");
+//			System.out.println("Prefer even usage of " + target + " modes");
+//			metaheuristics.add(new FavorXModulesFitness(target));
+//		}
+//		if (Parameters.parameters.booleanParameter("penalizeLinks")) {
+//			System.out.println("Penalize Links");
+//			metaheuristics.add(new LinkPenalty());
+//		}
+//		if (Parameters.parameters.booleanParameter("maximizeModes")) {
+//			System.out.println("Maximize Modes");
+//			metaheuristics.add(new MaxModulesFitness());
+//		}
+//		if (Parameters.parameters.booleanParameter("penalizeSubstrateLinks")) {
+//			System.out.println("Penalize Substrate Links");
+//			metaheuristics.add(new SubstrateLinkPenalty());
+//		}
 	}
 
 	private static void setupTWEANNGenotypeDataTracking(boolean coevolution) {
-		if (genotype instanceof TWEANNGenotype || 
-			genotype instanceof CombinedGenotype || // Assume first member of pair is TWEANNGenotype
-			genotype instanceof HyperNEATCPPNforDL4JGenotype) { // Contains CPPN that is TWEANNGenotype
-			if (Parameters.parameters.booleanParameter("io")
-					&& Parameters.parameters.booleanParameter("logTWEANNData")) {
-				System.out.println("Init TWEANN Log");
-				EvolutionaryHistory.initTWEANNLog();
-			}
-			if (!coevolution) {
-				EvolutionaryHistory.initArchetype(0);
-			}
-
-			@SuppressWarnings("rawtypes")
-			long biggestInnovation = genotype instanceof CombinedGenotype ? 
-					((TWEANNGenotype) ((CombinedGenotype) genotype).t1).biggestInnovation() :
-						(genotype instanceof HyperNEATCPPNforDL4JGenotype ?
-						((HyperNEATCPPNforDL4JGenotype) genotype).getCPPN().biggestInnovation()	:
-					((TWEANNGenotype) genotype).biggestInnovation());
-			if (biggestInnovation > EvolutionaryHistory.largestUnusedInnovationNumber) {
-				EvolutionaryHistory.setInnovation(biggestInnovation + 1);
-			}
-		}
+//		if (genotype instanceof TWEANNGenotype || 
+////			genotype instanceof CombinedGenotype || // Assume first member of pair is TWEANNGenotype
+////			genotype instanceof HyperNEATCPPNforDL4JGenotype) { // Contains CPPN that is TWEANNGenotype
+////			if (Parameters.parameters.booleanParameter("io")
+////					&& Parameters.parameters.booleanParameter("logTWEANNData")) {
+////				System.out.println("Init TWEANN Log");
+////				EvolutionaryHistory.initTWEANNLog();
+////			}
+////			if (!coevolution) {
+////				EvolutionaryHistory.initArchetype(0);
+////			}
+////
+////			//@SuppressWarnings("rawtypes")
+//////			long biggestInnovation = genotype instanceof CombinedGenotype ? 
+//////					((TWEANNGenotype) ((CombinedGenotype) genotype).t1).biggestInnovation() :
+//////						(genotype instanceof HyperNEATCPPNforDL4JGenotype ?
+//////						((HyperNEATCPPNforDL4JGenotype) genotype).getCPPN().biggestInnovation()	:
+//////					((TWEANNGenotype) genotype).biggestInnovation());
+////			if (biggestInnovation > EvolutionaryHistory.largestUnusedInnovationNumber) {
+////				EvolutionaryHistory.setInnovation(biggestInnovation + 1);
+////			}
+//		}
 	}
 
 	public static void prepareCoevolutionArchetypes() {
@@ -285,8 +223,9 @@ public class MMNEAT {
 	 * @return Whether task involves agents cooperating with subnetworks
 	 */
 	public static boolean taskHasSubnetworks() {
-		return CooperativeSubtaskSelectorMsPacManTask.class.equals(Parameters.parameters.classParameter("task"))
-				|| CooperativeSubtaskCombinerMsPacManTask.class.equals(Parameters.parameters.classParameter("task"));
+//		return CooperativeSubtaskSelectorMsPacManTask.class.equals(Parameters.parameters.classParameter("task"))
+//				|| CooperativeSubtaskCombinerMsPacManTask.class.equals(Parameters.parameters.classParameter("task"));
+		return false;
 	}
 
 	/**
@@ -498,53 +437,53 @@ public class MMNEAT {
 				// Is this next line redundant
 				EvolutionaryHistory.initInnovationHistory();
 				MsPacManInitialization.setupMsPacmanParameters();
-				if (task instanceof CooperativeGhostMonitorNetworksMsPacManTask) {
-					MsPacManInitialization.setupCooperativeCoevolutionGhostMonitorsForMsPacman();
-				} else if (task instanceof CooperativeSubtaskSelectorMsPacManTask) {
-					MsPacManInitialization.setupCooperativeCoevolutionSelectorForMsPacman();
-				} else if (task instanceof CooperativeSubtaskCombinerMsPacManTask) {
-					MsPacManInitialization.setupCooperativeCoevolutionCombinerForMsPacman();
-				} else if (task instanceof CooperativeNonHierarchicalMultiNetMsPacManTask) {
-					MsPacManInitialization.setupCooperativeCoevolutionNonHierarchicalForMsPacman();
-				} else if (task instanceof CooperativeCheckEachMultitaskSelectorMsPacManTask) {
-					MsPacManInitialization.setupCooperativeCoevolutionCheckEachMultitaskPreferenceNetForMsPacman();
-				}
-			} else if (task instanceof MicroRTSTask) {
-				MicroRTSTask temp = (MicroRTSTask) task;
-				setNNInputParameters(temp.sensorLabels().length, 1); //only one output because it is utility value for state being evaluated
-			} else if (task instanceof SinglePopulationCompetativeCoevolutionMicroRTSTask){
-				SinglePopulationCompetativeCoevolutionMicroRTSTask temp = (SinglePopulationCompetativeCoevolutionMicroRTSTask) task;
-				setNNInputParameters(temp.sensorLabels().length, 1); //only one output because it is utility value for state being evaluated
-				
-			} else if (task instanceof RLGlueTask) {
-				setNNInputParameters(rlGlueExtractor.numFeatures(), RLGlueTask.agent.getNumberOutputs());
-			} else if (task instanceof PinballTask) {
-				PinballTask temp = (PinballTask) task;
-				setNNInputParameters(temp.sensorLabels().length, temp.outputLabels().length);
-			} else if (task instanceof StaticOpponentBoardGameTask) {
-				StaticOpponentBoardGameTask temp = (StaticOpponentBoardGameTask) task;
-				setNNInputParameters(temp.sensorLabels().length, temp.outputLabels().length);
-			} else if (task instanceof SinglePopulationCompetativeCoevolutionBoardGameTask) {
-				SinglePopulationCompetativeCoevolutionBoardGameTask temp = (SinglePopulationCompetativeCoevolutionBoardGameTask) task;
-				setNNInputParameters(temp.sensorLabels().length, temp.outputLabels().length);
-			} else if (task instanceof MultiPopulationCompetativeCoevolutionBoardGameTask) {
-				System.out.println("Setup Multi-Population Board Game Coevolution Task");
-				multiPopulationCoevolution = true;
-				
-				MultiPopulationCompetativeCoevolutionBoardGameTask temp = (MultiPopulationCompetativeCoevolutionBoardGameTask) task;
-				setNNInputParameters(temp.sensorLabels().length, temp.outputLabels().length);	
-
-				genotype = (Genotype) ClassCreation.createObject("genotype");
-				genotypeExamples = new ArrayList<Genotype>(boardGame.getNumPlayers());
-				for(int i = 0; i < boardGame.getNumPlayers(); i++){
-					Genotype gene = genotype.newInstance();
-					if(genotype instanceof TWEANNGenotype) {
-						((TWEANNGenotype) gene).archetypeIndex = i;
-					}
-					
-					genotypeExamples.add(gene);
-				}
-				prepareCoevolutionArchetypes();
+//				if (task instanceof CooperativeGhostMonitorNetworksMsPacManTask) {
+//					MsPacManInitialization.setupCooperativeCoevolutionGhostMonitorsForMsPacman();
+//				} else if (task instanceof CooperativeSubtaskSelectorMsPacManTask) {
+//					MsPacManInitialization.setupCooperativeCoevolutionSelectorForMsPacman();
+//				} else if (task instanceof CooperativeSubtaskCombinerMsPacManTask) {
+//					MsPacManInitialization.setupCooperativeCoevolutionCombinerForMsPacman();
+//				} else if (task instanceof CooperativeNonHierarchicalMultiNetMsPacManTask) {
+//					MsPacManInitialization.setupCooperativeCoevolutionNonHierarchicalForMsPacman();
+//				} else if (task instanceof CooperativeCheckEachMultitaskSelectorMsPacManTask) {
+//					MsPacManInitialization.setupCooperativeCoevolutionCheckEachMultitaskPreferenceNetForMsPacman();
+//				}
+//			} else if (task instanceof MicroRTSTask) {
+//				MicroRTSTask temp = (MicroRTSTask) task;
+//				setNNInputParameters(temp.sensorLabels().length, 1); //only one output because it is utility value for state being evaluated
+//			} else if (task instanceof SinglePopulationCompetativeCoevolutionMicroRTSTask){
+//				SinglePopulationCompetativeCoevolutionMicroRTSTask temp = (SinglePopulationCompetativeCoevolutionMicroRTSTask) task;
+//				setNNInputParameters(temp.sensorLabels().length, 1); //only one output because it is utility value for state being evaluated
+//				
+//			} else if (task instanceof RLGlueTask) {
+//				setNNInputParameters(rlGlueExtractor.numFeatures(), RLGlueTask.agent.getNumberOutputs());
+//			} else if (task instanceof PinballTask) {
+//				PinballTask temp = (PinballTask) task;
+//				setNNInputParameters(temp.sensorLabels().length, temp.outputLabels().length);
+//			} else if (task instanceof StaticOpponentBoardGameTask) {
+//				StaticOpponentBoardGameTask temp = (StaticOpponentBoardGameTask) task;
+//				setNNInputParameters(temp.sensorLabels().length, temp.outputLabels().length);
+//			} else if (task instanceof SinglePopulationCompetativeCoevolutionBoardGameTask) {
+//				SinglePopulationCompetativeCoevolutionBoardGameTask temp = (SinglePopulationCompetativeCoevolutionBoardGameTask) task;
+//				setNNInputParameters(temp.sensorLabels().length, temp.outputLabels().length);
+//			} else if (task instanceof MultiPopulationCompetativeCoevolutionBoardGameTask) {
+//				System.out.println("Setup Multi-Population Board Game Coevolution Task");
+//				multiPopulationCoevolution = true;
+//				
+//				MultiPopulationCompetativeCoevolutionBoardGameTask temp = (MultiPopulationCompetativeCoevolutionBoardGameTask) task;
+//				setNNInputParameters(temp.sensorLabels().length, temp.outputLabels().length);	
+//
+//				genotype = (Genotype) ClassCreation.createObject("genotype");
+//				genotypeExamples = new ArrayList<Genotype>(boardGame.getNumPlayers());
+//				for(int i = 0; i < boardGame.getNumPlayers(); i++){
+//					Genotype gene = genotype.newInstance();
+//					if(genotype instanceof TWEANNGenotype) {
+//						((TWEANNGenotype) gene).archetypeIndex = i;
+//					}
+//					
+//					genotypeExamples.add(gene);
+//				}
+//				prepareCoevolutionArchetypes();
 				
 			} else if (task instanceof GVGAISinglePlayerTask) {
 				GVGAISinglePlayerTask temp = (GVGAISinglePlayerTask) task;
@@ -784,7 +723,7 @@ public class MMNEAT {
 		// This substrate mapping does not require all CPPN inputs
 		if(substrateMapping instanceof Bottom1DSubstrateMapping) {
 			// Other tasks may also use this mapping in the future.
-			HyperNEATTetrisTask.reduce2DTo1D = true;
+			//HyperNEATTetrisTask.reduce2DTo1D = true;
 		}		
 	}
 
@@ -799,32 +738,32 @@ public class MMNEAT {
 	private static int determineNumPredPreyInputs() {
 		//this is probably covering all the cases, but this must cover all cases for all types
 		//of predators tasks. 
-		boolean isPredator = task instanceof TorusEvolvedPredatorsVsStaticPreyTask || 
-				task instanceof CooperativePredatorsVsStaticPreyTask;
-		return determineNumPredPreyInputs(isPredator);
+//		boolean isPredator = task instanceof TorusEvolvedPredatorsVsStaticPreyTask || 
+//				task instanceof CooperativePredatorsVsStaticPreyTask;
+//		return determineNumPredPreyInputs(isPredator);
 	}
 
 	private static int determineNumPredPreyInputs(boolean isPredator) {
-		NNTorusPredPreyController temp = new NNTorusPredPreyController(null, isPredator);
-		return temp.getNumInputs();
+		//NNTorusPredPreyController temp = new NNTorusPredPreyController(null, isPredator);
+		//return temp.getNumInputs();
 	}
 
 	/**
 	 * Resets the classes used in MMNEAT and and sets them to null.
 	 */
 	public static void clearClasses() {
-		rlGlueEnvironment = null;
-		task = null;
-		fos = null;
-		metaheuristics = null;
-		fitnessFunctions = null;
-		aggregationOverrides = null;
-		ea = null;
-		genotype = null;
-		experiment = null;
-		performanceLog = null;
-		EvolutionaryHistory.archetypes = null;
-		Executor.close();
+		//rlGlueEnvironment = null;
+		//task = null;
+		//fos = null;
+//		metaheuristics = null;
+//		fitnessFunctions = null;
+//		aggregationOverrides = null;
+//		ea = null;
+//		genotype = null;
+//		experiment = null;
+//		performanceLog = null;
+//		EvolutionaryHistory.archetypes = null;
+//		Executor.close();
 	}
 
 	/**
@@ -851,7 +790,7 @@ public class MMNEAT {
 	 */
 	public static void process(int runs) throws FileNotFoundException, NoSuchMethodException {
 		try {
-			task = (Task) ClassCreation.createObject("task");
+			//task = (Task) ClassCreation.createObject("task");
 		} catch (NoSuchMethodException ex) {
 			System.out.println("Failed to instantiate task " + Parameters.parameters.classParameter("task"));
 			System.exit(1);
@@ -859,30 +798,30 @@ public class MMNEAT {
 		String base = Parameters.parameters.stringParameter("base");
 		String saveTo = Parameters.parameters.stringParameter("saveTo");
 		int run = Parameters.parameters.integerParameter("runNumber");
-		if(task instanceof MultiplePopulationTask) {
-			String runDir = base + "/" + saveTo + run + "/";
-			int i = 0;
-			// Note: Only works for populations of evolved TWEANNs,
-			// because an archetype is required. There will be one
-			// archetype file for each population, so checking for the
-			// existence of the files verifies the number of populations.
-			while(new File(runDir + "archetype"+i+".xml").exists()) {
-				ResultSummaryUtilities.processExperiment(
-						base + "/" + saveTo,
-						Parameters.parameters.stringParameter("log"), runs, Parameters.parameters.integerParameter("maxGens"),
-						"_" + ("pop" + i) + "parents_log.txt",
-						"_" + ("pop" + i) + "parents_gen",
-						base, i);
-				i++;
-			}
-		} else { //for lonerTask sending in default of population 0
-			ResultSummaryUtilities.processExperiment(
-					base + "/" + saveTo,
-					Parameters.parameters.stringParameter("log"), runs, Parameters.parameters.integerParameter("maxGens"),
-					"_" + (task instanceof MultiplePopulationTask ? "pop0" : "") + "parents_log.txt",
-					"_" + (task instanceof MultiplePopulationTask ? "pop0" : "") + "parents_gen",
-					base, 0);
-		}
+//		if(task instanceof MultiplePopulationTask) {
+//			String runDir = base + "/" + saveTo + run + "/";
+//			int i = 0;
+//			// Note: Only works for populations of evolved TWEANNs,
+//			// because an archetype is required. There will be one
+//			// archetype file for each population, so checking for the
+//			// existence of the files verifies the number of populations.
+//			while(new File(runDir + "archetype"+i+".xml").exists()) {
+//				ResultSummaryUtilities.processExperiment(
+//						base + "/" + saveTo,
+//						Parameters.parameters.stringParameter("log"), runs, Parameters.parameters.integerParameter("maxGens"),
+//						"_" + ("pop" + i) + "parents_log.txt",
+//						"_" + ("pop" + i) + "parents_gen",
+//						base, i);
+//				i++;
+//			}
+//		} else { //for lonerTask sending in default of population 0
+//			ResultSummaryUtilities.processExperiment(
+//					base + "/" + saveTo,
+//					Parameters.parameters.stringParameter("log"), runs, Parameters.parameters.integerParameter("maxGens"),
+//					"_" + (task instanceof MultiplePopulationTask ? "pop0" : "") + "parents_log.txt",
+//					"_" + (task instanceof MultiplePopulationTask ? "pop0" : "") + "parents_gen",
+//					base, 0);
+//		}
 	}
 
 	/**
@@ -891,16 +830,16 @@ public class MMNEAT {
 	 * @throws FileNotFoundException
 	 */
 	public static void calculateHVs(int runs) throws FileNotFoundException {
-		try {
-			task = (Task) ClassCreation.createObject("task");
-		} catch (NoSuchMethodException ex) {
-			Logger.getLogger(MMNEAT.class.getName()).log(Level.SEVERE, null, ex);
-		}
-		ResultSummaryUtilities.hypervolumeProcessing(
-				Parameters.parameters.stringParameter("base") + "/" + Parameters.parameters.stringParameter("saveTo"),
-				runs, Parameters.parameters.stringParameter("log"),
-				"_" + (task instanceof MultiplePopulationTask ? "pop0" : "") + "parents_gen",
-				Parameters.parameters.integerParameter("maxGens"), Parameters.parameters.stringParameter("base"));
+//		try {
+//			task = (Task) ClassCreation.createObject("task");
+//		} catch (NoSuchMethodException ex) {
+//			Logger.getLogger(MMNEAT.class.getName()).log(Level.SEVERE, null, ex);
+//		}
+//		ResultSummaryUtilities.hypervolumeProcessing(
+//				Parameters.parameters.stringParameter("base") + "/" + Parameters.parameters.stringParameter("saveTo"),
+//				runs, Parameters.parameters.stringParameter("log"),
+//				"_" + (task instanceof MultiplePopulationTask ? "pop0" : "") + "parents_gen",
+//				Parameters.parameters.integerParameter("maxGens"), Parameters.parameters.stringParameter("base"));
 	}
 
 	public static void main(String[] args) throws FileNotFoundException, NoSuchMethodException {
@@ -954,9 +893,9 @@ public class MMNEAT {
 				loadFrom = saveTo;
 				includeChildren = true;
 			}
-			Offspring.fillInLineage(Parameters.parameters.stringParameter("base"), saveTo, run,
-					Parameters.parameters.stringParameter("log"), loadFrom, includeChildren);
-			Offspring.browse();
+//			Offspring.fillInLineage(Parameters.parameters.stringParameter("base"), saveTo, run,
+//					Parameters.parameters.stringParameter("log"), loadFrom, includeChildren);
+			//Offspring.browse();
 		} else if (args[0].startsWith("process:")) {
 			st.nextToken(); // "process"
 			String value = st.nextToken();
@@ -970,9 +909,9 @@ public class MMNEAT {
 			evolutionaryRun(args);
 		}
 		System.out.println("done: " + (((System.currentTimeMillis() - start) / 1000.0) / 60.0) + " minutes");
-		if (!(task instanceof FunctionOptimization)) {
-			System.exit(0);
-		}
+//		if (!(task instanceof FunctionOptimization)) {
+//			System.exit(0);
+//		}
 	}
 
 	/**
@@ -987,8 +926,8 @@ public class MMNEAT {
 				String replayNetwork = Parameters.parameters.stringParameter("replayNetwork");
 				FileUtilities.drawTWEANN(replayNetwork);
 			}
-			ExecutorFacade ef = new ExecutorFacade(new Executor());
-			ef.replayGame(Parameters.parameters.stringParameter("pacmanSaveFile"), CommonConstants.watch);
+			//ExecutorFacade ef = new ExecutorFacade(new Executor());
+			//ef.replayGame(Parameters.parameters.stringParameter("pacmanSaveFile"), CommonConstants.watch);
 			System.exit(1);
 		}
 		String branchRoot = Parameters.parameters.stringParameter("branchRoot");
@@ -1019,10 +958,10 @@ public class MMNEAT {
 		if (performanceLog != null) {
 			performanceLog.close();
 		}
-		if (EvolutionaryHistory.tweannLog != null) {
-			EvolutionaryHistory.tweannLog.close();
-			EvolutionaryHistory.tweannLog = null;
-		}
+//		if (EvolutionaryHistory.tweannLog != null) {
+//			EvolutionaryHistory.tweannLog.close();
+//			EvolutionaryHistory.tweannLog = null;
+//		}
 		if (EvolutionaryHistory.mutationLog != null) {
 			EvolutionaryHistory.mutationLog.close();
 			EvolutionaryHistory.mutationLog = null;
