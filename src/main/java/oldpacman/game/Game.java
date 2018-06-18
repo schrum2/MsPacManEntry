@@ -3,10 +3,10 @@ package oldpacman.game;
 import edu.southwestern.MMNEAT.MMNEAT;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.parameters.Parameters;
-import edu.southwestern.tasks.mspacman.MsPacManOnlyPillScoreInFullVsEdibleFromCornersMultitask;
+//import edu.southwestern.tasks.mspacman.MsPacManOnlyPillScoreInFullVsEdibleFromCornersMultitask;
 import edu.southwestern.tasks.mspacman.agentcontroller.pacman.NNPacManController;
 import edu.southwestern.tasks.mspacman.data.ScentPath;
-import edu.southwestern.tasks.mspacman.data.TrainingCampManager;
+//import edu.southwestern.tasks.mspacman.data.TrainingCampManager;
 import edu.southwestern.tasks.mspacman.facades.GameFacade;
 import edu.southwestern.util.datastructures.ArrayUtil;
 import edu.southwestern.util.random.RandomNumbers;
@@ -750,9 +750,9 @@ public final class Game {
 		updatePacMan(pacManMove);
 		updateGhosts(ghostMoves);
 		updateGame();
-		if (TrainingCampManager.recentStates != null) {
-			TrainingCampManager.recentStates.giveCurrentState(this);
-		}
+//		if (TrainingCampManager.recentStates != null) {
+//			TrainingCampManager.recentStates.giveCurrentState(this);
+//		}
 		moves++;
 	}
 
@@ -921,8 +921,8 @@ public final class Game {
 			} else if (lairExitDatabase) {
 				// System.out.println("currentMaze.junctionIndices.length =
 				// "+currentMaze.junctionIndices.length);
-				ghost.currentNodeIndex = currentMaze.graph[MsPacManOnlyPillScoreInFullVsEdibleFromCornersMultitask
-						.newGhostLocation(mazeIndex, ghost)].nodeIndex;
+//				ghost.currentNodeIndex = currentMaze.graph[MsPacManOnlyPillScoreInFullVsEdibleFromCornersMultitask
+//						.newGhostLocation(mazeIndex, ghost)].nodeIndex;
 			} else {
 				ghost.currentNodeIndex = currentMaze.initialGhostNodeIndex;
 			}
@@ -1374,7 +1374,7 @@ public final class Game {
 						ghost.edibleTime = Constants.GHOST_SPEED_REDUCTION;
 					} else {
 						ghostRegret++;
-						TrainingCampManager.ghostEatingCamp(this.getTotalTime());
+						//TrainingCampManager.ghostEatingCamp(this.getTotalTime());
 						if (RandomNumbers.randomGenerator.nextDouble() < Parameters.parameters
 								.doubleParameter("powerPillPunishmentRate")) {
 							// Harsh punishment for failing to eat all ghosts
