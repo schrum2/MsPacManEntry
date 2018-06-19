@@ -20,6 +20,9 @@ public class ReactiveNNPacManController extends NNDirectionalPacManController {
 	@Override
 	public double[] getDirectionPreferences(GameFacade gf) {
 		final int current = gf.getPacmanCurrentNodeIndex();
+		assert this.inputMediator != null : "Why is inputMediator null?";
+		assert gf != null : "Why is gf null?";
+		assert gf.getPacmanLastMoveMade() == 0 || gf.getPacmanLastMoveMade() == 1 || gf.getPacmanLastMoveMade() == 2 || gf.getPacmanLastMoveMade() == 3 : "Why is pacmans last move null?";
 		double[] inputs = inputMediator.getInputs(gf, gf.getPacmanLastMoveMade());
 		if (nn.isMultitask()) {
 			ms.giveGame(gf);
