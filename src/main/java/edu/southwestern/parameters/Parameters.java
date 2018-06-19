@@ -15,6 +15,7 @@ import edu.southwestern.tasks.mspacman.data.JunctionNodes;
 //import edu.southwestern.tasks.mspacman.multitask.GhostsThenPillsModeSelector;
 import edu.southwestern.tasks.mspacman.objectives.fitnessassignment.GhostsPillsMap;
 //import edu.southwestern.tasks.mspacman.sensors.mediators.FullTaskMediator;
+//import edu.southwestern.tasks.mspacman.sensors.mediators.FullTaskMediator;
 import edu.southwestern.util.stats.Average;
 import edu.southwestern.util.stats.Max;
 import oldpacman.controllers.examples.Legacy;
@@ -829,8 +830,8 @@ public class Parameters {
 		classOptions.add("pacManMediatorClass4", null, "Sensors and actuators for 4th network of multinetwork");
 		classOptions.add("pacmanEscapeNodeCollection", JunctionNodes.class, "Type of node that pacman agent considers to escape to");
 		classOptions.add("pacmanFitnessModeMap", GhostsPillsMap.class, "What subpops get what fitness in cooperative coevolution");
-//		classOptions.add("pacmanInputOutputMediator", FullTaskMediator.class, "Defines pacman controllers sensors and actuators");
-//		classOptions.add("pacmanMultitaskScheme", GhostsThenPillsModeSelector.class, "Class defining multitask division in Ms. Pac-Man");
+		classOptions.add("pacmanInputOutputMediator", null, "Defines pacman controllers sensors and actuators");
+		classOptions.add("pacmanMultitaskScheme", null, "Class defining multitask division in Ms. Pac-Man");
 //		classOptions.add("rlGlueAgent", RLGlueAgent.class, "Agent used in RLGlue tasks");
 //		classOptions.add("rlGlueEnvironment", null, "Environment/domain for an RL-Glue problem");
 //		classOptions.add("rlGlueExtractor", StateVariableExtractor.class, "Feature extractor to get input features from RL-Glue observations");

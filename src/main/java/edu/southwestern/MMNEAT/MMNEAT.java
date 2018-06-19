@@ -28,6 +28,7 @@ import edu.southwestern.networks.hyperneat.SubstrateCoordinateMapping;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.parameters.Parameters;
 import edu.southwestern.scores.Score;
+import edu.southwestern.tasks.mspacman.ensemble.MsPacManEnsembleArbitrator;
 import edu.southwestern.tasks.mspacman.facades.ExecutorFacade;
 import edu.southwestern.tasks.mspacman.init.MsPacManInitialization;
 import edu.southwestern.tasks.mspacman.multitask.MsPacManModeSelector;
@@ -86,7 +87,7 @@ public class MMNEAT {
 	public static MsPacManControllerInputOutputMediator pacmanInputOutputMediator;
 //	public static GhostControllerInputOutputMediator ghostsInputOutputMediator;
 	public static MsPacManControllerInputOutputMediator[] coevolutionMediators = null;
-//	public static MsPacManEnsembleArbitrator ensembleArbitrator = null;
+	public static MsPacManEnsembleArbitrator ensembleArbitrator = null;
 	private static ArrayList<Integer> actualFitnessFunctions;
 	public static MsPacManModeSelector pacmanMultitaskScheme = null;
 	public static VariableDirectionBlock directionalSafetyFunction;
@@ -333,7 +334,7 @@ public class MMNEAT {
 			boolean loadFrom = !Parameters.parameters.stringParameter("loadFrom").equals("");
 			System.out.println("Init Genotype Ids");
 			EvolutionaryHistory.initGenotypeIds();
-	//		weightPerturber = (RandomGenerator) ClassCreation.createObject("weightPerturber");
+			//weightPerturber = (RandomGenerator) ClassCreation.createObject("weightPerturber");
 
 		//	setupCrossover();
 			//RLGlueInitialization.setupRLGlue();
@@ -342,14 +343,14 @@ public class MMNEAT {
 			// A task is always required
 //			System.out.println("Set Task");
 //			// modesToTrack has to be set before task initialization
-//			if (taskHasSubnetworks()) {
-//				modesToTrack = Parameters.parameters.integerParameter("numCoevolutionSubpops");
-//			} else {
-//				int multitaskModes = CommonConstants.multitaskModules;
-//				if (!CommonConstants.hierarchicalMultitask && multitaskModes > 1) {
-//					modesToTrack = multitaskModes;
-//				}
-//			}
+			if (taskHasSubnetworks()) {
+				modesToTrack = Parameters.parameters.integerParameter("numCoevolutionSubpops");
+			} else {
+				int multitaskModes = CommonConstants.multitaskModules;
+				if (!CommonConstants.hierarchicalMultitask && multitaskModes > 1) {
+					modesToTrack = multitaskModes;
+				}
+			}
 			
 //			if(Parameters.parameters.classParameter("boardGame") != null){
 //				boardGame = (BoardGame) ClassCreation.createObject("boardGame");
@@ -364,16 +365,16 @@ public class MMNEAT {
 //				}
 //			}
 			
-//			//task = (Task) ClassCreation.createObject("task");
-//		//	System.out.println("Load task: " + task);
-//			boolean multiPopulationCoevolution = false;
-//			// For all types of Ms Pac-Man tasks
-//			if (Parameters.parameters.booleanParameter("scalePillsByGen")
-//					&& Parameters.parameters.stringParameter("lastSavedDirectory").equals("")
-//					&& Parameters.parameters.integerParameter("lastSavedGeneration") == 0) {
-//				System.out.println("Set pre-eaten pills high, since we are scaling pills with generation");
-//				Parameters.parameters.setDouble("preEatenPillPercentage", 0.999);
-//			}
+			//task = (Task) ClassCreation.createObject("task");
+		//	System.out.println("Load task: " + task);
+			boolean multiPopulationCoevolution = false;
+			// For all types of Ms Pac-Man tasks
+			if (Parameters.parameters.booleanParameter("scalePillsByGen")
+					&& Parameters.parameters.stringParameter("lastSavedDirectory").equals("")
+					&& Parameters.parameters.integerParameter("lastSavedGeneration") == 0) {
+				System.out.println("Set pre-eaten pills high, since we are scaling pills with generation");
+				Parameters.parameters.setDouble("preEatenPillPercentage", 0.999);
+			}
 //			
 //			if(CommonConstants.hyperNEAT) {
 //				if(Parameters.parameters.booleanParameter("useHyperNEATCustomArchitecture")) {
@@ -384,32 +385,44 @@ public class MMNEAT {
 //				// Number of output neurons needed to designate bias values across all substrates
 //				//HyperNEATCPPNGenotype.numBiasOutputs = CommonConstants.evolveHyperNEATBias ? HyperNEATUtil.numBiasOutputsNeeded() : 0;				
 //			}
-//			if(Parameters.parameters.booleanParameter("hallOfFame")){
-//				//hallOfFame = new HallOfFame();
-//			}
-//			//if(task instanceof FunctionOptimization) {
-//				System.out.println("Setup Function Optimization");
-//				// Already setup in setupFunctionOptimization();
-//			//} else if (task instanceof MsPacManTask) {
-//				MsPacManInitialization.setupGenotypePoolsForMsPacman();
-//				System.out.println("Setup Ms. Pac-Man Task");
-//				pacmanInputOutputMediator = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacmanInputOutputMediator");
-//				if (MMNEAT.pacmanInputOutputMediator instanceof VariableDirectionBlockLoadedInputOutputMediator) {
-//					directionalSafetyFunction = (VariableDirectionBlock) ClassCreation.createObject("directionalSafetyFunction");
-//				//	ensembleArbitrator = (MsPacManEnsembleArbitrator) ClassCreation.createObject("ensembleArbitrator");
-//				}
+			if(Parameters.parameters.booleanParameter("hallOfFame")){
+				//hallOfFame = new HallOfFame();
+			}
+			//if(task instanceof FunctionOptimization) {
+				System.out.println("Setup Function Optimization");
+				// Already setup in setupFunctionOptimization();
+			//} else if (task instanceof MsPacManTask) {
+				MsPacManInitialization.setupGenotypePoolsForMsPacman();
+				System.out.println("Setup Ms. Pac-Man Task");
+				try {
+					pacmanInputOutputMediator = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacmanInputOutputMediator");
+				} catch (NoSuchMethodException e) {
+					e.printStackTrace();
+				}
+				if (MMNEAT.pacmanInputOutputMediator instanceof VariableDirectionBlockLoadedInputOutputMediator) {
+					try {
+						directionalSafetyFunction = (VariableDirectionBlock) ClassCreation.createObject("directionalSafetyFunction");
+					} catch (NoSuchMethodException e) {
+						e.printStackTrace();
+					}
+					try {
+						ensembleArbitrator = (MsPacManEnsembleArbitrator) ClassCreation.createObject("ensembleArbitrator");
+					} catch (NoSuchMethodException e) {
+						e.printStackTrace();
+					}
+				}
 //				String preferenceNet = Parameters.parameters.stringParameter("fixedPreferenceNetwork");
 //				String multitaskNet = Parameters.parameters.stringParameter("fixedMultitaskPolicy");
 //				if (multitaskNet != null && !multitaskNet.isEmpty()) {
-//					// Preference networks are being evolved to pick outputs of
-//					// fixed multitask network
-//					MMNEAT.sharedMultitaskNetwork = (TWEANNGenotype) Easy.load(multitaskNet);
-//					if (CommonConstants.showNetworks) {
-//						DrawingPanel panel = new DrawingPanel(TWEANN.NETWORK_VIEW_DIM, TWEANN.NETWORK_VIEW_DIM, "Fixed Multitask Network");
-//						MMNEAT.sharedMultitaskNetwork.getPhenotype().draw(panel);
-//					}
-//					// One preference neuron per multitask mode
-//					setNNInputParameters(pacmanInputOutputMediator.numIn(), MMNEAT.sharedMultitaskNetwork.numModules);
+					// Preference networks are being evolved to pick outputs of
+					// fixed multitask network
+					MMNEAT.sharedMultitaskNetwork = (TWEANNGenotype) Easy.load("gen55_bestIn0.xml");
+					if (CommonConstants.showNetworks) {
+						DrawingPanel panel = new DrawingPanel(TWEANN.NETWORK_VIEW_DIM, TWEANN.NETWORK_VIEW_DIM, "Fixed Multitask Network");
+						MMNEAT.sharedMultitaskNetwork.getPhenotype().draw(panel);
+					}
+					// One preference neuron per multitask mode
+					setNNInputParameters(pacmanInputOutputMediator.numIn(), MMNEAT.sharedMultitaskNetwork.numModules);
 //				} else if (preferenceNet != null && !preferenceNet.isEmpty()) {
 //					MMNEAT.sharedPreferenceNetwork = (TWEANNGenotype) Easy.load(preferenceNet);
 //					if (CommonConstants.showNetworks) {

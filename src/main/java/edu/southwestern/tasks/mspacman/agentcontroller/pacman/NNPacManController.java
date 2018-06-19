@@ -110,7 +110,7 @@ public abstract class NNPacManController extends NewPacManController {
 			reset();
 		}
 		lives = checkLives; // always do this in case lives increases
-		inputMediator.mediatorStateUpdate(gs);
+		//inputMediator.mediatorStateUpdate(gs);
 		int levelTime = gs.getCurrentLevelTime();
 		if (CommonConstants.pacmanFatalTimeLimit && levelTime >= CommonConstants.pacManLevelTimeLimit) {
 			timesTimeLimitReached++;
@@ -138,13 +138,13 @@ public abstract class NNPacManController extends NewPacManController {
 	public void reset() {
 		super.reset();
 		if(nn != null) nn.flush();//might be null when using hyperNEAT w/ msPacMan
-		inputMediator.reset();
-		ScentPath.scents.reset();
-		if (ScentPath.modeScents != null) {
-			for (int i = 0; i < ScentPath.modeScents.length; i++) {
-				ScentPath.modeScents[i].reset();
-			}
-		}
+//		inputMediator.reset();
+//		ScentPath.scents.reset();
+//		if (ScentPath.modeScents != null) {
+//			for (int i = 0; i < ScentPath.modeScents.length; i++) {
+//				ScentPath.modeScents[i].reset();
+//			}
+//		}
 	}
 
 	/**
