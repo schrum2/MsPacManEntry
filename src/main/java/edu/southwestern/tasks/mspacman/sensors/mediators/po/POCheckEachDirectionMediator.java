@@ -25,8 +25,8 @@ import edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.Varia
 import edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostEdibleBlock;
 import edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostIncomingBlock;
 import edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostTrappedBlock;
-//import edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSpecificGhostIncomingBlock;
-//import edu.southwestern.util.MiscUtil;
+import edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSpecificGhostIncomingBlock;
+import edu.southwestern.util.MiscUtil;
 //NEW PO STUFF
 import edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostDistanceBlock;
 import edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostProbabilityBlock;;
@@ -77,16 +77,16 @@ public class POCheckEachDirectionMediator extends VariableDirectionBlockLoadedIn
 				
 				//READD
 				if (incoming) {
-					blocks.add(new VariableDirectionSortedGhostIncomingBlock(i));
+					//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i));
 				}
 				if (Parameters.parameters.booleanParameter("trapped")) {
-					blocks.add(new VariableDirectionSortedGhostTrappedBlock(i));
+					//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i));
 				}
 				if (Parameters.parameters.booleanParameter("eTimeVsGDis")) {
-					blocks.add(new VariableDirectionSortedGhostEdibleTimeVsDistanceBlock(i));
+					//blocks.add(new VariableDirectionSortedGhostEdibleTimeVsDistanceBlock(i));
 				}
 				if (!imprisonedWhileEdible) {
-					blocks.add(new VariableDirectionSortedGhostEdibleBlock(i));
+					//blocks.add(new VariableDirectionSortedGhostEdibleBlock(i));
 				}
 			}
 		}
@@ -97,20 +97,20 @@ public class POCheckEachDirectionMediator extends VariableDirectionBlockLoadedIn
 		if (split) {
 			for (int i = 0; i < CommonConstants.numActiveGhosts; i++) {
 				// Threat prox
-				blocks.add(new VariableDirectionSortedGhostDistanceBlock(-1, i, false, false));
+				//blocks.add(new VariableDirectionSortedGhostDistanceBlock(-1, i, false, false));
 				// Edible prox
-				blocks.add(new VariableDirectionSortedGhostDistanceBlock(-1, i, true, false));
+				//blocks.add(new VariableDirectionSortedGhostDistanceBlock(-1, i, true, false));
 				if (incoming) {
 					// Threat incoming
-					blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, false, false));
+					//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, false, false));
 					// Edible incoming
-					blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, true, false));
+					//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, true, false));
 				}
 				if (Parameters.parameters.booleanParameter("trapped")) {
 					// Threat trapped
-					blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, false, false));
+					//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, false, false));
 					// Edible trapped
-					blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, true, false));
+					//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, true, false));
 				}
 			}
 		}
@@ -136,7 +136,7 @@ public class POCheckEachDirectionMediator extends VariableDirectionBlockLoadedIn
 
 		// Other
 		blocks.add(new AnyEdibleGhostBlock());
-		blocks.add(new AllThreatsPresentBlock());
+		//blocks.add(new AllThreatsPresentBlock());
 		blocks.add(new IsCloseToPowerPill());
 		blocks.add(new TimeLeftBlock());
 		blocks.add(new EdibleGhostTimeRemainingPOBlock());
@@ -152,6 +152,6 @@ public class POCheckEachDirectionMediator extends VariableDirectionBlockLoadedIn
 			// blocks.add(new VariableDirectionPowerPillBlocksJunctionBlock(direction));
 			// blocks.add(new VariableDirectionGhostBlocksJunctionBlock(direction));
 		}
-		//blocks.add(new VariableDirectionOneStepSafeBlock());
+		// blocks.add(new VariableDirectionOneStepSafeBlock());
 	}
 }

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import edu.southwestern.MMNEAT.MMNEAT;
 import edu.southwestern.evolution.genotypes.Genotype;
 import edu.southwestern.evolution.genotypes.TWEANNGenotype;
 import edu.southwestern.networks.TWEANN;
@@ -35,7 +36,7 @@ import pacman.game.Game;
 public class OldToNewPacManIntermediaryController extends pacman.controllers.PacmanController implements Drawable {
 
 	protected final oldpacman.controllers.NewPacManController oldpacman;
-	public static final String CHAMPION_FILE = "gen55_bestIn0.xml";
+	public static final String CHAMPION_FILE = "bestPacMan.xml";
 	public PillModel pillModel = null;
 	public Maze currentMaze;
 	public GhostPredictionsFast ghostPredictions = null;
@@ -51,7 +52,9 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 	public final double GHOST_THRESHOLD = Parameters.parameters.doubleParameter("probabilityThreshold");
 	
 	private static final oldpacman.controllers.NewPacManController getController(String file) {
-		Parameters.initializeParameterCollections(new String[0]);
+		Parameters.initializeParameterCollections("maxGens:200 mu:100 io:true netio:true mating:true highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:8000 pacmanInputOutputMediator:edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator trials:10 log:OneLifeSplit-TwoModuleMultitask saveTo:TwoModuleMultitask fs:false edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod perLinkMutateRate:0.05 netLinkRate:0.4 netSpliceRate:0.2 crossoverRate:0.5 partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.49 ghostPO:true rawScorePacMan:true logTWEANNData:true".split(" "));
+		//Parameters.initializeParameterCollections(new String(""));
+		MMNEAT.loadClasses();
 		return (NewPacManController) (new NNMsPacMan<TWEANN>(((TWEANNGenotype) Easy.load(file))).controller);
 	}
 	
@@ -197,9 +200,9 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 
     //determines whether or not to use this classes draw method
 	public boolean enabled() {
-		if(Parameters.parameters.booleanParameter("drawGhostPredictions") || Parameters.parameters.booleanParameter("drawPillModel")) {
-			return true;
-		}
+//		if(Parameters.parameters.booleanParameter("drawGhostPredictions") || Parameters.parameters.booleanParameter("drawPillModel")) {
+//			return true;
+//		}
 		return false;
 	}
 	
@@ -310,7 +313,7 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 	            int ghostIndex = game.getGhostCurrentNodeIndex(ghost);
 	            if (ghostIndex != -1) {
 	            	try {
-	            		ghostPredictions.observe(ghost, ghostIndex, informedGameFacade.poG.getGhostLastMoveMade(ghost));
+	            		ghostPredictions.observe(ghost, ghostIndex, informedGameFacade.poG.getGhostLastMoveMade(ghost), informedGameFacade);
 	            	} catch (java.lang.ArrayIndexOutOfBoundsException e) {
 	            		//System.out.println(e.toString() + " in OldToNewPacManIntermediaryController.updateModels()");
 	            		break;
@@ -319,7 +322,7 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 	            } else {
 	                List<GhostLocation> locations = ghostPredictions.getGhostLocations(ghost);
 	                locations.stream().filter(location -> informedGameFacade.poG.isNodeObservable(location.getIndex())).forEach(location -> {
-	                	ghostPredictions.observeNotPresent(ghost, location.getIndex());
+	                	ghostPredictions.observeNotPresent(ghost, location.getIndex(), informedGameFacade);
 	                });
 	            }
 	        }
