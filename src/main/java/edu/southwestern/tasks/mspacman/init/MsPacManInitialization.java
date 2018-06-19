@@ -6,30 +6,30 @@ import java.util.ArrayList;
 import edu.southwestern.MMNEAT.MMNEAT;
 import static edu.southwestern.MMNEAT.MMNEAT.pacmanInputOutputMediator;
 import edu.southwestern.evolution.EvolutionaryHistory;
-import edu.southwestern.evolution.crossover.network.CombiningTWEANNCrossover;
+//import edu.southwestern.evolution.crossover.network.CombiningTWEANNCrossover;
 import edu.southwestern.evolution.genotypes.Genotype;
-import edu.southwestern.evolution.genotypes.HierarchicalTWEANNGenotype;
-import edu.southwestern.evolution.genotypes.SimpleBlueprintGenotype;
+//import edu.southwestern.evolution.genotypes.HierarchicalTWEANNGenotype;
+//import edu.southwestern.evolution.genotypes.SimpleBlueprintGenotype;
 import edu.southwestern.evolution.genotypes.TWEANNGenotype;
-import edu.southwestern.evolution.genotypes.pool.GenotypePool;
-import edu.southwestern.evolution.nsga2.NSGA2Score;
-import edu.southwestern.experiment.evolution.SinglePopulationGenerationalEAExperiment;
+//import edu.southwestern.evolution.genotypes.pool.GenotypePool;
+//import edu.southwestern.evolution.nsga2.NSGA2Score;
+//import edu.southwestern.experiment.evolution.SinglePopulationGenerationalEAExperiment;
 import edu.southwestern.log.MMNEATLog;
 import edu.southwestern.networks.ActivationFunctions;
 import edu.southwestern.networks.TWEANN;
 import edu.southwestern.parameters.CommonConstants;
 import edu.southwestern.parameters.Parameters;
-import edu.southwestern.tasks.mspacman.CooperativeBlueprintSubtaskMsPacManTask;
-import edu.southwestern.tasks.mspacman.CooperativeNonHierarchicalMultiNetMsPacManTask;
+//import edu.southwestern.tasks.mspacman.CooperativeBlueprintSubtaskMsPacManTask;
+//import edu.southwestern.tasks.mspacman.CooperativeNonHierarchicalMultiNetMsPacManTask;
 import edu.southwestern.tasks.mspacman.facades.GameFacade;
 import edu.southwestern.tasks.mspacman.sensors.BlockLoadedInputOutputMediator;
 import edu.southwestern.tasks.mspacman.sensors.MsPacManControllerInputOutputMediator;
-import edu.southwestern.tasks.mspacman.sensors.OneGhostAndPillsMonitorInputOutputMediator;
-import edu.southwestern.tasks.mspacman.sensors.OneGhostMonitorInputOutputMediator;
-import edu.southwestern.tasks.mspacman.sensors.blocks.combining.GhostMonitorNetworkBlock;
-import edu.southwestern.tasks.mspacman.sensors.blocks.combining.SubNetworkBlock;
+//import edu.southwestern.tasks.mspacman.sensors.OneGhostAndPillsMonitorInputOutputMediator;
+//import edu.southwestern.tasks.mspacman.sensors.OneGhostMonitorInputOutputMediator;
+//import edu.southwestern.tasks.mspacman.sensors.blocks.combining.GhostMonitorNetworkBlock;
+//import edu.southwestern.tasks.mspacman.sensors.blocks.combining.SubNetworkBlock;
 import edu.southwestern.util.ClassCreation;
-import edu.southwestern.util.PopulationUtil;
+//import edu.southwestern.util.PopulationUtil;
 import edu.southwestern.util.file.FileUtilities;
 import oldpacman.game.Constants;
 import wox.serial.Easy;
@@ -116,16 +116,16 @@ public class MsPacManInitialization {
 	public static void setupGenotypePoolsForMsPacman() {
 		// Use genotype pools
 		//below check should be true unless new network utilized
-		if (Parameters.parameters.classParameter("genotype").equals(HierarchicalTWEANNGenotype.class)) {
-			System.out.println("Ghost eating pool");
-			GenotypePool.addPool(Parameters.parameters.stringParameter("ghostEatingSubnetworkDir"));
-			System.out.println("Pill eating pool");
-			GenotypePool.addPool(Parameters.parameters.stringParameter("pillEatingSubnetworkDir"));
-			//sets ceilings of genotype size based on initial pool size 
-			MMNEAT.discreteCeilings = new int[2];
-			MMNEAT.discreteCeilings[0] = GenotypePool.poolSize(0);
-			MMNEAT.discreteCeilings[1] = GenotypePool.poolSize(1);
-		}
+//		if (Parameters.parameters.classParameter("genotype").equals(HierarchicalTWEANNGenotype.class)) {
+//			System.out.println("Ghost eating pool");
+//			GenotypePool.addPool(Parameters.parameters.stringParameter("ghostEatingSubnetworkDir"));
+//			System.out.println("Pill eating pool");
+//			GenotypePool.addPool(Parameters.parameters.stringParameter("pillEatingSubnetworkDir"));
+//			//sets ceilings of genotype size based on initial pool size 
+//			MMNEAT.discreteCeilings = new int[2];
+//			MMNEAT.discreteCeilings[0] = GenotypePool.poolSize(0);
+//			MMNEAT.discreteCeilings[1] = GenotypePool.poolSize(1);
+//		}
 	}
 
 
@@ -141,7 +141,7 @@ public class MsPacManInitialization {
 		BlockLoadedInputOutputMediator blockMediator = ((BlockLoadedInputOutputMediator) pacmanInputOutputMediator);
 		int numBlocks = blockMediator.blocks.size();
 		for (int i = 0; i < subnets.size(); i++) {
-			((SubNetworkBlock) blockMediator.blocks.get(numBlocks - subnets.size() + i)).changeNetwork(subnets.get(i));
+			//((SubNetworkBlock) blockMediator.blocks.get(numBlocks - subnets.size() + i)).changeNetwork(subnets.get(i));
 		}
 	}
         
@@ -152,27 +152,27 @@ public class MsPacManInitialization {
 		boolean ghostMonitorsSensePills = Parameters.parameters.booleanParameter("ghostMonitorsSensePills");
 		// Use the specified mediator, but add the required ghost monitor blocks
 		// to it later
-		int ghostMonitorInputs = (ghostMonitorsSensePills ? 
-                        new OneGhostAndPillsMonitorInputOutputMediator(0) : 
-                        new OneGhostMonitorInputOutputMediator(0)).numIn();
-		MMNEAT.pacmanInputOutputMediator = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacmanInputOutputMediator");
-		int numInputs = MMNEAT.pacmanInputOutputMediator.numIn() + (CommonConstants.numActiveGhosts * (includeInputs ? outputsPerMonitor + ghostMonitorInputs : outputsPerMonitor));
-		MMNEAT.setNNInputParameters(numInputs, GameFacade.NUM_DIRS);
+//		int ghostMonitorInputs = (ghostMonitorsSensePills ? 
+//                        new OneGhostAndPillsMonitorInputOutputMediator(0) : 
+//                        new OneGhostMonitorInputOutputMediator(0)).numIn();
+//		MMNEAT.pacmanInputOutputMediator = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacmanInputOutputMediator");
+		//int numInputs = MMNEAT.pacmanInputOutputMediator.numIn() + (CommonConstants.numActiveGhosts * (includeInputs ? outputsPerMonitor + ghostMonitorInputs : outputsPerMonitor));
+	//	MMNEAT.setNNInputParameters(numInputs, GameFacade.NUM_DIRS);
 
 		MMNEAT.genotypeExamples = new ArrayList<Genotype>(CommonConstants.numActiveGhosts + 1);
-		MMNEAT.genotypeExamples.add(new TWEANNGenotype(numInputs, GameFacade.NUM_DIRS, 0));
+		//MMNEAT.genotypeExamples.add(new TWEANNGenotype(numInputs, GameFacade.NUM_DIRS, 0));
 
 		ArrayList<Genotype<TWEANN>> ghostMonitorExamples = new ArrayList<Genotype<TWEANN>>(CommonConstants.numActiveGhosts);
 		for (int i = 0; i < CommonConstants.numActiveGhosts; i++) {
-			TWEANNGenotype tg = new TWEANNGenotype(ghostMonitorInputs, outputsPerMonitor, (i + 1));
-			MMNEAT.genotypeExamples.add(tg);
-			ghostMonitorExamples.add(tg);
+			//TWEANNGenotype tg = new TWEANNGenotype(ghostMonitorInputs, outputsPerMonitor, (i + 1));
+//			MMNEAT.genotypeExamples.add(tg);
+//			ghostMonitorExamples.add(tg);
 		}
 		MMNEAT.prepareCoevolutionArchetypes();
 		// Needed so that sensor and output labels can be retrieved
 		for (int i = 0; i < ghostMonitorExamples.size(); i++) {
-			((BlockLoadedInputOutputMediator) MMNEAT.pacmanInputOutputMediator).blocks
-					.add(new GhostMonitorNetworkBlock((TWEANNGenotype) ghostMonitorExamples.get(i), includeInputs, i));
+//			((BlockLoadedInputOutputMediator) MMNEAT.pacmanInputOutputMediator).blocks
+//					.add(new GhostMonitorNetworkBlock((TWEANNGenotype) ghostMonitorExamples.get(i), includeInputs, i));
 		}
 	}
 	
@@ -191,11 +191,11 @@ public class MsPacManInitialization {
 
 		MMNEAT.prepareCoevolutionArchetypes();
 		// Now the blueprints come in
-		if (MMNEAT.task instanceof CooperativeBlueprintSubtaskMsPacManTask) {
-			MMNEAT.blueprints = true;
-			// subcontrollers and selector
-			MMNEAT.genotypeExamples.add(new SimpleBlueprintGenotype(MMNEAT.modesToTrack + 1)); 
-		}
+//		if (MMNEAT.task instanceof CooperativeBlueprintSubtaskMsPacManTask) {
+//			MMNEAT.blueprints = true;
+//			// subcontrollers and selector
+//			MMNEAT.genotypeExamples.add(new SimpleBlueprintGenotype(MMNEAT.modesToTrack + 1)); 
+//		}
 	}
 	
 	@SuppressWarnings("rawtypes")
@@ -239,10 +239,10 @@ public class MsPacManInitialization {
 		MMNEAT.prepareCoevolutionArchetypes();
 		// Needed so that sensor and output labels can be retrieved
 		for (int i = 0; i < MMNEAT.coevolutionMediators.length; i++) {
-			TWEANNGenotype tg = (TWEANNGenotype) MMNEAT.genotypeExamples.get(i + 1); // skip combiner
-			((BlockLoadedInputOutputMediator) MMNEAT.pacmanInputOutputMediator).blocks
-					.add(new SubNetworkBlock(tg.getPhenotype(), MMNEAT.coevolutionMediators[i],
-							MMNEAT.coevolutionMediators[i].getClass().getSimpleName() + "[" + i + "]", includeInputs));
+//			TWEANNGenotype tg = (TWEANNGenotype) MMNEAT.genotypeExamples.get(i + 1); // skip combiner
+//			((BlockLoadedInputOutputMediator) MMNEAT.pacmanInputOutputMediator).blocks
+//					.add(new SubNetworkBlock(tg.getPhenotype(), MMNEAT.coevolutionMediators[i],
+//							MMNEAT.coevolutionMediators[i].getClass().getSimpleName() + "[" + i + "]", includeInputs));
 		}
 	}
 	
@@ -251,23 +251,23 @@ public class MsPacManInitialization {
 		MMNEAT.pacmanInputOutputMediator = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacmanInputOutputMediator");
 		MMNEAT.setNNInputParameters(MMNEAT.pacmanInputOutputMediator.numIn(), MMNEAT.pacmanInputOutputMediator.numOut());
 
-		CooperativeNonHierarchicalMultiNetMsPacManTask theTask = (CooperativeNonHierarchicalMultiNetMsPacManTask) MMNEAT.task;
-		int pops = theTask.numberOfPopulations();
-		MMNEAT.genotypeExamples = new ArrayList<Genotype>(pops);
+		//CooperativeNonHierarchicalMultiNetMsPacManTask theTask = (CooperativeNonHierarchicalMultiNetMsPacManTask) MMNEAT.task;
+		//int pops = theTask.numberOfPopulations();
+		//MMNEAT.genotypeExamples = new ArrayList<Genotype>(pops);
 		boolean specializeMediators = !Parameters.parameters.booleanParameter("defaultMediator");
-		for (int i = 1; i <= pops; i++) {
-			if (specializeMediators) {
-				theTask.inputMediators[i - 1] = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacManMediatorClass" + i);
-			}
-			MMNEAT.genotypeExamples.add(new TWEANNGenotype(theTask.inputMediators[i - 1].numIn(), GameFacade.NUM_DIRS, i - 1));
-		}
-		MMNEAT.prepareCoevolutionArchetypes();
+		//for (int i = 1; i <= pops; i++) {
+		//	if (specializeMediators) {
+		//		theTask.inputMediators[i - 1] = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacManMediatorClass" + i);
+		//	}
+		//	MMNEAT.genotypeExamples.add(new TWEANNGenotype(theTask.inputMediators[i - 1].numIn(), GameFacade.NUM_DIRS, i - 1));
+		//}
+		//MMNEAT.prepareCoevolutionArchetypes();
 	}
 	
 	@SuppressWarnings("unchecked")
 	public static void setupMultitaskSeedPopulationForMsPacman(String ghostDir, String pillDir) {
 		// A combined archetype is needed
-		CombiningTWEANNCrossover cross = new CombiningTWEANNCrossover(true, true);
+		//CombiningTWEANNCrossover cross = new CombiningTWEANNCrossover(true, true);
 		ArrayList<TWEANNGenotype.NodeGene> ghostArchetype = (ArrayList<TWEANNGenotype.NodeGene>) Easy
 				.load(Parameters.parameters.stringParameter("ghostArchetype"));
 		ArrayList<TWEANNGenotype.NodeGene> pillArchetype = (ArrayList<TWEANNGenotype.NodeGene>) Easy
@@ -276,8 +276,8 @@ public class MsPacManInitialization {
 				GameFacade.NUM_DIRS, false, false, -1);
 		TWEANNGenotype pillArchetypeNet = new TWEANNGenotype(pillArchetype, new ArrayList<TWEANNGenotype.LinkGene>(),
 				GameFacade.NUM_DIRS, false, false, -1);
-		EvolutionaryHistory.archetypes[0] = ((TWEANNGenotype) cross.crossover(ghostArchetypeNet,
-				pillArchetypeNet)).nodes;
+		//EvolutionaryHistory.archetypes[0] = ((TWEANNGenotype) cross.crossover(ghostArchetypeNet,
+		//		pillArchetypeNet)).nodes;
 
 		// Load component populations, create multitask network combinations,
 		// and save them all to an initial population dir
@@ -286,46 +286,46 @@ public class MsPacManInitialization {
 		while (layers * layers < mu) {
 			layers++;
 		}
-		ArrayList<Genotype<TWEANN>> ghostPop = PopulationUtil.load(ghostDir);
-		ArrayList<Genotype<TWEANN>> pillPop = PopulationUtil.load(pillDir);
+		//ArrayList<Genotype<TWEANN>> ghostPop = PopulationUtil.load(ghostDir);
+		//ArrayList<Genotype<TWEANN>> pillPop = PopulationUtil.load(pillDir);
 
 		String ghostScoreFile = Parameters.parameters.stringParameter("multinetworkScores1");
 		String pillScoreFile = Parameters.parameters.stringParameter("multinetworkScores2");
 
 
-                NSGA2Score<TWEANN>[] ghostScores = null;
-                NSGA2Score<TWEANN>[] pillScores = null;
-		try {
-			ghostScores = PopulationUtil.loadScores(ghostScoreFile);
-			pillScores = PopulationUtil.loadScores(pillScoreFile);
-		} catch (FileNotFoundException ex) {
-			ex.printStackTrace();
-			System.exit(1);
-		}
+               // NSGA2Score<TWEANN>[] ghostScores = null;
+             //   NSGA2Score<TWEANN>[] pillScores = null;
+//		try {
+//			//ghostScores = PopulationUtil.loadScores(ghostScoreFile);
+//			//pillScores = PopulationUtil.loadScores(pillScoreFile);
+//		} catch (FileNotFoundException ex) {
+//			ex.printStackTrace();
+//			System.exit(1);
+//		}
 		// Reduce to the top performers of each population
-		PopulationUtil.pruneDownToTopParetoLayers(ghostPop, ghostScores, layers);
-		PopulationUtil.pruneDownToTopParetoLayers(pillPop, pillScores, layers);
+		//PopulationUtil.pruneDownToTopParetoLayers(ghostPop, ghostScores, layers);
+		//PopulationUtil.pruneDownToTopParetoLayers(pillPop, pillScores, layers);
 
 		// Now create a population of combined multitask networks
 		ArrayList<Genotype<TWEANN>> combinedPopulation = new ArrayList<Genotype<TWEANN>>(mu);
 		int ghostPos = 0;
 		int pillPos = 0;
 		for (int i = 0; i < mu; i++) {
-			Genotype<TWEANN> ghostEating = ghostPop.get(ghostPos).copy();
-			Genotype<TWEANN> pillEating = pillPop.get(pillPos).copy();
-			Genotype<TWEANN> combination = cross.crossover(ghostEating, pillEating);
-			combinedPopulation.add(combination);
+			//Genotype<TWEANN> ghostEating = ghostPop.get(ghostPos).copy();
+			//Genotype<TWEANN> pillEating = pillPop.get(pillPos).copy();
+			//Genotype<TWEANN> combination = cross.crossover(ghostEating, pillEating);
+			//combinedPopulation.add(combination);
 			// Pick next pair of networks to combine
 			pillPos++;
-			if (pillPos >= pillPop.size()) {
-				pillPos = 0;
-				ghostPos++;
-			}
+			//if (pillPos >= pillPop.size()) {
+			//	pillPos = 0;
+			//	ghostPos++;
+			//}
 		}
 		// Save the population so it will be loaded naturally, as if a resume is
 		// being performed
 		String saveDirectory = FileUtilities.getSaveDirectory();
-		SinglePopulationGenerationalEAExperiment.save("initial", saveDirectory, combinedPopulation, false);
+		//SinglePopulationGenerationalEAExperiment.save("initial", saveDirectory, combinedPopulation, false);
 	}
 	
 	public static void setupSingleMultitaskSeedForMsPacman() {
@@ -333,9 +333,9 @@ public class MsPacManInitialization {
 				.getSubnetwork(Parameters.parameters.stringParameter("ghostEatingSubnetwork"));
 		Genotype<TWEANN> pillEating = EvolutionaryHistory
 				.getSubnetwork(Parameters.parameters.stringParameter("pillEatingSubnetwork"));
-		CombiningTWEANNCrossover cross = new CombiningTWEANNCrossover(true, true);
+		//CombiningTWEANNCrossover cross = new CombiningTWEANNCrossover(true, true);
 		// Copy assures a fresh genotype id
-		MMNEAT.genotype = cross.crossover(ghostEating, pillEating).copy();
+		//MMNEAT.genotype = cross.crossover(ghostEating, pillEating).copy();
 		MMNEAT.seedExample = true;
 	}
 }
