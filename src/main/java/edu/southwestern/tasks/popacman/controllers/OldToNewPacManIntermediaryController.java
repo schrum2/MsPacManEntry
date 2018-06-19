@@ -8,8 +8,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import edu.southwestern.evolution.genotypes.Genotype;
+import edu.southwestern.evolution.genotypes.TWEANNGenotype;
+import edu.southwestern.networks.TWEANN;
 import edu.southwestern.parameters.Parameters;
+import edu.southwestern.tasks.mspacman.agentcontroller.pacman.NNMsPacMan;
 import edu.southwestern.tasks.mspacman.facades.GameFacade;
+import oldpacman.controllers.NewPacManController;
 import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
 //TODO: this could be useful
@@ -18,6 +23,7 @@ import pacman.game.internal.Maze;
 import pacman.prediction.GhostLocation;
 import pacman.prediction.PillModel;
 import pacman.prediction.fast.GhostPredictionsFast;
+import wox.serial.Easy;
 import pacman.game.Drawable;
 import pacman.game.Game;
 
@@ -29,6 +35,7 @@ import pacman.game.Game;
 public class OldToNewPacManIntermediaryController extends pacman.controllers.PacmanController implements Drawable {
 
 	protected final oldpacman.controllers.NewPacManController oldpacman;
+	public static final String CHAMPION_FILE = "gen55_bestIn0.xml";
 	public PillModel pillModel = null;
 	public Maze currentMaze;
 	public GhostPredictionsFast ghostPredictions = null;
@@ -43,6 +50,19 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 	public boolean useGhostModel = Parameters.parameters.booleanParameter("useGhostModel");
 	public final double GHOST_THRESHOLD = Parameters.parameters.doubleParameter("probabilityThreshold");
 	
+	private static final oldpacman.controllers.NewPacManController getController(String file) {
+		Parameters.initializeParameterCollections(new String[0]);
+		return (NewPacManController) (new NNMsPacMan<TWEANN>(((TWEANNGenotype) Easy.load(file))).controller);
+	}
+	
+	public OldToNewPacManIntermediaryController() {
+		this(CHAMPION_FILE);
+	}
+	
+	public OldToNewPacManIntermediaryController(String file) {
+		this(getController(file));
+	}
+		
 	public OldToNewPacManIntermediaryController(oldpacman.controllers.NewPacManController oldpacman) {
 		this.oldpacman = oldpacman;
 		

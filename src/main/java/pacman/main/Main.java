@@ -8,6 +8,8 @@ import pacman.controllers.MASController;
 import pacman.entrants.ghosts.spooky.*;
 import pacman.entrants.pacman.spooky.*;
 import pacman.entries.pacman.MyPacMan;
+import edu.southwestern.tasks.mspacman.sensors.mediators.po.*;
+import edu.southwestern.tasks.popacman.controllers.OldToNewPacManIntermediaryController;
 import pacman.examples.StarterISMCTS.InformationSetMCTSPacMan;
 import pacman.game.Constants.GHOST;
 
@@ -25,11 +27,15 @@ public class Main {
 
         EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);
 
+        OldToNewPacManIntermediaryController badboy = new OldToNewPacManIntermediaryController();
+        
         controllers.put(GHOST.INKY, new George());
         controllers.put(GHOST.BLINKY, new Ringo());
         controllers.put(GHOST.PINKY, new Paul());
         controllers.put(GHOST.SUE, new John());
+        
+        
 
-        executor.runGameTimed(new InformationSetMCTSPacMan(), new MASController(controllers));
+        executor.runGameTimed(badboy, new MASController(controllers));
     }
 }
