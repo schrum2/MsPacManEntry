@@ -1,4 +1,4 @@
-package pacman.entrants.ghosts.spooky;
+package pacman.entrants.ghosts.Vilhelm_Von_Tweann;
 
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
@@ -9,16 +9,15 @@ import pacman.game.Constants.MOVE;
 /**
  * Created by Piers on 11/11/2015.
  */
-public class George extends IndividualGhostController {
+public class John extends IndividualGhostController {
 	private MOVE myMove = MOVE.NEUTRAL;
 	
-    public George() {
-        super(Constants.GHOST.SUE);
+    public John() {
+        super(Constants.GHOST.INKY);
     }
 
     @Override
     public MOVE getMove(Game game, long timeDue) {
-
         //Place your game logic here to play the game as Ms Pac-Man
     	int decision = (int) Math.floor(Math.random() * 4);
     	switch(decision) {

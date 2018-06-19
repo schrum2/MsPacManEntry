@@ -5,12 +5,11 @@ import java.util.EnumMap;
 import pacman.Executor;
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
-import pacman.entrants.ghosts.spooky.*;
-import pacman.entrants.pacman.spooky.*;
-import pacman.entries.pacman.MyPacMan;
-import edu.southwestern.tasks.mspacman.sensors.mediators.po.*;
-import edu.southwestern.tasks.popacman.controllers.OldToNewPacManIntermediaryController;
-import pacman.examples.StarterISMCTS.InformationSetMCTSPacMan;
+import pacman.entrants.ghosts.Vilhelm_Von_Tweann.George;
+import pacman.entrants.ghosts.Vilhelm_Von_Tweann.John;
+import pacman.entrants.ghosts.Vilhelm_Von_Tweann.Paul;
+import pacman.entrants.ghosts.Vilhelm_Von_Tweann.Ringo;
+import pacman.entrants.pacman.Vilhelm_Von_Tweann.OldToNewPacManIntermediaryController;
 import pacman.game.Constants.GHOST;
 
 /**

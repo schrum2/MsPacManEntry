@@ -1,4 +1,4 @@
-package edu.southwestern.tasks.popacman.controllers;
+package pacman.entrants.pacman.Vilhelm_Von_Tweann;
 
 import static pacman.game.Constants.MAG;
 

@@ -1,4 +1,4 @@
-package pacman.entrants.ghosts.spooky;
+package pacman.entrants.ghosts.Vilhelm_Von_Tweann;
 
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
@@ -8,11 +8,10 @@ import pacman.game.Game;
 /**
  * Created by Piers on 11/11/2015.
  */
-public class Blinky extends IndividualGhostController {
+public class Inky extends IndividualGhostController {
 
-
-    public Blinky() {
-        super(Constants.GHOST.BLINKY);
+    public Inky() {
+        super(Constants.GHOST.INKY);
     }
 
     @Override
