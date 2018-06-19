@@ -9,24 +9,23 @@ import java.util.Arrays;
 import java.util.List;
 
 import edu.southwestern.MMNEAT.MMNEAT;
-import edu.southwestern.evolution.genotypes.Genotype;
-import edu.southwestern.evolution.genotypes.TWEANNGenotype;
-import edu.southwestern.networks.TWEANN;
 import edu.southwestern.parameters.Parameters;
 import edu.southwestern.tasks.mspacman.agentcontroller.pacman.NNMsPacMan;
 import edu.southwestern.tasks.mspacman.facades.GameFacade;
-import oldpacman.controllers.NewPacManController;
 import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
 //TODO: this could be useful
 import pacman.game.info.GameInfo;
 import pacman.game.internal.Maze;
+import pacman.game.Drawable;
+import pacman.game.Game;
 import pacman.prediction.GhostLocation;
 import pacman.prediction.PillModel;
 import pacman.prediction.fast.GhostPredictionsFast;
 import wox.serial.Easy;
-import pacman.game.Drawable;
-import pacman.game.Game;
+import edu.southwestern.networks.TWEANN;
+import edu.southwestern.evolution.genotypes.*;
+import oldpacman.controllers.*;
 
 /**
  * a class that converts oldpacman controller information into popacman controller information
@@ -186,12 +185,22 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 	        	for (int i = 0; i < mostRecentGame.getNumberOfNodes(); i++) {      	
 	                double probability = ghostPredictions.calculate(i);
 	                if (probability >= GHOST_THRESHOLD) {
-	                	graphics.setColor(redAlphas[(int) Math.min(255 * probability, 255)]);
-	                    graphics.fillRect(
-	                            mostRecentGame.getNodeXCood(i) * MAG - 1,
-	                            mostRecentGame.getNodeYCood(i) * MAG + 3,
-	                            14, 14
-	                    );
+	                	double edibleProbability = ghostPredictions.calculateEdible(i);
+	                	if(edibleProbability > 0.0) {
+	                    	graphics.setColor(new Color(0,0, 255, 255));
+		                    graphics.fillRect(
+		                            mostRecentGame.getNodeXCood(i) * MAG - 1,
+		                            mostRecentGame.getNodeYCood(i) * MAG + 3,
+		                            14, 14
+		                    );
+	                	} else {
+	                    	graphics.setColor(redAlphas[(int) Math.min(255 * probability, 255)]);
+		                    graphics.fillRect(
+		                            mostRecentGame.getNodeXCood(i) * MAG - 1,
+		                            mostRecentGame.getNodeYCood(i) * MAG + 3,
+		                            14, 14
+		                    );	
+	                	}
 	                }
 	            }
     		}
