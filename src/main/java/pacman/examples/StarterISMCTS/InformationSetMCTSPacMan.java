@@ -2,10 +2,10 @@ package pacman.examples.StarterISMCTS;
 
 import com.fossgalaxy.object.annotations.ObjectDef;
 
-import entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.util.MiscUtil;
-import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.GhostLocation;
-import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.PillModel;
-import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.fast.GhostPredictionsFast;
+import entrants.pacman.Spooky.edu.southwestern.util.MiscUtil;
+import entrants.pacman.Spooky.pacman.prediction.GhostLocation;
+import entrants.pacman.Spooky.pacman.prediction.PillModel;
+import entrants.pacman.Spooky.pacman.prediction.fast.GhostPredictionsFast;
 import pacman.controllers.PacmanController;
 import pacman.game.Drawable;
 import pacman.game.Game;

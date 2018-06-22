@@ -6,7 +6,7 @@ import entrants.ghosts.Vilhelm_Von_Tweann.George;
 import entrants.ghosts.Vilhelm_Von_Tweann.John;
 import entrants.ghosts.Vilhelm_Von_Tweann.Paul;
 import entrants.ghosts.Vilhelm_Von_Tweann.Ringo;
-import entrants.pacman.Vilhelm_Von_Tweann.OldToNewPacManIntermediaryController;
+import entrants.pacman.Spooky.OldToNewPacManIntermediaryController;
 import pacman.Executor;
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
