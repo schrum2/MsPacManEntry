@@ -1,4 +1,4 @@
-package pacman.entrants.pacman.Vilhelm_Von_Tweann;
+package entrants.pacman.Vilhelm_Von_Tweann;
 
 import static pacman.game.Constants.MAG;
 

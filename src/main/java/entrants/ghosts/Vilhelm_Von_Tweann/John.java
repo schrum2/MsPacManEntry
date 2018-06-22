@@ -1,4 +1,4 @@
-package pacman.entrants.ghosts.Vilhelm_Von_Tweann;
+package entrants.ghosts.Vilhelm_Von_Tweann;
 
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
@@ -9,11 +9,11 @@ import pacman.game.Constants.MOVE;
 /**
  * Created by Piers on 11/11/2015.
  */
-public class Paul extends IndividualGhostController {
+public class John extends IndividualGhostController {
 	private MOVE myMove = MOVE.NEUTRAL;
 	
-    public Paul() {
-        super(Constants.GHOST.PINKY);
+    public John() {
+        super(Constants.GHOST.INKY);
     }
 
     @Override

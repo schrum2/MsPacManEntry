@@ -1,4 +1,4 @@
-package pacman.entrants.ghosts.Vilhelm_Von_Tweann;
+package entrants.ghosts.Vilhelm_Von_Tweann;
 
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;

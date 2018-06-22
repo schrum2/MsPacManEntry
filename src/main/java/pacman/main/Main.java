@@ -2,14 +2,14 @@ package pacman.main;
 
 import java.util.EnumMap;
 
+import entrants.ghosts.Vilhelm_Von_Tweann.George;
+import entrants.ghosts.Vilhelm_Von_Tweann.John;
+import entrants.ghosts.Vilhelm_Von_Tweann.Paul;
+import entrants.ghosts.Vilhelm_Von_Tweann.Ringo;
+import entrants.pacman.Vilhelm_Von_Tweann.OldToNewPacManIntermediaryController;
 import pacman.Executor;
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
-import pacman.entrants.ghosts.Vilhelm_Von_Tweann.George;
-import pacman.entrants.ghosts.Vilhelm_Von_Tweann.John;
-import pacman.entrants.ghosts.Vilhelm_Von_Tweann.Paul;
-import pacman.entrants.ghosts.Vilhelm_Von_Tweann.Ringo;
-import pacman.entrants.pacman.Vilhelm_Von_Tweann.OldToNewPacManIntermediaryController;
 import pacman.game.Constants.GHOST;
 
 /**
