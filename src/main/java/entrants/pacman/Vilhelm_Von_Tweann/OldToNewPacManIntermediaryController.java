@@ -8,10 +8,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.southwestern.MMNEAT.MMNEAT;
-import edu.southwestern.parameters.Parameters;
-import edu.southwestern.tasks.mspacman.agentcontroller.pacman.NNMsPacMan;
-import edu.southwestern.tasks.mspacman.facades.GameFacade;
+import entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.MMNEAT.MMNEAT;
+import entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.evolution.genotypes.*;
+import entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.networks.TWEANN;
+import entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.parameters.Parameters;
+import entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.tasks.mspacman.agentcontroller.pacman.NNMsPacMan;
+import entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.tasks.mspacman.facades.GameFacade;
+import entrants.pacman.Vilhelm_Von_Tweann.oldpacman.controllers.*;
+import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.GhostLocation;
+import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.PillModel;
+import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.fast.GhostPredictionsFast;
 import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
 //TODO: this could be useful
@@ -19,22 +25,16 @@ import pacman.game.info.GameInfo;
 import pacman.game.internal.Maze;
 import pacman.game.Drawable;
 import pacman.game.Game;
-import pacman.prediction.GhostLocation;
-import pacman.prediction.PillModel;
-import pacman.prediction.fast.GhostPredictionsFast;
 import wox.serial.Easy;
-import edu.southwestern.networks.TWEANN;
-import edu.southwestern.evolution.genotypes.*;
-import oldpacman.controllers.*;
 
 /**
- * a class that converts oldpacman controller information into popacman controller information
+ * a class that converts entrants.pacman.Vilhelm_Von_Tweann.oldpacman controller information into popacman controller information
  * @author pricew
  *
  */
 public class OldToNewPacManIntermediaryController extends pacman.controllers.PacmanController implements Drawable {
 
-	protected final oldpacman.controllers.NewPacManController oldpacman;
+	protected final entrants.pacman.Vilhelm_Von_Tweann.oldpacman.controllers.NewPacManController oldpacman;
 	public static final String CHAMPION_FILE = "bestPacMan.xml";
 	public PillModel pillModel = null;
 	public Maze currentMaze;
@@ -50,9 +50,10 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 	public boolean useGhostModel = Parameters.parameters.booleanParameter("useGhostModel");
 	public final double GHOST_THRESHOLD = Parameters.parameters.doubleParameter("probabilityThreshold");
 	
-	private static final oldpacman.controllers.NewPacManController getController(String file) {
-		Parameters.initializeParameterCollections("maxGens:200 mu:100 io:true netio:true mating:true highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:8000 pacmanInputOutputMediator:edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator trials:10 log:OneLifeSplit-TwoModuleMultitask saveTo:TwoModuleMultitask fs:false edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod perLinkMutateRate:0.05 netLinkRate:0.4 netSpliceRate:0.2 crossoverRate:0.5 partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.49 ghostPO:true rawScorePacMan:true logTWEANNData:true".split(" "));
-		//Parameters.initializeParameterCollections(new String(""));
+	private static final entrants.pacman.Vilhelm_Von_Tweann.oldpacman.controllers.NewPacManController getController(String file) {
+		Parameters.initializeParameterCollections("maxGens:200 mu:100 io:true netio:true mating:true highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:8000 pacmanInputOutputMediator:entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator trials:10 log:OneLifeSplit-TwoModuleMultitask saveTo:TwoModuleMultitask fs:false edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod perLinkMutateRate:0.05 netLinkRate:0.4 netSpliceRate:0.2 crossoverRate:0.5 partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.49 ghostPO:true rawScorePacMan:true logTWEANNData:true".split(" "));
+		TWEANNGenotype wtf = (TWEANNGenotype) Easy.load(file);
+		System.out.println("WTF: " + wtf);
 		MMNEAT.loadClasses();
 		return (NewPacManController) (new NNMsPacMan<TWEANN>(((TWEANNGenotype) Easy.load(file))).controller);
 	}
@@ -65,7 +66,7 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 		this(getController(file));
 	}
 		
-	public OldToNewPacManIntermediaryController(oldpacman.controllers.NewPacManController oldpacman) {
+	public OldToNewPacManIntermediaryController(entrants.pacman.Vilhelm_Von_Tweann.oldpacman.controllers.NewPacManController oldpacman) {
 		this.oldpacman = oldpacman;
 		
         redAlphas = new Color[256];
@@ -89,7 +90,7 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 
 		//get the action to be made
 		int action = oldpacman.getAction(informedGameFacade, timeDue);
-		//converts an action to an oldpacman move to a popacman move to be returned
+		//converts an action to an entrants.pacman.Vilhelm_Von_Tweann.oldpacman move to a popacman move to be returned
 		return moveConverterOldToPO(GameFacade.indexToMove(action));
 	}
 	
@@ -100,13 +101,13 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 	}
 	
 	/**
-	 * Takes an oldpacman move and returns the equivalent popacman move
+	 * Takes an entrants.pacman.Vilhelm_Von_Tweann.oldpacman move and returns the equivalent popacman move
 	 * @param move
 	 * @return
 	 * @throws NoSuchFieldException
 	 * @author pricew
 	 */
-	public static pacman.game.Constants.MOVE moveConverterOldToPO(oldpacman.game.Constants.MOVE move){
+	public static pacman.game.Constants.MOVE moveConverterOldToPO(entrants.pacman.Vilhelm_Von_Tweann.oldpacman.game.Constants.MOVE move){
 		switch(move) {
 			case NEUTRAL:
 				return pacman.game.Constants.MOVE.NEUTRAL;

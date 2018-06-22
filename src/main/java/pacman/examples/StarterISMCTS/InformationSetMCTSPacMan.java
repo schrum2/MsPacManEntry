@@ -2,7 +2,10 @@ package pacman.examples.StarterISMCTS;
 
 import com.fossgalaxy.object.annotations.ObjectDef;
 
-import edu.southwestern.util.MiscUtil;
+import entrants.pacman.Vilhelm_Von_Tweann.edu.southwestern.util.MiscUtil;
+import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.GhostLocation;
+import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.PillModel;
+import entrants.pacman.Vilhelm_Von_Tweann.pacman.prediction.fast.GhostPredictionsFast;
 import pacman.controllers.PacmanController;
 import pacman.game.Drawable;
 import pacman.game.Game;
@@ -10,9 +13,6 @@ import pacman.game.info.GameInfo;
 import pacman.game.internal.Ghost;
 import pacman.game.internal.Maze;
 import pacman.game.internal.PacMan;
-import pacman.prediction.GhostLocation;
-import pacman.prediction.PillModel;
-import pacman.prediction.fast.GhostPredictionsFast;
 
 import java.awt.*;
 import java.util.Arrays;
