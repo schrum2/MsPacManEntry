@@ -17,7 +17,7 @@ import entrants.pacman.Squillyprice01.edu.southwestern.networks.TWEANN;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.CommonConstants;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.Parameters;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.file.FileUtilities;
-import wox.serial.Easy;
+import entrants.pacman.Squillyprice01.wox.serial.Easy;
 
 /**
  * Stores and tracks information about a population of networks. Uses an

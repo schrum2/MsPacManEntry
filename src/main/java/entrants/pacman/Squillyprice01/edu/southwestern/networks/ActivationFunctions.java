@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.nd4j.linalg.activations.Activation;
+//import org.nd4j.linalg.activations.Activation;
 
 import entrants.pacman.Squillyprice01.edu.southwestern.networks.activationfunctions.*;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.CommonConstants;
@@ -202,9 +202,9 @@ public class ActivationFunctions {
 	 * @param ftype Unique identifier for activation function in MM-NEAT
 	 * @return Enum instance from DL4J for corresponding activation function.
 	 */
-	public static Activation getDL4JEquivalent(int ftype) {
-		return functionMap.get(ftype).equivalentDL4JFunction();
-	}
+//	public static Activation getDL4JEquivalent(int ftype) {
+//		return functionMap.get(ftype).equivalentDL4JFunction();
+//	}
 	
 	/**
 	 * Takes in the list of all ftypes and randomly selects a function. (For CPPN)

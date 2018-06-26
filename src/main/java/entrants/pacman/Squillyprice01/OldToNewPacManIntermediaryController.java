@@ -18,6 +18,7 @@ import entrants.pacman.Squillyprice01.oldpacman.controllers.*;
 import entrants.pacman.Squillyprice01.pacman.prediction.GhostLocation;
 import entrants.pacman.Squillyprice01.pacman.prediction.PillModel;
 import entrants.pacman.Squillyprice01.pacman.prediction.fast.GhostPredictionsFast;
+import entrants.pacman.Squillyprice01.wox.serial.Easy;
 import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
 //TODO: this could be useful
@@ -25,7 +26,6 @@ import pacman.game.info.GameInfo;
 import pacman.game.internal.Maze;
 import pacman.game.Drawable;
 import pacman.game.Game;
-import wox.serial.Easy;
 
 /**
  * a class that converts entrants.pacman.Squillyprice01.oldpacman controller information into popacman controller information

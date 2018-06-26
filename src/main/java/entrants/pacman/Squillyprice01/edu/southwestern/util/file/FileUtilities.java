@@ -11,7 +11,7 @@ import entrants.pacman.Squillyprice01.edu.southwestern.networks.TWEANN;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.Parameters;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.CommonTaskUtil;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.graphics.DrawingPanel;
-import wox.serial.Easy;
+import entrants.pacman.Squillyprice01.wox.serial.Easy;
 
 /**
  * Various static methods associated with files.

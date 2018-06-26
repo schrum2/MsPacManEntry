@@ -7,8 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.lang.ArrayUtils;
-import org.nd4j.linalg.api.ndarray.INDArray;
+import org.apache.commons.lang3.ArrayUtils;
+//import org.nd4j.linalg.api.ndarray.INDArray;
 
 /**
  * Various useful methods with arrays
@@ -199,13 +199,13 @@ public class ArrayUtil {
 	 * @param row INDArray with just one row
 	 * @return corresponding double array
 	 */
-	public static double[] doubleArrayFromINDArray(INDArray row) {
-		double[] array = new double[(int) row.length()];
-		for(int i = 0; i < array.length; i++) {
-			array[i] = row.getDouble(i);
-		}
-		return array;
-	}
+//	public static double[] doubleArrayFromINDArray(INDArray row) {
+//		double[] array = new double[(int) row.length()];
+//		for(int i = 0; i < array.length; i++) {
+//			array[i] = row.getDouble(i);
+//		}
+//		return array;
+//	}
 	
 	/**
 	 * Return true if any element of members is also an element of set
@@ -914,14 +914,14 @@ public class ArrayUtil {
 	 * @param values An INDArray that must be 1D
 	 * @return ArrayList with same values in same order
 	 */
-	public static ArrayList<Double> doubleVectorFromINDArray(INDArray values) {
-		ArrayList<Double> result = new ArrayList<Double>((int) values.length());
-		for (int i = 0; i < values.length(); i++) {
-			result.add(values.getDouble(0,i));
-		}
-		return result;
-	}
-	
+//	public static ArrayList<Double> doubleVectorFromINDArray(INDArray values) {
+//		ArrayList<Double> result = new ArrayList<Double>((int) values.length());
+//		for (int i = 0; i < values.length(); i++) {
+//			result.add(values.getDouble(0,i));
+//		}
+//		return result;
+//	}
+//	
 	/**
 	 * For each pair of elements in the two separate 1D INDArrays
 	 * at the same index, take the min and save the result in the
@@ -929,11 +929,11 @@ public class ArrayUtil {
 	 * @param toModify Array that is modified to contain minimum values
 	 * @param other Other array checked for smaller values
 	 */
-	public static void pairwiseMinimum(INDArray toModify, INDArray other) {
-		assert toModify.length() == other.length() : "INDArrays not the same size";
-		int size = (int) toModify.length();
-		for(int i = 0; i < size; i++) {
-			toModify.put(0, i, Math.min(toModify.getDouble(0,i), other.getDouble(0,i)));
-		}		
-	}
+//	public static void pairwiseMinimum(INDArray toModify, INDArray other) {
+//		assert toModify.length() == other.length() : "INDArrays not the same size";
+//		int size = (int) toModify.length();
+//		for(int i = 0; i < size; i++) {
+//			toModify.put(0, i, Math.min(toModify.getDouble(0,i), other.getDouble(0,i)));
+//		}		
+//	}
 }

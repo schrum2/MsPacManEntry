@@ -20,7 +20,7 @@ import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.Ms
 import entrants.pacman.Squillyprice01.edu.southwestern.util.ClassCreation;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.file.FileUtilities;
 import entrants.pacman.Squillyprice01.oldpacman.game.Constants;
-import wox.serial.Easy;
+import entrants.pacman.Squillyprice01.wox.serial.Easy;
 /**
  * Initializes ms Pac Man
  * 

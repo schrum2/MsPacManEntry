@@ -35,7 +35,7 @@ import entrants.pacman.Squillyprice01.edu.southwestern.util.random.RandomGenerat
 import entrants.pacman.Squillyprice01.edu.southwestern.util.random.RandomNumbers;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.stats.Statistic;
 import entrants.pacman.Squillyprice01.oldpacman.Executor;
-import wox.serial.Easy;
+import entrants.pacman.Squillyprice01.wox.serial.Easy;
 
 /**
  * Modular Multiobjective Neuro-Evolution of Augmenting Topologies.

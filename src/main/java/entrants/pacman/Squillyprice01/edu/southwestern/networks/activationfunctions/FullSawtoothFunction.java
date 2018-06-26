@@ -1,6 +1,6 @@
 package entrants.pacman.Squillyprice01.edu.southwestern.networks.activationfunctions;
 
-import org.nd4j.linalg.activations.Activation;
+//import org.nd4j.linalg.activations.Activation;
 
 import entrants.pacman.Squillyprice01.edu.southwestern.networks.ActivationFunctions;
 
@@ -15,10 +15,10 @@ public class FullSawtoothFunction implements ActivationFunction {
 		return ActivationFunctions.fullSawtooth(x,1);
 	}
 
-	@Override
-	public Activation equivalentDL4JFunction() {
-		throw new UnsupportedOperationException("No corresponding DL4J function for " + name());
-	}
+//	@Override
+//	public Activation equivalentDL4JFunction() {
+//		throw new UnsupportedOperationException("No corresponding DL4J function for " + name());
+//	}
 
 	@Override
 	public String name() {

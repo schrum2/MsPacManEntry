@@ -1,6 +1,6 @@
 package entrants.pacman.Squillyprice01.edu.southwestern.networks.activationfunctions;
 
-import org.nd4j.linalg.activations.Activation;
+//import org.nd4j.linalg.activations.Activation;
 
 import entrants.pacman.Squillyprice01.edu.southwestern.networks.ActivationFunctions;
 
@@ -18,10 +18,10 @@ public class GaussianFunction implements ActivationFunction {
 		return ActivationFunctions.gaussian(x, 1, 0);
 	}
 
-	@Override
-	public Activation equivalentDL4JFunction() {
-		throw new UnsupportedOperationException("No corresponding DL4J function for " + name());
-	}
+//	@Override
+//	public Activation equivalentDL4JFunction() {
+//		throw new UnsupportedOperationException("No corresponding DL4J function for " + name());
+//	}
 
 	@Override
 	public String name() {
