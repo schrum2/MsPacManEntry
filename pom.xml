@@ -77,15 +77,6 @@
 	</plugins>
   </build>
 
-<repositories>
-    <repository>
-        <id>project.local</id>
-        <name>project</name>
-        <url>file:${project.basedir}/libs</url>
-    </repository>
-
-</repositories>
-
     <distributionManagement>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
@@ -147,32 +138,7 @@
    		<version>1.2.20</version>
 	</dependency>
     
-	    
-	<!--  RL-Viz libraries -->
-	<dependency>
-		<groupId>rl-glue.rl-viz</groupId>
-		<artifactId>AgentShell</artifactId>
-		<version>1.0</version>
-	</dependency>
-	
-	<dependency>
-		<groupId>rl-glue.rl-viz</groupId>
-		<artifactId>EnvironmentShell</artifactId>
-		<version>1.0</version>
-	</dependency>
-	
-	<dependency>
-		<groupId>rl-glue.rl-viz</groupId>
-		<artifactId>RLVizApp</artifactId>
-		<version>1.0</version>
-	</dependency>
-	
-	<dependency>
-		<groupId>rl-glue.rl-viz</groupId>
-		<artifactId>RLVizLib</artifactId>
-		<version>1.0</version>
-	</dependency>
-	
+	    	
 		<!-- https://mvnrepository.com/artifact/javax.vecmath/vecmath -->
 	<dependency>
     	<groupId>javax.vecmath</groupId>

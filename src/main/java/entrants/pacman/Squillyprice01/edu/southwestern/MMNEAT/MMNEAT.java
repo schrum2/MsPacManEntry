@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
-import org.rlcommunity.rlglue.codec.taskspec.TaskSpec;
 
 import entrants.pacman.Squillyprice01.edu.southwestern.evolution.EvolutionaryHistory;
 import entrants.pacman.Squillyprice01.edu.southwestern.evolution.genotypes.CombinedGenotype;
@@ -70,7 +69,7 @@ public class MMNEAT {
 //	public static ArrayList<Metaheuristic> metaheuristics;
 	public static ArrayList<ArrayList<String>> fitnessFunctions;
 	public static ArrayList<Statistic> aggregationOverrides;
-	public static TaskSpec tso;
+//	public static TaskSpec tso;
 //	public static FeatureExtractor rlGlueExtractor;
 	public static boolean blueprints = false;
 	@SuppressWarnings("rawtypes") // applies to any population type
