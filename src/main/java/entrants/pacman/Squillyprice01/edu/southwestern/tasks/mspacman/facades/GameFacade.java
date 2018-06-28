@@ -475,7 +475,7 @@ public class GameFacade {
 		if(oldG == null) {
 			if(usePillModel) {
 				//TODO: test
-				//assert pillModel != null : "the information handling in OldToNewPacManIntermediaryController should handle this";
+				//assert pillModel != null : "the information handling in MyPacMan should handle this";
 				return pillModel.getPillsEaten();
 			} else {
 				//Without pillModel, we cannot track this
