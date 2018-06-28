@@ -21,18 +21,15 @@ import entrants.pacman.Squillyprice01.pacman.prediction.fast.GhostPredictionsFas
 import entrants.pacman.Squillyprice01.wox.serial.Easy;
 import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
-//TODO: this could be useful
-import pacman.game.info.GameInfo;
 import pacman.game.internal.Maze;
-import pacman.game.Drawable;
 import pacman.game.Game;
-
+import pacman.controllers.PacmanController;
 /**
  * a class that converts entrants.pacman.Squillyprice01.oldpacman controller information into popacman controller information
  * @author pricew
  *
  */
-public class OldToNewPacManIntermediaryController extends pacman.controllers.PacmanController implements Drawable {
+public class MyPacMan extends PacmanController{
 
 	protected final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController oldpacman;
 	public static final String CHAMPION_FILE = "bestPacMan.xml";
@@ -57,15 +54,15 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 		return (NewPacManController) (new NNMsPacMan<TWEANN>(((TWEANNGenotype) Easy.load(file))).controller);
 	}
 	
-	public OldToNewPacManIntermediaryController() {
+	public MyPacMan() {
 		this(CHAMPION_FILE);
 	}
 	
-	public OldToNewPacManIntermediaryController(String file) {
+	public MyPacMan(String file) {
 		this(getController(file));
 	}
 		
-	public OldToNewPacManIntermediaryController(entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController oldpacman) {
+	public MyPacMan(entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController oldpacman) {
 		this.oldpacman = oldpacman;
 		
         redAlphas = new Color[256];
@@ -324,7 +321,7 @@ public class OldToNewPacManIntermediaryController extends pacman.controllers.Pac
 	            	try {
 	            		ghostPredictions.observe(ghost, ghostIndex, informedGameFacade.poG.getGhostLastMoveMade(ghost), informedGameFacade);
 	            	} catch (java.lang.ArrayIndexOutOfBoundsException e) {
-	            		//System.out.println(e.toString() + " in OldToNewPacManIntermediaryController.updateModels()");
+	            		//System.out.println(e.toString() + " in MyPacMan.updateModels()");
 	            		break;
 	            	}
 	                ghostEdibleTime[ghost.ordinal()] = game.getGhostEdibleTime(ghost);
