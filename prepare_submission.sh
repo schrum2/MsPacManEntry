@@ -1,5 +1,5 @@
 #!/bin/bash
 
-zip -rX submission.zip src/** libs/** pom.xml bestPacMan.xml
+zip -rX submission.zip src/** pom.xml bestPacMan.xml
 
 
