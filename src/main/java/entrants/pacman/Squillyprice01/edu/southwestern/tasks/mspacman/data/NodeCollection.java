@@ -54,19 +54,19 @@ public abstract class NodeCollection {
 		int[] activePills = gs.getActivePillsIndices();
 		int nearestPill = gs.getClosestNodeIndexFromNodeIndex(current, activePills);
 		int farthestPill = gs.getFarthestNodeIndexFromNodeIndex(current, activePills);
-		assert nearestPill != -1 : "The pillModel should stop this from happening";
-		assert farthestPill != -1 : "The pillModel should stop this from happening";
-		int[] tempPath = gs.getShortestPath(nearestPill, farthestPill);
-		assert tempPath != null : "tempPath is null in NodeCollection.addExtraNodes";
-		int[] pillPath = new int[tempPath.length + 1];
-		System.arraycopy(tempPath, 0, pillPath, 0, tempPath.length);
-		pillPath[tempPath.length] = farthestPill;
-		if (ArrayUtil.subset(activePills, pillPath)) {
-			// Path will consume all pills
-			//assert gs.nodeInMaze(farthestPill) : "Farthest pill " + farthestPill + " not in maze";
-			addedNodes.add(farthestPill);
-		}
+		if(nearestPill != -1 && farthestPill != -1) {
+			int[] tempPath = gs.getShortestPath(nearestPill, farthestPill);
+			assert tempPath != null : "tempPath is null in NodeCollection.addExtraNodes";
+			int[] pillPath = new int[tempPath.length + 1];
+			System.arraycopy(tempPath, 0, pillPath, 0, tempPath.length);
+			pillPath[tempPath.length] = farthestPill;
+			if (ArrayUtil.subset(activePills, pillPath)) {
+				// Path will consume all pills
+				//assert gs.nodeInMaze(farthestPill) : "Farthest pill " + farthestPill + " not in maze";
+				addedNodes.add(farthestPill);
+			}
 
+		}
 		if (escapeToPowerPills) {
 			int[] activePowerPills = gs.getActivePowerPillsIndices();
 			for (Integer j : activePowerPills) {
