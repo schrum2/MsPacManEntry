@@ -36,5 +36,6 @@ public class Main {
         
 
         executor.runGameTimed(badboy, new MASController(controllers));
+        System.out.println("WE FINISHED");
     }
 }

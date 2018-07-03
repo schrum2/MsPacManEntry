@@ -48,7 +48,7 @@ public class MyPacMan extends PacmanController{
 	public final double GHOST_THRESHOLD = Parameters.parameters.doubleParameter("probabilityThreshold");
 	
 	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(String file) {
-		Parameters.initializeParameterCollections("io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.49 ghostPO:true rawScorePacMan:true".split(" "));
+		Parameters.initializeParameterCollections("io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
 		String myPacManPath;
 		myPacManPath = MyPacMan.class.getResource(file).getPath();
 		MMNEAT.loadClasses();
@@ -82,13 +82,12 @@ public class MyPacMan extends PacmanController{
 	 */
 	public MOVE getMove(Game game, long timeDue) {
         
-		
 		GameFacade informedGameFacade = updateModels(game, timeDue);
-
 		//get the action to be made
 		int action = oldpacman.getAction(informedGameFacade, timeDue);
 		//converts an action to an entrants.pacman.Squillyprice01.oldpacman move to a popacman move to be returned
 		return moveConverterOldToPO(GameFacade.indexToMove(action));
+		
 	}
 	
 	//This method clears all stored information about a game
