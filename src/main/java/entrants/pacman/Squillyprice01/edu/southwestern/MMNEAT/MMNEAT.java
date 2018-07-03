@@ -112,16 +112,16 @@ public class MMNEAT {
 		return result;
 	}
 
-	private static void setupSaveDirectory() {
-		String saveTo = Parameters.parameters.stringParameter("saveTo");
-		if (Parameters.parameters.booleanParameter("io") && !saveTo.isEmpty()) {
-			String directory = FileUtilities.getSaveDirectory();
-			File dir = new File(directory);
-			if (!dir.exists()) {
-				dir.mkdir();
-			}
-		}
-	}
+//	private static void setupSaveDirectory() {
+//		String saveTo = Parameters.parameters.stringParameter("saveTo");
+//		if (Parameters.parameters.booleanParameter("io") && !saveTo.isEmpty()) {
+//			String directory = FileUtilities.getSaveDirectory();
+//			File dir = new File(directory);
+//			if (!dir.exists()) {
+//				dir.mkdir();
+//			}
+//		}
+//	}
 
 	@SuppressWarnings("rawtypes") // type of genotypes being crossed could be anything
 	private static void setupCrossover() throws NoSuchMethodException {
@@ -205,17 +205,6 @@ public class MMNEAT {
 			}
 			System.out.println("---------------------------------------------");
 		}
-	}
-
-	/**
-	 * Currently, this check only applies to Ms Pac-Man tasks, but could
-	 * be used for other coevolution experiments in the future.
-	 * @return Whether task involves agents cooperating with subnetworks
-	 */
-	public static boolean taskHasSubnetworks() {
-//		return CooperativeSubtaskSelectorMsPacManTask.class.equals(Parameters.parameters.classParameter("task"))
-//				|| CooperativeSubtaskCombinerMsPacManTask.class.equals(Parameters.parameters.classParameter("task"));
-	return false;
 	}
 
 	/**
@@ -315,7 +304,6 @@ public class MMNEAT {
 	public static void loadClasses() {
 //		try {
 			ActivationFunctions.resetFunctionSet();
-			setupSaveDirectory();
 
 			fitnessFunctions = new ArrayList<ArrayList<String>>();
 			fitnessFunctions.add(new ArrayList<String>());
@@ -324,13 +312,9 @@ public class MMNEAT {
 			System.out.println("Init Genotype Ids");
 			EvolutionaryHistory.initGenotypeIds();
 
-			if (taskHasSubnetworks()) {
-				modesToTrack = Parameters.parameters.integerParameter("numCoevolutionSubpops");
-			} else {
-				int multitaskModes = CommonConstants.multitaskModules;
-				if (!CommonConstants.hierarchicalMultitask && multitaskModes > 1) {
-					modesToTrack = multitaskModes;
-				}
+			int multitaskModes = CommonConstants.multitaskModules;
+			if (!CommonConstants.hierarchicalMultitask && multitaskModes > 1) {
+				modesToTrack = multitaskModes;
 			}
 			
 			if (Parameters.parameters.booleanParameter("scalePillsByGen")
@@ -340,9 +324,6 @@ public class MMNEAT {
 				Parameters.parameters.setDouble("preEatenPillPercentage", 0.999);
 			}
 
-			System.out.println("Setup Function Optimization");
-
-			MsPacManInitialization.setupGenotypePoolsForMsPacman();
 			System.out.println("Setup Ms. Pac-Man Task");
 			try {
 				pacmanInputOutputMediator = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacmanInputOutputMediator");
@@ -355,16 +336,21 @@ public class MMNEAT {
 				} catch (NoSuchMethodException e) {
 					e.printStackTrace();
 				}
+			}
+
+			// Regular Check-Each-Direction networks
+			setNNInputParameters(pacmanInputOutputMediator.numIn(), pacmanInputOutputMediator.numOut());
+
+			MsPacManInitialization.setupMsPacmanParameters();
+			if (CommonConstants.multitaskModules > 1) {
 				try {
-					ensembleArbitrator = (MsPacManEnsembleArbitrator) ClassCreation.createObject("ensembleArbitrator");
+					pacmanMultitaskScheme = (MsPacManModeSelector) ClassCreation.createObject("pacmanMultitaskScheme");
 				} catch (NoSuchMethodException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 
-			//TODO the links are being loaded as null	
-			MMNEAT.sharedMultitaskNetwork = (TWEANNGenotype) Easy.load("bestPacMan.xml");
-			setNNInputParameters(pacmanInputOutputMediator.numIn(), MMNEAT.sharedMultitaskNetwork.numModules);
 	}
 
 	/**

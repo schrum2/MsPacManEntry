@@ -97,25 +97,6 @@ public class MsPacManInitialization {
 		Parameters.parameters.setInteger("edibleTime", Constants.EDIBLE_TIME);
 		System.out.println("EDIBLE TIME: " + Constants.EDIBLE_TIME);
 	}
-	
-	/**
-	 * Sets up directory that stores genotypes for both pill and ghost eating agent subnetworks
-	 */
-	public static void setupGenotypePoolsForMsPacman() {
-		// Use genotype pools
-		//below check should be true unless new network utilized
-//		if (Parameters.parameters.classParameter("genotype").equals(HierarchicalTWEANNGenotype.class)) {
-//			System.out.println("Ghost eating pool");
-//			GenotypePool.addPool(Parameters.parameters.stringParameter("ghostEatingSubnetworkDir"));
-//			System.out.println("Pill eating pool");
-//			GenotypePool.addPool(Parameters.parameters.stringParameter("pillEatingSubnetworkDir"));
-//			//sets ceilings of genotype size based on initial pool size 
-//			MMNEAT.discreteCeilings = new int[2];
-//			MMNEAT.discreteCeilings[0] = GenotypePool.poolSize(0);
-//			MMNEAT.discreteCeilings[1] = GenotypePool.poolSize(1);
-//		}
-	}
-
 
 	/**
 	 * Assumes the subnets are always in SubNetworkBlocks at the end of a
