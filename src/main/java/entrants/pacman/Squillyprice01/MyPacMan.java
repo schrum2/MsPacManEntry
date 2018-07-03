@@ -49,16 +49,8 @@ public class MyPacMan extends PacmanController{
 	
 	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(String file) {
 		Parameters.initializeParameterCollections("io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.49 ghostPO:true rawScorePacMan:true".split(" "));
-//		TWEANNGenotype wtf = (TWEANNGenotype) Easy.load(file);
-
 		String myPacManPath;
-//		myPacManPath = MyPacMan.class.getResource("MyPacMan.class").getPath().replace("MyPacMan.class", "");
-//		System.out.println("CLASS:"+ myPacManPath + file);
 		myPacManPath = MyPacMan.class.getResource(file).getPath();
-		System.out.println("RESOURCE:" + myPacManPath);
-//		myPacManPath = MyPacMan.class.getResource("fake").getPath();
-//		System.out.println("WHAT?:" + myPacManPath);
-		
 		MMNEAT.loadClasses();
 		return (NewPacManController) (new NNMsPacMan<TWEANN>(((TWEANNGenotype) Easy.load(myPacManPath))).controller);
 	}
@@ -330,7 +322,6 @@ public class MyPacMan extends PacmanController{
 	            	try {
 	            		ghostPredictions.observe(ghost, ghostIndex, informedGameFacade.poG.getGhostLastMoveMade(ghost), informedGameFacade);
 	            	} catch (java.lang.ArrayIndexOutOfBoundsException e) {
-	            		//System.out.println(e.toString() + " in MyPacMan.updateModels()");
 	            		break;
 	            	}
 	                ghostEdibleTime[ghost.ordinal()] = game.getGhostEdibleTime(ghost);

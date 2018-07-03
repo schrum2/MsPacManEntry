@@ -47,10 +47,8 @@ public class Parameters {
 		parameters = new Parameters(args);
 
 		if (logFile != null) {
-			System.out.println("File exists? " + logFile);
 			File f = new File(logFile);
 			if (f.getParentFile().exists() && f.exists()) {
-				System.out.println("Load parameters: " + logFile);
 				initializeParameterCollections(logFile);
 				// Commandline can overwrite save file
 				parameters.parseArgs(args, true);
@@ -60,7 +58,6 @@ public class Parameters {
 		if (base != null && !base.equals("")) {
 			File baseDir = new File(base);
 			if (!baseDir.exists() || !baseDir.isDirectory()) {
-				System.out.println("Made directory: " + base);
 				baseDir.mkdir();
 			}
 		}
@@ -78,7 +75,6 @@ public class Parameters {
 		if (parameters == null) {
 			parameters = new Parameters(new String[0]);
 		}
-		System.out.println("Loading parameters from " + parameterFile);
 		parameters.loadParameters(parameterFile);
 		CommonConstants.load();
 	}
@@ -100,7 +96,6 @@ public class Parameters {
 			String[] sArgs = new String[args.size()];
 			parseArgs(args.toArray(sArgs), false);
 		} catch (FileNotFoundException ex) {
-			System.out.println("Could not read parameter file");
 			System.exit(1);
 		}
 	}
@@ -155,7 +150,6 @@ public class Parameters {
 			stringOptions.writeLabels(stream);
 			classOptions.writeLabels(stream);
 		} catch (FileNotFoundException ex) {
-			System.out.println("Could not save parameters");
 			System.exit(1);
 		}
 	}
@@ -924,7 +918,6 @@ public class Parameters {
 	 */
 	private void parseArgs(String[] args, boolean terminateOnUnrecognized) {
 		if (args.length > 0 && args[0].equals("help")) {
-			System.out.println("Paremeter help:");
 			usage(0);
 		}
 		StringTokenizer st;
@@ -945,19 +938,19 @@ public class Parameters {
 			}
 			if (integerOptions.hasLabel(entity)) {
 				integerOptions.change(entity, Integer.parseInt(value));
-				System.out.println("Integer value \"" + entity + "\" set to \"" + value + "\"");
+				//System.out.println("Integer value \"" + entity + "\" set to \"" + value + "\"");
 			} else if (longOptions.hasLabel(entity)) {
 				longOptions.change(entity, Long.parseLong(value));
-				System.out.println("Long value \"" + entity + "\" set to \"" + value + "\"");
+				//System.out.println("Long value \"" + entity + "\" set to \"" + value + "\"");
 			} else if (doubleOptions.hasLabel(entity)) {
 				doubleOptions.change(entity, Double.parseDouble(value));
-				System.out.println("Double value \"" + entity + "\" set to \"" + value + "\"");
+				//System.out.println("Double value \"" + entity + "\" set to \"" + value + "\"");
 			} else if (booleanOptions.hasLabel(entity)) {
 				booleanOptions.change(entity, Boolean.parseBoolean(value));
-				System.out.println("Boolean value \"" + entity + "\" set to \"" + value + "\"");
+				//System.out.println("Boolean value \"" + entity + "\" set to \"" + value + "\"");
 			} else if (stringOptions.hasLabel(entity)) {
 				stringOptions.change(entity, value);
-				System.out.println("String value \"" + entity + "\" set to \"" + value + "\"");
+				//System.out.println("String value \"" + entity + "\" set to \"" + value + "\"");
 			} else if (classOptions.hasLabel(entity)) {
 				try {
 					classOptions.change(entity, Class.forName(value));
@@ -965,7 +958,7 @@ public class Parameters {
 					System.out.println(value + " is not a valid class");
 					System.exit(1);
 				}
-				System.out.println("Class value \"" + entity + "\" set to \"" + value + "\"");
+				//System.out.println("Class value \"" + entity + "\" set to \"" + value + "\"");
 			} else {
 				System.out.println("Did not recognize \"" + entity + "\" with value \"" + value + "\"");
 				if (terminateOnUnrecognized) {
@@ -1000,7 +993,7 @@ public class Parameters {
 				value = st.nextToken();
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.out.println("Problem parsing parameter tokens");
+				//System.out.println("Problem parsing parameter tokens");
 				System.exit(1);
 			}
 			if (entity.equals("saveTo")) {
@@ -1035,20 +1028,20 @@ public class Parameters {
 	 *               showing the information.
 	 */
 	public void usage(int status) {
-		System.out.println("Usage:");
-		System.out.println("Integer parameters:");
+		//System.out.println("Usage:");
+		//System.out.println("Integer parameters:");
 		integerOptions.showUsage();
-		System.out.println("Long parameters:");
+		//System.out.println("Long parameters:");
 		longOptions.showUsage();
-		System.out.println("Double parameters:");
+		//System.out.println("Double parameters:");
 		doubleOptions.showUsage();
-		System.out.println("Boolean parameters:");
+		//System.out.println("Boolean parameters:");
 		booleanOptions.showUsage();
-		System.out.println("String parameters:");
+		//System.out.println("String parameters:");
 		stringOptions.showUsage();
-		System.out.println("Class parameters:");
+		//System.out.println("Class parameters:");
 		classOptions.showUsage();
-		System.exit(status);
+		//System.exit(status);
 	}
 
 	/**

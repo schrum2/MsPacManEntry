@@ -72,7 +72,7 @@ public class MsPacManInitialization {
 			Constants.COMMON_LAIR_TIME = minLairTime;
 		}//resets command line parameter
 		Parameters.parameters.setInteger("lairTime", Constants.COMMON_LAIR_TIME);
-		System.out.println("LAIR TIME: " + Constants.COMMON_LAIR_TIME);
+		//System.out.println("LAIR TIME: " + Constants.COMMON_LAIR_TIME);
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class MsPacManInitialization {
 			Constants.EDIBLE_TIME = minEdibleTime;
 		}//resets command line parameter 
 		Parameters.parameters.setInteger("edibleTime", Constants.EDIBLE_TIME);
-		System.out.println("EDIBLE TIME: " + Constants.EDIBLE_TIME);
+		//System.out.println("EDIBLE TIME: " + Constants.EDIBLE_TIME);
 	}
 
 	/**

@@ -143,27 +143,21 @@ public class MMNEAT {
 	private static void setupMetaHeuristics() {
 		// Metaheuristics are objectives that are not associated with the
 		// domain/task
-		System.out.println("Use meta-heuristics?");
 		//metaheuristics = new ArrayList<Metaheuristic>();
 		if (Parameters.parameters.booleanParameter("antiMaxModeUsage")) {
-			System.out.println("Penalize Max Mode Usage");
 		//	metaheuristics.add(new AntiMaxModuleUsageFitness());
 		}
 		if (Parameters.parameters.integerParameter("numModesToPrefer") > 0) {
 			int target = Parameters.parameters.integerParameter("numModesToPrefer");
-			System.out.println("Prefer even usage of " + target + " modes");
 		//	metaheuristics.add(new FavorXModulesFitness(target));
 		}
 		if (Parameters.parameters.booleanParameter("penalizeLinks")) {
-			System.out.println("Penalize Links");
 		//	metaheuristics.add(new LinkPenalty());
 		}
 		if (Parameters.parameters.booleanParameter("maximizeModes")) {
-			System.out.println("Maximize Modes");
 		//	metaheuristics.add(new MaxModulesFitness());
 		}
 		if (Parameters.parameters.booleanParameter("penalizeSubstrateLinks")) {
-			System.out.println("Penalize Substrate Links");
 		//	metaheuristics.add(new SubstrateLinkPenalty());
 		}
 	}
@@ -174,7 +168,6 @@ public class MMNEAT {
 			//genotype instanceof HyperNEATCPPNforDL4JGenotype) { // Contains CPPN that is TWEANNGenotype
 			if (Parameters.parameters.booleanParameter("io")
 					&& Parameters.parameters.booleanParameter("logTWEANNData")) {
-				System.out.println("Init TWEANN Log");
 				EvolutionaryHistory.initTWEANNLog();
 			}
 			if (!coevolution) {
@@ -197,13 +190,10 @@ public class MMNEAT {
 		for (int i = 0; i < genotypeExamples.size(); i++) {
 			String archetypeFile = Parameters.parameters.stringParameter("seedArchetype" + (i + 1));
 			if (!EvolutionaryHistory.archetypeFileExists(i) && archetypeFile != null && !archetypeFile.isEmpty()) {
-				System.out.println("Using seed archetype: " + archetypeFile);
 				EvolutionaryHistory.initArchetype(i, archetypeFile);
 			} else {
-				System.out.println("New or resumed archetype");
 				EvolutionaryHistory.initArchetype(i);
 			}
-			System.out.println("---------------------------------------------");
 		}
 	}
 
@@ -309,7 +299,6 @@ public class MMNEAT {
 			fitnessFunctions.add(new ArrayList<String>());
 			aggregationOverrides = new ArrayList<Statistic>();
 
-			System.out.println("Init Genotype Ids");
 			EvolutionaryHistory.initGenotypeIds();
 
 			int multitaskModes = CommonConstants.multitaskModules;
@@ -320,22 +309,21 @@ public class MMNEAT {
 			if (Parameters.parameters.booleanParameter("scalePillsByGen")
 					&& Parameters.parameters.stringParameter("lastSavedDirectory").equals("")
 					&& Parameters.parameters.integerParameter("lastSavedGeneration") == 0) {
-				System.out.println("Set pre-eaten pills high, since we are scaling pills with generation");
 				Parameters.parameters.setDouble("preEatenPillPercentage", 0.999);
 			}
 
-			System.out.println("Setup Ms. Pac-Man Task");
 			try {
 				pacmanInputOutputMediator = (MsPacManControllerInputOutputMediator) ClassCreation.createObject("pacmanInputOutputMediator");
 			} catch (NoSuchMethodException e) {
 				e.printStackTrace();
 			}
 			if (MMNEAT.pacmanInputOutputMediator instanceof VariableDirectionBlockLoadedInputOutputMediator) {
-				try {
-					directionalSafetyFunction = (VariableDirectionBlock) ClassCreation.createObject("directionalSafetyFunction");
-				} catch (NoSuchMethodException e) {
-					e.printStackTrace();
-				}
+				//TODO: add directional Safety Function!?
+//				try {
+//					directionalSafetyFunction = (VariableDirectionBlock) ClassCreation.createObject("directionalSafetyFunction");
+//				} catch (NoSuchMethodException e) {
+//					e.printStackTrace();
+//				}
 			}
 
 			// Regular Check-Each-Direction networks
@@ -399,16 +387,13 @@ public class MMNEAT {
 	 * Initializes and runs the experiment given the loaded classes.
 	 */
 	public void run() {
-		System.out.println("Run:");
 		clearClasses();
 		loadClasses();
 
 		if (Parameters.parameters.booleanParameter("io")) {
 			Parameters.parameters.saveParameters();
 		}
-		System.out.println("Run");
 		experiment.run();
-		System.out.println("Experiment finished");
 	}
 
 	/**
@@ -430,11 +415,6 @@ public class MMNEAT {
 
 	public static void main(String[] args) throws FileNotFoundException, NoSuchMethodException {
 		if (args.length == 0) {
-			System.out.println("First command line parameter must be one of the following:");
-			System.out.println("\tmultiple:n\twhere n is the number of experiments to run in sequence");
-			System.out.println("\trunNumber:n\twhere n is the specific experiment number to assign");
-			System.out.println("\tprocess:n\twhere n is the number of experiments to do data processing on");
-			System.out.println("\tlineage:n\twhere n is the experiment number to do lineage browsing on");
 			System.exit(0);
 		}
 		long start = System.currentTimeMillis();
@@ -460,7 +440,6 @@ public class MMNEAT {
 			loadClasses();
 			calculateHVs(runs);
 		} else if (args[0].startsWith("lineage:")) {
-			System.out.println("Lineage browser");
 			browseLineage = true;
 			st.nextToken(); // "lineage"
 			String value = st.nextToken();
@@ -468,7 +447,6 @@ public class MMNEAT {
 			int run = Integer.parseInt(value);
 			args[0] = "runNumber:" + run;
 			Parameters.initializeParameterCollections(args); // file should exist			
-			System.out.println("Params loaded");
 			String saveTo = Parameters.parameters.stringParameter("saveTo");
 			String loadFrom = Parameters.parameters.stringParameter("loadFrom");
 			boolean includeChildren = false;
@@ -491,7 +469,6 @@ public class MMNEAT {
 		} else {
 			evolutionaryRun(args);
 		}
-		System.out.println("done: " + (((System.currentTimeMillis() - start) / 1000.0) / 60.0) + " minutes");
 	//	if (!(task instanceof FunctionOptimization)) {
 	//		System.exit(0);
 	//	}
@@ -519,7 +496,6 @@ public class MMNEAT {
 				&& (lastSavedDirectory == null || lastSavedDirectory.isEmpty())) {
 			// This run is a branch off of another run.
 			Parameters rootParameters = new Parameters(new String[0]);
-			System.out.println("Loading root parameters from " + branchRoot);
 			rootParameters.loadParameters(branchRoot);
 			// Copy the needed parameters
 			Parameters.parameters.setString("lastSavedDirectory", rootParameters.stringParameter("lastSavedDirectory"));
@@ -572,7 +548,6 @@ public class MMNEAT {
 			// neuron net instead
 		}
 		networkOutputs *= multitaskModes;
-		System.out.println("Networks will have " + networkInputs + " inputs and " + networkOutputs + " outputs.");
 
 		lowerInputBounds = new double[networkInputs];
 		upperInputBounds = new double[networkInputs];

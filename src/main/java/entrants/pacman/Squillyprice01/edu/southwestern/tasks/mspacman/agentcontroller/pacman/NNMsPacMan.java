@@ -43,7 +43,7 @@ public class NNMsPacMan<T extends Network> extends Organism<T> {
 		if(CommonConstants.hyperNEAT) {
 			//controller = new NNHyperNEATPacManController((HyperNEATCPPNGenotype) genotype);
 		} else {
-			System.out.println(this.getGenotype());
+			//System.out.println(this.getGenotype());
 			//System.out.println(this.getGenotype().getPhenotype());
 			Network net = (Network) this.getGenotype().getPhenotype();
 			boolean evolveNetworkSelector = Parameters.parameters.booleanParameter("evolveNetworkSelector");
