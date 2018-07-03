@@ -2,7 +2,6 @@ package entrants.pacman.Squillyprice01.edu.southwestern.util;
 
 import java.util.ArrayList;
 
-import entrants.pacman.Squillyprice01.edu.southwestern.util.datastructures.Vertex;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.util2D.ILocated2D;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.util2D.Tuple2D;
 
@@ -44,15 +43,15 @@ public class CartesianGeometricUtilities {
 	 * @param depth depth of shape
 	 * @return scaled vertex
 	 */
-	public static Vertex centerAndScale(Vertex toScale, int width, int height, int depth) {
-		double newX = CartesianGeometricUtilities.centerAndScale(toScale.x, width); //scaled x coordinate
-		double newY = CartesianGeometricUtilities.centerAndScale(toScale.y, height); //scaled y coordinate
-		double newZ = CartesianGeometricUtilities.centerAndScale(toScale.z, depth); //scaled z coordinate
-		assert !Double.isNaN(newX) : "newX is NaN! width="+width+", height="+height+", toScale="+toScale;
-		assert !Double.isNaN(newY) : "newY is NaN! width="+width+", height="+height+", toScale="+toScale;
-		assert !Double.isNaN(newZ) : "newZ is NaN! width="+width+", height="+height+", toScale="+toScale;
-		return new Vertex(newX, newY, newZ);
-	}
+//	public static Vertex centerAndScale(Vertex toScale, int width, int height, int depth) {
+//		double newX = CartesianGeometricUtilities.centerAndScale(toScale.x, width); //scaled x coordinate
+//		double newY = CartesianGeometricUtilities.centerAndScale(toScale.y, height); //scaled y coordinate
+//		double newZ = CartesianGeometricUtilities.centerAndScale(toScale.z, depth); //scaled z coordinate
+//		assert !Double.isNaN(newX) : "newX is NaN! width="+width+", height="+height+", toScale="+toScale;
+//		assert !Double.isNaN(newY) : "newY is NaN! width="+width+", height="+height+", toScale="+toScale;
+//		assert !Double.isNaN(newZ) : "newZ is NaN! width="+width+", height="+height+", toScale="+toScale;
+//		return new Vertex(newX, newY, newZ);
+//	}
 
 	/**
 	 * Scales either x or y coordinate to where origin is at center of plane,
