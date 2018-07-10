@@ -5,6 +5,8 @@ import org.jdom.Document;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.XMLOutputter;
 
+import entrants.pacman.Squillyprice01.MyPacMan;
+
 import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.FileInputStream;
@@ -31,17 +33,32 @@ public class Easy {
         }
     }
 
+//    public static Object load(String filename) {
+//        try {
+//            SAXBuilder builder = new SAXBuilder();
+//            InputStream is = new FileInputStream(filename);
+//            Document doc = builder.build(is);
+//            Element el = doc.getRootElement();
+//            ObjectReader reader = new SimpleReader();
+//            return reader.read(el);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+    
+    // This is Piers' fix
     public static Object load(String filename) {
-        try {
-            SAXBuilder builder = new SAXBuilder();
-            InputStream is = new FileInputStream(filename);
-            Document doc = builder.build(is);
-            Element el = doc.getRootElement();
-            ObjectReader reader = new SimpleReader();
-            return reader.read(el);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+    	try {
+    		SAXBuilder builder = new SAXBuilder();
+    		InputStream is = MyPacMan.class.getResourceAsStream(filename);
+    		Document doc = builder.build(is);
+    		Element el = doc.getRootElement();
+    		ObjectReader reader = new SimpleReader();
+    		return reader.read(el);
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    		return null;
+    	}
     }
 }
