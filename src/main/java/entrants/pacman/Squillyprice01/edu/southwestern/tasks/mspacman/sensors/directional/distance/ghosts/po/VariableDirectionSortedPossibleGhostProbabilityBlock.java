@@ -7,7 +7,6 @@ import java.util.Comparator;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.facades.GameFacade;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.VariableDirectionBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.datastructures.Quad;
-import entrants.pacman.Squillyprice01.edu.southwestern.util.datastructures.Triple;
 import pacman.game.Constants.MOVE;
 
 
@@ -21,14 +20,22 @@ import pacman.game.Constants.MOVE;
 public class VariableDirectionSortedPossibleGhostProbabilityBlock extends VariableDirectionBlock{
 
 	private final int order;
+	private final boolean sortThreats;
+	private final boolean sortEdibles;
 	
+	public VariableDirectionSortedPossibleGhostProbabilityBlock(int order, boolean sortThreats, boolean sortEdibles) {
+		this(-1, order, sortThreats, sortEdibles);
+	}
+		
 	public VariableDirectionSortedPossibleGhostProbabilityBlock(int order) {
-		this(-1, order);
+		this(-1, order, true, true);
 	}
 	
-	public VariableDirectionSortedPossibleGhostProbabilityBlock(int dir, int order) {
+	public VariableDirectionSortedPossibleGhostProbabilityBlock(int dir, int order, boolean sortThreats, boolean sortEdibles) {
 		super(dir);
 		this.order = order;
+		this.sortEdibles = sortEdibles;
+		this.sortThreats = sortThreats;
 	}
 
 	@Override
@@ -39,7 +46,26 @@ public class VariableDirectionSortedPossibleGhostProbabilityBlock extends Variab
 
 	@Override
 	public double getValue(GameFacade gf) {
+		
 		ArrayList<Quad<Integer, MOVE, Double, Double>> ghosts = gf.getPossibleGhostInfo();
+			
+		if(sortThreats && !sortEdibles) {
+			//remove edible ghosts from the list
+			for(int i = 0; i < ghosts.size(); i++) {
+				if(ghosts.get(i).t4 > 0) {
+					ghosts.remove(i);
+				}
+			}
+		} else if(!sortThreats && sortEdibles) {
+			//remove threat ghosts from the list
+			for(int i = 0; i < ghosts.size(); i++) {
+				if(ghosts.get(i).t4 <= 0) {
+					ghosts.remove(i);
+				}
+			}
+		} else {
+			//DO NOTHING
+		}
 		
 		if (order >= ghosts.size()) {
 			return 0.0; // Target in lair will result in distance of
@@ -73,7 +99,13 @@ public class VariableDirectionSortedPossibleGhostProbabilityBlock extends Variab
 
 	@Override
 	public String getLabel() {
-		return "Probability of " + order + " Closest Possible Ghost in " + dir + "direction";
+		if(sortThreats && !sortEdibles) {
+			return "Probability of " + order + " Closest Possible Threat Ghost in " + dir + "direction";
+		} else if(!sortThreats && sortEdibles) {
+			return "Probability of " + order + " Closest Possible Edible Ghost in " + dir + "direction";
+		} else {
+			return "Probability of " + order + " Closest Possible Ghost in " + dir + "direction";	
+		}
 	}
 	
 

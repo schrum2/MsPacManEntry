@@ -1,6 +1,8 @@
 package entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po;
 
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.EdibleGhostTimeRemainingPOBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.CommonConstants;
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.TimeLeftBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.Parameters;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.VariableDirectionBlockLoadedInputOutputMediator;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.booleansensors.AllThreatsPresentBlock;
@@ -10,9 +12,7 @@ import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.bl
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.counting.CountEdibleGhostsBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.counting.PillsRemainingBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.counting.PowerPillsRemainingBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.EdibleGhostTimeRemainingPOBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.EdibleTimesBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.TimeLeftBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.VariableDirectionCountJunctionOptionsBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.counts.VariableDirectionKStepJunctionCountBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.counts.VariableDirectionKStepPillCountBlock;
@@ -21,13 +21,15 @@ import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.di
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.VariableDirectionPowerPillDistanceBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.VariableDirectionSortedGhostDistanceBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.VariableDirectionSortedGhostEdibleTimeVsDistanceBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostDistanceBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostProbabilityBlock;
+//import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.specific.VariableDirectionSpecificGhostDistanceBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostEdibleBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostIncomingBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostTrappedBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSpecificGhostIncomingBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.util.MiscUtil;;
+import entrants.pacman.Squillyprice01.edu.southwestern.util.MiscUtil;
+//NEW PO STUFF
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostDistanceBlock;
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostProbabilityBlock;;
 
 /**
  * TODO: Describe
@@ -45,10 +47,7 @@ public class POCheckEachDirectionMediator extends VariableDirectionBlockLoadedIn
 
 		blocks.add(new BiasBlock());
 
-//		// Distances
-//		//TODO: implement pill model correctly for this to work
-		blocks.add(new VariableDirectionPillDistanceBlock(direction)); // ASSUME PILL MODEL INFLUENCES THESE IN GAMEFACADE
-//		//TODO: implement pill model and add support for tracking power pills for this to work
+		blocks.add(new VariableDirectionPillDistanceBlock(direction));
 		blocks.add(new VariableDirectionPowerPillDistanceBlock(direction));
 		
 		
@@ -63,10 +62,35 @@ public class POCheckEachDirectionMediator extends VariableDirectionBlockLoadedIn
 				
 				//if we are using the ghostModel
 				if(Parameters.parameters.booleanParameter("useGhostModel")) {
-					//this will keep track of the nearest four ghosts, but with probabilities, there can be many more than
-					//just four probable ghosts
-					blocks.add(new VariableDirectionSortedPossibleGhostDistanceBlock(i));
-					blocks.add(new VariableDirectionSortedPossibleGhostProbabilityBlock(i));
+//					// Split ghost sensors: edible and threat
+					boolean split = Parameters.parameters.booleanParameter("specificGhostEdibleThreatSplit");
+					if (split) {
+						
+							// Threat prox
+							blocks.add(new VariableDirectionSortedPossibleGhostDistanceBlock(i, true, false));
+							blocks.add(new VariableDirectionSortedPossibleGhostProbabilityBlock(i, true, false));
+							// Edible prox
+							blocks.add(new VariableDirectionSortedPossibleGhostDistanceBlock(i, false, true));
+							blocks.add(new VariableDirectionSortedPossibleGhostProbabilityBlock(i, false, true));
+							if (incoming) {
+								// Threat incoming
+								//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, false, false));
+								// Edible incoming
+								//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, true, false));
+							}
+							if (Parameters.parameters.booleanParameter("trapped")) {
+								// Threat trapped
+								//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, false, false));
+								// Edible trapped
+								//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, true, false));
+							}
+						
+					} else {
+						//this will keep track of the nearest four ghosts, but with probabilities, there can be many more than
+						//just four probable ghosts
+						blocks.add(new VariableDirectionSortedPossibleGhostDistanceBlock(i));
+						blocks.add(new VariableDirectionSortedPossibleGhostProbabilityBlock(i));
+					}
 				} else {
 					blocks.add(new VariableDirectionSortedGhostDistanceBlock(i));
 				}
@@ -83,30 +107,6 @@ public class POCheckEachDirectionMediator extends VariableDirectionBlockLoadedIn
 				}
 				if (!imprisonedWhileEdible) {
 					//blocks.add(new VariableDirectionSortedGhostEdibleBlock(i));
-				}
-			}
-		}
-		
-
-//		// Split ghost sensors: edible and threat
-		boolean split = Parameters.parameters.booleanParameter("specificGhostEdibleThreatSplit");
-		if (split) {
-			for (int i = 0; i < CommonConstants.numActiveGhosts; i++) {
-				// Threat prox
-				//blocks.add(new VariableDirectionSortedGhostDistanceBlock(-1, i, false, false));
-				// Edible prox
-				//blocks.add(new VariableDirectionSortedGhostDistanceBlock(-1, i, true, false));
-				if (incoming) {
-					// Threat incoming
-					//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, false, false));
-					// Edible incoming
-					//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, true, false));
-				}
-				if (Parameters.parameters.booleanParameter("trapped")) {
-					// Threat trapped
-					//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, false, false));
-					// Edible trapped
-					//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, true, false));
 				}
 			}
 		}
