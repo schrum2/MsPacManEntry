@@ -32,7 +32,9 @@ import pacman.controllers.PacmanController;
 public class MyPacMan extends PacmanController{
 
 	protected final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController oldpacman;
-	public static final String CHAMPION_FILE = "bestPacMan.xml";
+	//public static final String CHAMPION_FILE = "bestPacMan.xml";
+	// Fix: New networks crash! Make this network work, and then delete the file
+	public static final String CHAMPION_FILE = "3MTTest.xml";
 	public PillModel pillModel = null;
 	public Maze currentMaze;
 	public GhostPredictionsFast ghostPredictions = null;
