@@ -13,14 +13,14 @@ import pacman.game.Constants.MOVE;
  * @author pricew
  *
  */
-public class POProbableGhostStateModeSelector3Mod extends MsPacManModeSelector {
+public class POProbableGhostStateModeSelector2Mod extends MsPacManModeSelector {
 
 	public static final int NO_GHOSTS_VISIBLE = 0;
-	public static final int EDIBLE_GHOSTS_VISIBLE = 1;
-	public static final int THREAT_GHOSTS_VISIBLE = 2;
+	public static final int ANY_GHOSTS_VISIBLE = 1;
+
 	ArrayList<Quad<Integer, MOVE, Double, Double>> predictedGhostInfo;
 	
-	public POProbableGhostStateModeSelector3Mod() {
+	public POProbableGhostStateModeSelector2Mod() {
 		super();
 	}
 	
@@ -33,29 +33,8 @@ public class POProbableGhostStateModeSelector3Mod extends MsPacManModeSelector {
 			return NO_GHOSTS_VISIBLE;
 		}
 		
-		//if the only ghosts we have predicted are those we can see are edible
-		if(containsOnlyEdibleGhosts(predictedGhostInfo)) {
-			return EDIBLE_GHOSTS_VISIBLE;
-		}
+		return ANY_GHOSTS_VISIBLE;
 		
-		return THREAT_GHOSTS_VISIBLE;
-		
-	}
-	
-	/**
-	 * Takes an ArrayList of predicted ghost information and determines whether all preidcted ghosts are edible or not.
-	 * @param predictedGhostInfo
-	 * @return
-	 */
-	private boolean containsOnlyEdibleGhosts(ArrayList<Quad<Integer, MOVE, Double, Double>> predictedGhostInfo) {
-		//for each predicted ghost location
-		for(Quad<Integer, MOVE, Double, Double> q : predictedGhostInfo) {
-			//if the probability that it is edible is 0 or -1 (The ghost isn't edible)
-			if(q.t4 == 0 || q.t4 == -1) {
-				return false;
-			}
-		}
-		return true;
 	}
 
 	@Override
