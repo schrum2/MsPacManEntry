@@ -1,18 +1,17 @@
 package entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po;
 
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.EdibleGhostTimeRemainingPOBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.CommonConstants;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.TimeLeftBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.Parameters;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.VariableDirectionBlockLoadedInputOutputMediator;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.booleansensors.AllThreatsPresentBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.booleansensors.AnyEdibleGhostBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.booleansensors.BiasBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.booleansensors.veryclose.IsCloseToPowerPill;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.counting.CountEdibleGhostsBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.counting.PillsRemainingBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.counting.PowerPillsRemainingBlock;
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.EdibleGhostTimeRemainingPOBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.EdibleTimesBlock;
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.blocks.time.TimeLeftBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.VariableDirectionCountJunctionOptionsBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.counts.VariableDirectionKStepJunctionCountBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.counts.VariableDirectionKStepPillCountBlock;
@@ -20,16 +19,11 @@ import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.di
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.VariableDirectionPillDistanceBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.VariableDirectionPowerPillDistanceBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.VariableDirectionSortedGhostDistanceBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.VariableDirectionSortedGhostEdibleTimeVsDistanceBlock;
-//import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.specific.VariableDirectionSpecificGhostDistanceBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostEdibleBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostIncomingBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostTrappedBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSpecificGhostIncomingBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.util.MiscUtil;
 //NEW PO STUFF
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostDistanceBlock;
-import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostProbabilityBlock;;
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.po.VariableDirectionSortedPossibleGhostProbabilityBlock;
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.distance.ghosts.specific.po.VariableDirectionSortedPossibleGhostIncomingBlock;
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.specific.VariableDirectionSortedGhostTrappedBlock;;
 
 /**
  * TODO: Describe
@@ -74,15 +68,13 @@ public class POCheckEachDirectionMediator extends VariableDirectionBlockLoadedIn
 							blocks.add(new VariableDirectionSortedPossibleGhostProbabilityBlock(i, false, true));
 							if (incoming) {
 								// Threat incoming
-								//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, false, false));
+								blocks.add(new VariableDirectionSortedPossibleGhostIncomingBlock(i, true, false));
 								// Edible incoming
-								//blocks.add(new VariableDirectionSortedGhostIncomingBlock(i, true, false));
+								blocks.add(new VariableDirectionSortedPossibleGhostIncomingBlock(i, false, true));
 							}
 							if (Parameters.parameters.booleanParameter("trapped")) {
 								// Threat trapped
-								//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, false, false));
-								// Edible trapped
-								//blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, true, false));
+								blocks.add(new VariableDirectionSortedGhostTrappedBlock(i, false, false));
 							}
 						
 					} else {
