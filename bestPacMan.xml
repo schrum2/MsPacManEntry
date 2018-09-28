@@ -1,0 +1,2258 @@
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype" id="0">
+<field name="smallerGenotypes" type="boolean" value="false"/>
+<field name="nodes">
+<object type="java.util.ArrayList" id="1">
+<field name="elementData">
+<array type="java.lang.Object" length="251" id="2">
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="3">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-1"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="4">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-2"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="5">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-3"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="6">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-4"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="7">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-5"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="8">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-6"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="9">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-7"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="10">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-8"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="11">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-9"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="12">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-10"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="13">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-11"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="14">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-12"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="15">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-13"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="16">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-14"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="17">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-15"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="18">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-16"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="19">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-17"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="20">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-18"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="21">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-19"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="22">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-20"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="23">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-21"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="24">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-22"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="25">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-23"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="26">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-24"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="27">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-25"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="28">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-26"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="29">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-27"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="30">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-28"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="31">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-29"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="32">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-30"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="33">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-31"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="34">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-32"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="35">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-33"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="36">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-34"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="37">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-35"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="38">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-36"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="39">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-37"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="40">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-38"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="41">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-39"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="42">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-40"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="43">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-41"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="44">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-42"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="45">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="0"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-43"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="46">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="19011"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="47">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="18226"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="48">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="14970"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="49">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="12365"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="50">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="11607"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="51">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="10424"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="52">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="8723"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="53">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="8087"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="54">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="4576"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="55">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="3341"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="56">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="2377"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="57">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="1"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="1747"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="58">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="2"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-44"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="59">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="2"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-45"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullNodeGene" id="60">
+<field name="fromCombiningCrossover" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="ntype" type="int" value="2"/>
+<field name="ftype" type="int" value="1"/>
+<field name="bias" type="double" value="0.0"/>
+<field name="innovation" type="long" value="-46"/>
+</object>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+</array>
+</field>
+<field name="size" type="int" value="58"/>
+<field name="modCount" type="int" value="58"/>
+</object>
+</field>
+<field name="links">
+<object type="java.util.ArrayList" id="61">
+<field name="elementData">
+<array type="java.lang.Object" length="166" id="62">
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="63">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-43"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-3.0153945741183734"/>
+<field name="innovation" type="long" value="-176"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="64">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-42"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.43136503461432196"/>
+<field name="innovation" type="long" value="-175"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="65">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-41"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-3.375815446433917"/>
+<field name="innovation" type="long" value="-174"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="66">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-40"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-1.8055264428297817"/>
+<field name="innovation" type="long" value="-173"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="67">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-39"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.05314625775742837"/>
+<field name="innovation" type="long" value="-172"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="68">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-38"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-4.672537460105643"/>
+<field name="innovation" type="long" value="-171"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="69">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-37"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-1.407598950771206"/>
+<field name="innovation" type="long" value="-170"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="70">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-36"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-5.128728064224092"/>
+<field name="innovation" type="long" value="-169"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="71">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-35"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="5.048414432863559"/>
+<field name="innovation" type="long" value="-168"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="72">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-34"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.38681604467842123"/>
+<field name="innovation" type="long" value="-167"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="73">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-33"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.6578496737485466"/>
+<field name="innovation" type="long" value="-166"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="74">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-31"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.17975780082335513"/>
+<field name="innovation" type="long" value="-164"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="75">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-30"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.11165965713153891"/>
+<field name="innovation" type="long" value="-163"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="76">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-29"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="4.182220874187958"/>
+<field name="innovation" type="long" value="-162"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="77">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-28"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="5.304964610901045"/>
+<field name="innovation" type="long" value="-161"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="78">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-27"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.12962648557308165"/>
+<field name="innovation" type="long" value="-160"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="79">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-26"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="2.566388959441918"/>
+<field name="innovation" type="long" value="-159"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="80">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-25"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.8432144726233783"/>
+<field name="innovation" type="long" value="-158"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="81">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-24"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="2.632728182884169"/>
+<field name="innovation" type="long" value="-157"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="82">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-23"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.300794899005882"/>
+<field name="innovation" type="long" value="-156"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="83">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-22"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-2.5582353701266136"/>
+<field name="innovation" type="long" value="-155"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="84">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-21"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.6997656952361611"/>
+<field name="innovation" type="long" value="-154"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="85">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-20"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.1571549706969249"/>
+<field name="innovation" type="long" value="-153"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="86">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-19"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.10176552241616565"/>
+<field name="innovation" type="long" value="-152"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="87">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-18"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.4948061001798151"/>
+<field name="innovation" type="long" value="-151"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="88">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-17"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="1.5606219132973342"/>
+<field name="innovation" type="long" value="-150"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="89">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-16"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.6838323996823885"/>
+<field name="innovation" type="long" value="-149"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="90">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-15"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="2.804228740900602"/>
+<field name="innovation" type="long" value="-148"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="91">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-14"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.6022577696008875"/>
+<field name="innovation" type="long" value="-147"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="92">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-13"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-1.3361646505113143"/>
+<field name="innovation" type="long" value="-146"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="93">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-12"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.740498461360628"/>
+<field name="innovation" type="long" value="-145"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="94">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-11"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-1.1903906506996749"/>
+<field name="innovation" type="long" value="-144"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="95">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-10"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.5828843485980405"/>
+<field name="innovation" type="long" value="-143"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="96">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-9"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-1.1230829500627197"/>
+<field name="innovation" type="long" value="-142"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="97">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-8"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="0.9340668604133342"/>
+<field name="innovation" type="long" value="-141"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="98">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-7"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-4.8144720295417756"/>
+<field name="innovation" type="long" value="-140"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="99">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-6"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-1.8295536850346812"/>
+<field name="innovation" type="long" value="-139"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="100">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-5"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="4.203158891197479"/>
+<field name="innovation" type="long" value="-138"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="101">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-4"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.6561067081706066"/>
+<field name="innovation" type="long" value="-137"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="102">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-3"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-2.875536399946901"/>
+<field name="innovation" type="long" value="-136"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="103">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-2"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-5.536580059506403"/>
+<field name="innovation" type="long" value="-135"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="104">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-1"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="4.918990744840539"/>
+<field name="innovation" type="long" value="-134"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="105">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-43"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="3.3498837045321928"/>
+<field name="innovation" type="long" value="-133"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="106">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-42"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.4663617865116601"/>
+<field name="innovation" type="long" value="-132"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="107">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-41"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.7922897091257469"/>
+<field name="innovation" type="long" value="-131"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="108">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-40"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="2.860835901738678"/>
+<field name="innovation" type="long" value="-130"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="109">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-39"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-1.605130288500085"/>
+<field name="innovation" type="long" value="-129"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="110">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-38"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="2.338195278275874"/>
+<field name="innovation" type="long" value="-128"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="111">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-37"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.3278584786690959"/>
+<field name="innovation" type="long" value="-127"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="112">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-36"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="1.4481131435381729"/>
+<field name="innovation" type="long" value="-126"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="113">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-34"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-1.7361341304513376"/>
+<field name="innovation" type="long" value="-124"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="114">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-33"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.7970096530633023"/>
+<field name="innovation" type="long" value="-123"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="115">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-32"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-4.020998873165652"/>
+<field name="innovation" type="long" value="-122"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="116">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-31"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.5042978290430421"/>
+<field name="innovation" type="long" value="-121"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="117">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-30"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="2.0526073996977905"/>
+<field name="innovation" type="long" value="-120"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="118">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-29"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.5397673162781433"/>
+<field name="innovation" type="long" value="-119"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="119">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-28"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="1.7579552653292718"/>
+<field name="innovation" type="long" value="-118"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="120">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-27"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="1.5302108380729451"/>
+<field name="innovation" type="long" value="-117"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="121">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-26"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-2.0724082978899308"/>
+<field name="innovation" type="long" value="-116"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="122">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-25"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.9948897280292642"/>
+<field name="innovation" type="long" value="-115"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="123">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-24"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.7981257238880224"/>
+<field name="innovation" type="long" value="-114"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="124">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-23"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.777467854508207"/>
+<field name="innovation" type="long" value="-113"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="125">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-22"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-3.3300667349212976"/>
+<field name="innovation" type="long" value="-112"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="126">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-21"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-3.9956445486445546"/>
+<field name="innovation" type="long" value="-111"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="127">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-20"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.13773267836081504"/>
+<field name="innovation" type="long" value="-110"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="128">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-19"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.6433399010654263"/>
+<field name="innovation" type="long" value="-109"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="129">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-18"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-1.8433575148283805"/>
+<field name="innovation" type="long" value="-108"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="130">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-17"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.24183268469306532"/>
+<field name="innovation" type="long" value="-107"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="131">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-16"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.7496079470670439"/>
+<field name="innovation" type="long" value="-106"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="132">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-15"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="2.590734279455818"/>
+<field name="innovation" type="long" value="-105"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="133">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-14"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-1.0225465135069156"/>
+<field name="innovation" type="long" value="-104"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="134">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-13"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-2.4281162654230006"/>
+<field name="innovation" type="long" value="-103"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="135">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-12"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.249216155899456"/>
+<field name="innovation" type="long" value="-102"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="136">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-11"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.13942818720243283"/>
+<field name="innovation" type="long" value="-101"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="137">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-10"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="1.4970579941923021"/>
+<field name="innovation" type="long" value="-100"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="138">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-8"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="1.9369719378222068"/>
+<field name="innovation" type="long" value="-98"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="139">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-7"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-6.089381636811234"/>
+<field name="innovation" type="long" value="-97"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="140">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-6"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-6.34827270141222"/>
+<field name="innovation" type="long" value="-96"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="141">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-5"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-1.2794552380678523"/>
+<field name="innovation" type="long" value="-95"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="142">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-3"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-1.129004593463893"/>
+<field name="innovation" type="long" value="-93"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="143">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-2"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.9326566772678863"/>
+<field name="innovation" type="long" value="-92"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="144">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-43"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="5.137479431634864"/>
+<field name="innovation" type="long" value="-90"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="145">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-42"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="1.5003198567354383"/>
+<field name="innovation" type="long" value="-89"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="146">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-41"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="2.6636235807622066"/>
+<field name="innovation" type="long" value="-88"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="147">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-40"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="2.4150221594124544"/>
+<field name="innovation" type="long" value="-87"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="148">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-39"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="1.214118282180582"/>
+<field name="innovation" type="long" value="-86"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="149">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-38"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="1.1524156638431"/>
+<field name="innovation" type="long" value="-85"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="150">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-37"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.27368795574808025"/>
+<field name="innovation" type="long" value="-84"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="151">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-36"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.02136718881865249"/>
+<field name="innovation" type="long" value="-83"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="152">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-34"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.07004396439456073"/>
+<field name="innovation" type="long" value="-81"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="153">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-33"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="0.24907095446613026"/>
+<field name="innovation" type="long" value="-80"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="154">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-31"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-2.4764887014376153"/>
+<field name="innovation" type="long" value="-78"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="155">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-30"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="0.9129314900941021"/>
+<field name="innovation" type="long" value="-77"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="156">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-29"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="1.392124636185489"/>
+<field name="innovation" type="long" value="-76"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="157">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-27"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="4.779761157956334"/>
+<field name="innovation" type="long" value="-74"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="158">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-26"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.688656055477733"/>
+<field name="innovation" type="long" value="-73"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="159">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-25"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="0.9633374482044488"/>
+<field name="innovation" type="long" value="-72"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="160">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-24"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.5527919798778629"/>
+<field name="innovation" type="long" value="-71"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="161">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-23"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="3.121893145296239"/>
+<field name="innovation" type="long" value="-70"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="162">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-22"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="0.15852418850381855"/>
+<field name="innovation" type="long" value="-69"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="163">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-21"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.4958153476808239"/>
+<field name="innovation" type="long" value="-68"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="164">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-19"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.732689863386069"/>
+<field name="innovation" type="long" value="-66"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="165">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-18"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="2.924705721049623"/>
+<field name="innovation" type="long" value="-65"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="166">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-17"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.3953806232880481"/>
+<field name="innovation" type="long" value="-64"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="167">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-16"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.9407172695464208"/>
+<field name="innovation" type="long" value="-63"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="168">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-15"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="2.05517494385375"/>
+<field name="innovation" type="long" value="-62"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="169">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-14"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="2.511599094796278"/>
+<field name="innovation" type="long" value="-61"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="170">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-13"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-3.898129913493867"/>
+<field name="innovation" type="long" value="-60"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="171">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-11"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-4.0215733437739"/>
+<field name="innovation" type="long" value="-58"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="172">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-10"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="2.053092036375965"/>
+<field name="innovation" type="long" value="-57"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="173">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-8"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="1.4862446315547977"/>
+<field name="innovation" type="long" value="-55"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="174">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-7"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="0.6663370467975722"/>
+<field name="innovation" type="long" value="-54"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="175">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-6"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-1.6727156647039705"/>
+<field name="innovation" type="long" value="-53"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="176">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-5"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.7570564406024934"/>
+<field name="innovation" type="long" value="-52"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="177">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-4"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="0.014345172793714944"/>
+<field name="innovation" type="long" value="-51"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="178">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-3"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.0806561295046852"/>
+<field name="innovation" type="long" value="-50"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="179">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-2"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-2.493801376631821"/>
+<field name="innovation" type="long" value="-49"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="180">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-1"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="1.3584353402672253"/>
+<field name="innovation" type="long" value="-48"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="181">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-35"/>
+<field name="targetInnovation" type="long" value="1747"/>
+<field name="weight" type="double" value="1.4252041402114126"/>
+<field name="innovation" type="long" value="1748"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="182">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="1747"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.5136512796428535"/>
+<field name="innovation" type="long" value="1749"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="183">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-12"/>
+<field name="targetInnovation" type="long" value="2377"/>
+<field name="weight" type="double" value="-0.4428278369428487"/>
+<field name="innovation" type="long" value="2378"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="184">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="2377"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.41051488409768205"/>
+<field name="innovation" type="long" value="2379"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="185">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-19"/>
+<field name="targetInnovation" type="long" value="1747"/>
+<field name="weight" type="double" value="-0.49915183486461856"/>
+<field name="innovation" type="long" value="2380"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="186">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-32"/>
+<field name="targetInnovation" type="long" value="3341"/>
+<field name="weight" type="double" value="-4.485325950706087"/>
+<field name="innovation" type="long" value="3342"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="187">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="3341"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-3.161038737020328"/>
+<field name="innovation" type="long" value="3343"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="188">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-28"/>
+<field name="targetInnovation" type="long" value="4576"/>
+<field name="weight" type="double" value="0.8532958248579279"/>
+<field name="innovation" type="long" value="4577"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="189">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="4576"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="1.2829532759747182"/>
+<field name="innovation" type="long" value="4578"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="190">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-23"/>
+<field name="targetInnovation" type="long" value="3341"/>
+<field name="weight" type="double" value="0.9263221057200797"/>
+<field name="innovation" type="long" value="6333"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="191">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-4"/>
+<field name="targetInnovation" type="long" value="8087"/>
+<field name="weight" type="double" value="-0.29294939096143024"/>
+<field name="innovation" type="long" value="8088"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="192">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="8087"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="0.010595830690222185"/>
+<field name="innovation" type="long" value="8089"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="193">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-32"/>
+<field name="targetInnovation" type="long" value="8723"/>
+<field name="weight" type="double" value="-0.019435889509851534"/>
+<field name="innovation" type="long" value="8724"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="194">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="8723"/>
+<field name="targetInnovation" type="long" value="-46"/>
+<field name="weight" type="double" value="-0.02436990120115734"/>
+<field name="innovation" type="long" value="8725"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="195">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-9"/>
+<field name="targetInnovation" type="long" value="10424"/>
+<field name="weight" type="double" value="2.110439180171666"/>
+<field name="innovation" type="long" value="10425"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="196">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="10424"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.3291696785845417"/>
+<field name="innovation" type="long" value="10426"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="197">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-34"/>
+<field name="targetInnovation" type="long" value="11607"/>
+<field name="weight" type="double" value="0.6428640364430289"/>
+<field name="innovation" type="long" value="11608"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="198">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="11607"/>
+<field name="targetInnovation" type="long" value="1747"/>
+<field name="weight" type="double" value="-0.9692901952612338"/>
+<field name="innovation" type="long" value="11609"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="199">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-28"/>
+<field name="targetInnovation" type="long" value="2377"/>
+<field name="weight" type="double" value="1.972033393864922"/>
+<field name="innovation" type="long" value="11877"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="200">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-20"/>
+<field name="targetInnovation" type="long" value="12365"/>
+<field name="weight" type="double" value="0.4753344110577648"/>
+<field name="innovation" type="long" value="12366"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="201">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="12365"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="0.09221261408354309"/>
+<field name="innovation" type="long" value="12367"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="202">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-40"/>
+<field name="targetInnovation" type="long" value="1747"/>
+<field name="weight" type="double" value="1.0071710262349765"/>
+<field name="innovation" type="long" value="13401"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="203">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-6"/>
+<field name="targetInnovation" type="long" value="11607"/>
+<field name="weight" type="double" value="1.314437954630179"/>
+<field name="innovation" type="long" value="14092"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="204">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-9"/>
+<field name="targetInnovation" type="long" value="14970"/>
+<field name="weight" type="double" value="-0.3316300426999602"/>
+<field name="innovation" type="long" value="14971"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="205">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="14970"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.07239032228800668"/>
+<field name="innovation" type="long" value="14972"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="206">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-12"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.1862142834108227"/>
+<field name="innovation" type="long" value="15214"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="207">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-37"/>
+<field name="targetInnovation" type="long" value="14970"/>
+<field name="weight" type="double" value="-0.4869770818675545"/>
+<field name="innovation" type="long" value="15368"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="208">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-18"/>
+<field name="targetInnovation" type="long" value="8723"/>
+<field name="weight" type="double" value="0.13195544991268165"/>
+<field name="innovation" type="long" value="16795"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="209">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="8723"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.3996422980324795"/>
+<field name="innovation" type="long" value="17078"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="210">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-1"/>
+<field name="targetInnovation" type="long" value="18226"/>
+<field name="weight" type="double" value="0.7365825793523781"/>
+<field name="innovation" type="long" value="18227"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="211">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="18226"/>
+<field name="targetInnovation" type="long" value="-45"/>
+<field name="weight" type="double" value="-0.5296175254462705"/>
+<field name="innovation" type="long" value="18228"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="212">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-2"/>
+<field name="targetInnovation" type="long" value="2377"/>
+<field name="weight" type="double" value="-0.07552508379467238"/>
+<field name="innovation" type="long" value="18344"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="213">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-10"/>
+<field name="targetInnovation" type="long" value="8087"/>
+<field name="weight" type="double" value="-0.9065632743385876"/>
+<field name="innovation" type="long" value="18693"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="214">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-35"/>
+<field name="targetInnovation" type="long" value="19011"/>
+<field name="weight" type="double" value="0.8310107408020837"/>
+<field name="innovation" type="long" value="19012"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="215">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="19011"/>
+<field name="targetInnovation" type="long" value="-44"/>
+<field name="weight" type="double" value="-0.029425414602614497"/>
+<field name="innovation" type="long" value="19013"/>
+</object>
+<object type="edu.southwestern.evolution.genotypes.TWEANNGenotype$FullLinkGene" id="216">
+<field name="active" type="boolean" value="true"/>
+<field name="recurrent" type="boolean" value="false"/>
+<field name="frozen" type="boolean" value="false"/>
+<field name="moduleSource" type="int" value="-1"/>
+<field name="sourceInnovation" type="long" value="-43"/>
+<field name="targetInnovation" type="long" value="10424"/>
+<field name="weight" type="double" value="0.762186844299295"/>
+<field name="innovation" type="long" value="19706"/>
+</object>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+<object/>
+</array>
+</field>
+<field name="size" type="int" value="154"/>
+<field name="modCount" type="int" value="154"/>
+</object>
+</field>
+<field name="numIn" type="int" value="43"/>
+<field name="numOut" type="int" value="3"/>
+<field name="numModules" type="int" value="3"/>
+<field name="neuronsPerModule" type="int" value="1"/>
+<field name="standardMultitask" type="boolean" value="true"/>
+<field name="hierarchicalMultitask" type="boolean" value="false"/>
+<field name="moduleAssociations">
+<array type="int" length="3" id="217">0 0 0</array>
+</field>
+<field name="moduleUsage">
+<array type="int" length="3" id="218">419 154 29</array>
+</field>
+<field name="id" type="long" value="20033"/>
+<field name="archetypeIndex" type="int" value="0"/>
+<field name="parents">
+<object type="java.util.LinkedList" id="219">
+<field name="size" type="int" value="0"/>
+<field name="first">
+<object/>
+</field>
+<field name="last">
+<object/>
+</field>
+<field name="modCount" type="int" value="0"/>
+</object>
+</field>
+</object>

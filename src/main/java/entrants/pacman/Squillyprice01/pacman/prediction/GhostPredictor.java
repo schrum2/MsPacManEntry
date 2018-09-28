@@ -84,7 +84,7 @@ public class GhostPredictor {
         if(ghostPredictions.size() <= depth){
             for(int i = ghostPredictions.size(); i <= depth; i++){
                 GhostPredictionsFast temp = ghostPredictions.get(i - 1).copy();
-                temp.update();
+                temp.update(null); //This is a band-aid but we never use this method anyway
                 ghostPredictions.add(temp);
             }
         }
@@ -97,7 +97,7 @@ public class GhostPredictor {
         if(ghostPredictions.size() <= depth){
             for(int i = ghostPredictions.size(); i <= depth; i++){
                 GhostPredictionsFast temp = ghostPredictions.get(i - 1).copy();
-                temp.update();
+                temp.update(null); //This is a band-aid but we never use this method anyway
                 ghostPredictions.add(temp);
             }
         }

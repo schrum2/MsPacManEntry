@@ -3394,13 +3394,17 @@ public class GameFacade {
 		timeOfLastEatenPowerPill = time;
 	}
 	
-	public double calculateRemainingPillBuffTime() {
-		
-		int currentLevelTime = getCurrentLevelTime();
-		int timeOfLastPowerPill = getTimeOfLastPowerPillEaten();
+	public int calculateRawRemainingPillBuffTime() {		
 		int levelCount = getCurrentLevel();
 		//The edible time of level "levelcount"
-		double newEdibleTime = (int) (pacman.game.Constants.EDIBLE_TIME * (Math.pow(pacman.game.Constants.EDIBLE_TIME_REDUCTION, levelCount % pacman.game.Constants.LEVEL_RESET_REDUCTION)));	
+		int newEdibleTime = (int)(pacman.game.Constants.EDIBLE_TIME * (Math.pow(pacman.game.Constants.EDIBLE_TIME_REDUCTION, levelCount % pacman.game.Constants.LEVEL_RESET_REDUCTION)));	
+		return newEdibleTime;
+	}	
+		
+	public double calculateRemainingPillBuffTime() {
+		int currentLevelTime = getCurrentLevelTime();
+		int timeOfLastPowerPill = getTimeOfLastPowerPillEaten();
+		double newEdibleTime = calculateRawRemainingPillBuffTime();
 		int delta;
 		
 		//If we havent eaten a pill yet, we don't want to use -1
@@ -3421,5 +3425,6 @@ public class GameFacade {
 			return (newEdibleTime - delta) / pacman.game.Constants.EDIBLE_TIME;
 		}
 	}
+
 	
 }
