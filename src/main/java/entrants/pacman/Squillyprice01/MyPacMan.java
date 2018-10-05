@@ -59,7 +59,8 @@ public class MyPacMan extends PacmanController{
 
     // This is Piers' fix
 	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(String file) {
-		Parameters.initializeParameterCollections("io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
+		System.out.println("Initialize controller");
+		Parameters.initializeParameterCollections("io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true modePheremone:true observePacManPO:true".split(" "));
 		//String myPacManPath;
 		//myPacManPath = MyPacMan.class.getResource(file).getPath();
 		MMNEAT.loadClasses();
@@ -217,9 +218,9 @@ public class MyPacMan extends PacmanController{
 
     //determines whether or not to use this classes draw method
 	public boolean enabled() {
-//		if(Parameters.parameters.booleanParameter("drawGhostPredictions") || Parameters.parameters.booleanParameter("drawPillModel")) {
-//			return true;
-//		}
+		if(Parameters.parameters.booleanParameter("drawGhostPredictions") || Parameters.parameters.booleanParameter("drawPillModel")) {
+			return true;
+		}
 		return false;
 	}
 	

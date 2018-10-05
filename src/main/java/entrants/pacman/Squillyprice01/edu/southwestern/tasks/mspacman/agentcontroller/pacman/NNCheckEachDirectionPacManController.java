@@ -151,6 +151,7 @@ public class NNCheckEachDirectionPacManController extends NNDirectionalPacManCon
 			ms.giveGame(gf);
 			mode = ms.mode();
 		}
+		System.out.println("Module: "+mode);
 		// Used by ensemble arbitrators: Assume one output per mode
 		double[][] fullPreferences = new double[this.directionalNetworks[0].numOutputs()][neighbors.length];
 		for (int i = 0; i < neighbors.length; i++) {
