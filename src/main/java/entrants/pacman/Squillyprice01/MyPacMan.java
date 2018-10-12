@@ -21,6 +21,7 @@ import entrants.pacman.Squillyprice01.pacman.prediction.fast.GhostPredictionsFas
 import entrants.pacman.Squillyprice01.wox.serial.Easy;
 import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
+import pacman.game.Drawable;
 import pacman.game.internal.Maze;
 import pacman.game.Game;
 import pacman.controllers.PacmanController;
@@ -29,7 +30,7 @@ import pacman.controllers.PacmanController;
  * @author pricew
  *
  */
-public class MyPacMan extends PacmanController{
+public class MyPacMan extends PacmanController implements Drawable{
 
 	protected final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController oldpacman;
 	//public static final String CHAMPION_FILE = "bestPacMan.xml";
@@ -59,9 +60,7 @@ public class MyPacMan extends PacmanController{
 
     // This is Piers' fix
 	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(String file) {
-		Parameters.initializeParameterCollections("io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
-		//String myPacManPath;
-		//myPacManPath = MyPacMan.class.getResource(file).getPath();
+		Parameters.initializeParameterCollections("drawGhostPredictions:true io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
 		MMNEAT.loadClasses();
 		return (NewPacManController) (new NNMsPacMan<TWEANN>(((TWEANNGenotype) Easy.load(file))).controller);
 	}
@@ -135,7 +134,6 @@ public class MyPacMan extends PacmanController{
 	//credit to piers InformationSetMCTSPacMan.java
 	//draws the red blocks representing a predicted ghost location
     public void draw(Graphics2D graphics) {
-    	   	
     	//Draw Pill Model based on parameter
     	if(Parameters.parameters.booleanParameter("drawPillModel")) {
     		
@@ -217,9 +215,9 @@ public class MyPacMan extends PacmanController{
 
     //determines whether or not to use this classes draw method
 	public boolean enabled() {
-//		if(Parameters.parameters.booleanParameter("drawGhostPredictions") || Parameters.parameters.booleanParameter("drawPillModel")) {
-//			return true;
-//		}
+		if(Parameters.parameters.booleanParameter("drawGhostPredictions") || Parameters.parameters.booleanParameter("drawPillModel")) {
+			return true;
+		}
 		return false;
 	}
 	
@@ -332,7 +330,6 @@ public class MyPacMan extends PacmanController{
 	            	try {
 	            		ghostPredictions.observe(ghost, ghostIndex, informedGameFacade.poG.getGhostLastMoveMade(ghost), informedGameFacade);
 	            	} catch (java.lang.ArrayIndexOutOfBoundsException e) {
-	            		//System.out.println(e.toString() + " in OldToNewPacManIntermediaryController.updateModels()");
 	            		break;
 	            	}
 	                ghostEdibleTime[ghost.ordinal()] = game.getGhostEdibleTime(ghost);
