@@ -33,6 +33,8 @@ public class Main {
         controllers.put(GHOST.PINKY, new Paul());
         controllers.put(GHOST.SUE, new John());
         
+        
+
         executor.runGameTimed(badboy, new MASController(controllers));
     }
 }
