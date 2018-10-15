@@ -10,6 +10,7 @@ import entrants.pacman.Squillyprice01.MyPacMan;
 import pacman.Executor;
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
+import pacman.examples.StarterGhost.POGhost;
 import pacman.game.Constants.GHOST;
 
 /**
@@ -34,10 +35,10 @@ public class Main {
 
             MyPacMan badboy = new MyPacMan();
             
-            controllers.put(GHOST.INKY, new George());
-            controllers.put(GHOST.BLINKY, new Ringo());
-            controllers.put(GHOST.PINKY, new Paul());
-            controllers.put(GHOST.SUE, new John());
+            controllers.put(GHOST.INKY, new POGhost(GHOST.INKY));
+            controllers.put(GHOST.BLINKY, new POGhost(GHOST.BLINKY));
+            controllers.put(GHOST.PINKY, new POGhost(GHOST.PINKY));
+            controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
             
             executor.runGameTimed(badboy, new MASController(controllers));
             
@@ -52,10 +53,10 @@ public class Main {
 
 	        MyPacMan badboy = new MyPacMan();
 	        
-	        controllers.put(GHOST.INKY, new George());
-	        controllers.put(GHOST.BLINKY, new Ringo());
-	        controllers.put(GHOST.PINKY, new Paul());
-	        controllers.put(GHOST.SUE, new John());
+	        controllers.put(GHOST.INKY, new POGhost(GHOST.INKY));
+	        controllers.put(GHOST.BLINKY, new POGhost(GHOST.BLINKY));
+	        controllers.put(GHOST.PINKY, new POGhost(GHOST.PINKY));
+	        controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
 	        
 	        executor.runGameTimed(badboy, new MASController(controllers));
     	}
