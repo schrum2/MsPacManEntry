@@ -7,3 +7,4 @@ http://www.pacmanvghosts.co.uk/results.html
 Networks can be generated using the MM-NEAT library. XML files representing the network are placed in the main directory. The code will use a network named "bestPacMan.xml". To run the submission for testing purposes, execute the file ...src\main\java\pacman\main.Main.
 
 # Screenshots
+![screenshot 46](https://user-images.githubusercontent.com/15305479/46963246-b8c79b00-d06a-11e8-8b1a-43888be2249d.png)
