@@ -26,13 +26,7 @@ public class StatsRun {
         controllers.put(GHOST.PINKY, new POGhost(GHOST.PINKY));
         controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
         
-        //executor.runGameTimed(badboy, new MASController(controllers));
-        
-        System.out.println("");
-        for(int i = 0; i < 10; i++) {        
-            Stats foo = executor.runGameTimedSpeedOptimised(badboy, new MASController(controllers), false, "run" + i);
-	        System.out.print(foo.getDescription() + " " + foo.getAverage() + "\n");
-	        badboy.clearStoredInformation();
-        }
+        Stats[] stats = executor.runExperiment(badboy, new MASController(controllers), 100, "post evals");
+        System.out.println(stats[0]);
 	}
 }
