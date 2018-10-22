@@ -7,7 +7,7 @@ http://www.pacmanvghosts.co.uk/results.html
 The agent has a model for pills and a model for ghosts. The pill model allows the agent to path to pills that is cannot see. The ghost model keeps track of where ghosts might possibbly be, as well as if they are edible or are threats. The agent also uses a number of sensors of the game state as input to it's network. This process is described in the paper.
 
 # Usage
-Networks can be generated using the MM-NEAT library. XML files representing the network are placed in the main directory. The code will use a network named "bestPacMan.xml". To run the submission for testing purposes, execute the file ...src\main\java\pacman\main.Main. After making any changes to the source, run "Maven -u install" in the home directory to rebuild the library.
+Networks can be generated using the MM-NEAT library. XML files representing the network are placed in the main directory. The code will use a network named "bestPacMan.xml". To run the submission for testing purposes, execute the file ...src\main\java\pacman\main.Main. After making any changes to the source, run "mvn -u install" in the home directory to rebuild the library. This requires having Maven on your system.
 
 # Paper
 The paper describing the agent is a WIP. More to come soon!
