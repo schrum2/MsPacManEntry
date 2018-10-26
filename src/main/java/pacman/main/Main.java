@@ -2,10 +2,6 @@ package pacman.main;
 
 import java.util.EnumMap;
 
-import entrants.ghosts.Squillyprice01.George;
-import entrants.ghosts.Squillyprice01.John;
-import entrants.ghosts.Squillyprice01.Paul;
-import entrants.ghosts.Squillyprice01.Ringo;
 import entrants.pacman.Squillyprice01.MyPacMan;
 import pacman.Executor;
 import pacman.controllers.IndividualGhostController;

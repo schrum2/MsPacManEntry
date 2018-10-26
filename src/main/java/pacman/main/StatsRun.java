@@ -26,9 +26,6 @@ public class StatsRun {
         controllers.put(GHOST.PINKY, new POGhost(GHOST.PINKY));
         controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
 
-        System.out.println("EXITING FROM STATSRUN");
-        if(true) System.exit(1);
-        
         Stats[] stats = executor.runExperiment(badboy, new MASController(controllers), 10, "post evals");
         System.out.println(stats[0]);
 	}

@@ -548,6 +548,7 @@ public class MMNEAT {
 			// neuron net instead
 		}
 		networkOutputs *= multitaskModes;
+		System.out.println("Networks will have " + networkInputs + " inputs and " + networkOutputs + " outputs.");
 
 		lowerInputBounds = new double[networkInputs];
 		upperInputBounds = new double[networkInputs];
