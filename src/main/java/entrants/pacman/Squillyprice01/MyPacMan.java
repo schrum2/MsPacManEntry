@@ -50,14 +50,6 @@ public class MyPacMan extends PacmanController implements Drawable{
 	public boolean useGhostModel = Parameters.parameters.booleanParameter("useGhostModel");
 	public final double GHOST_THRESHOLD = Parameters.parameters.doubleParameter("probabilityThreshold");
 	
-//	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(String file) {
-//		Parameters.initializeParameterCollections("io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
-//		String myPacManPath;
-//		myPacManPath = MyPacMan.class.getResource(file).getPath();
-//		MMNEAT.loadClasses();
-//		return (NewPacManController) (new NNMsPacMan<TWEANN>(((TWEANNGenotype) Easy.load(myPacManPath))).controller);
-//	}
-
     // This is Piers' fix
 	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(String file) {
 		Parameters.initializeParameterCollections("drawGhostPredictions:true io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
