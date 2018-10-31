@@ -35,7 +35,7 @@ public class ConvertNetwork {
 		Scanner s = new Scanner(fds);		
 		String text = new String();
 		while(s.hasNextLine()) {
-			text += s.nextLine();
+			text += s.nextLine() + "\n";
 		}
 		s.close();
 		text = convert(text);
