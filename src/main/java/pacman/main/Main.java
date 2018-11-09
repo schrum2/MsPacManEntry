@@ -55,6 +55,8 @@ public class Main {
 	        controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
 	        
 	        executor.runGameTimed(badboy, new MASController(controllers));
+	        System.out.println("Evaluation over");
+	        
     	}
     }
 }
