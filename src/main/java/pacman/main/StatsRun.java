@@ -26,7 +26,7 @@ public class StatsRun {
         controllers.put(GHOST.PINKY, new POGhost(GHOST.PINKY));
         controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
 
-        Stats[] stats = executor.runExperiment(badboy, new MASController(controllers), 10, "post evals");
+        Stats[] stats = executor.runExperiment(badboy, new MASController(controllers), 100, "post evals");
         System.out.println(stats[0]);
 	}
 }

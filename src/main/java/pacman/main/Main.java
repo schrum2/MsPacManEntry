@@ -23,7 +23,7 @@ public class Main {
     	if(debug) {
     		CustomExecutor executor = new CustomExecutor.Builder()
 	    			.setVisual(true)
-	              	.setTickLimit(4000)
+	              	.setTickLimit(8000)
 	    			.setPO(true)
 	              	.build();
     		
@@ -37,7 +37,7 @@ public class Main {
             controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
             
             executor.runGameTimed(badboy, new MASController(controllers));
-            
+	        System.out.println("Evaluation over");
     	} else {
     		
 	        Executor executor = new Executor.Builder()
