@@ -42,7 +42,7 @@ public class Main {
     		
 	        Executor executor = new Executor.Builder()
 	        		.setVisual(true)
-	        	  	.setTickLimit(4000)
+	        	  	.setTickLimit(8000)
 	        	  	.build();		
 	        
 	    	EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);

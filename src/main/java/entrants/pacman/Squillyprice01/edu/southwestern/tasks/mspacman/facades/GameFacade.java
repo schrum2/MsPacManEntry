@@ -19,7 +19,6 @@ import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.ghosts.Gho
 import entrants.pacman.Squillyprice01.edu.southwestern.util.datastructures.ArrayUtil;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.datastructures.Pair;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.datastructures.Quad;
-import entrants.pacman.Squillyprice01.edu.southwestern.util.datastructures.Triple;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.stats.StatisticsUtilities;
 import entrants.pacman.Squillyprice01.pacman.prediction.GhostLocation;
 import entrants.pacman.Squillyprice01.pacman.prediction.PillModel;
@@ -65,6 +64,7 @@ public class GameFacade {
 		case 3:
 			return entrants.pacman.Squillyprice01.oldpacman.game.Constants.MOVE.LEFT;
 		default:
+			System.out.println("ERROR in indexToMove, index="+index);
 			return null;
 		}
 	}

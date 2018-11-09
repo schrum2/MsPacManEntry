@@ -89,6 +89,8 @@ public class MyPacMan extends PacmanController implements Drawable{
 		GameFacade informedGameFacade = updateModels(game, timeDue);
 		//get the action to be made
 		int action = oldpacman.getAction(informedGameFacade, timeDue);
+		// If the game is over, then the action is nothing.
+		if(action == NewPacManController.END_GAME_CODE) return MOVE.NEUTRAL;
 		//converts an action to an entrants.pacman.Squillyprice01.oldpacman move to a popacman move to be returned
 		return moveConverterOldToPO(GameFacade.indexToMove(action));
 		

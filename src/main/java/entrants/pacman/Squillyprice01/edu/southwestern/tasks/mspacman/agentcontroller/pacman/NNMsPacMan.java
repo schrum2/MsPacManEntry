@@ -3,9 +3,7 @@ package entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.agentcont
 import entrants.pacman.Squillyprice01.edu.southwestern.MMNEAT.MMNEAT;
 import entrants.pacman.Squillyprice01.edu.southwestern.evolution.Organism;
 import entrants.pacman.Squillyprice01.edu.southwestern.evolution.genotypes.Genotype;
-import entrants.pacman.Squillyprice01.edu.southwestern.evolution.genotypes.TWEANNGenotype;
 import entrants.pacman.Squillyprice01.edu.southwestern.networks.Network;
-import entrants.pacman.Squillyprice01.edu.southwestern.networks.TWEANN;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.CommonConstants;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.Parameters;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.ActionBlockLoadedInputOutputMediator;
@@ -37,7 +35,6 @@ public class NNMsPacMan<T extends Network> extends Organism<T> {
 	 * 
 	 * @param genotype
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public NNMsPacMan(Genotype<T> genotype) {
 		super(genotype);
 		if(CommonConstants.hyperNEAT) {
