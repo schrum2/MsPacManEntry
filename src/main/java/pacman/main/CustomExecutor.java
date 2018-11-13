@@ -305,10 +305,23 @@ public class CustomExecutor {
      * @param delay            The delay between time-steps
      */
     public int runGame(Controller<MOVE> pacManController, MASController ghostController, int delay) {
+    	return runGame(pacManController, ghostController, delay, false);
+    }
+    
+    /**
+     * Same as above, but the new secondViewer allows for viewing PO and non-PO visualizations side by side
+     * @param pacManController
+     * @param ghostController
+     * @param delay
+     * @param secondViewer
+     * @return
+     */
+    public int runGame(Controller<MOVE> pacManController, MASController ghostController, int delay, boolean secondViewer) {
         Game game = setupGame();
 
         GameView gv = (visuals) ? setupGameView(pacManController, game) : null;
-
+        GameView gv2 = (visuals && secondViewer) ? setupGameView(pacManController, game) : null;
+        
         MASController ghostControllerCopy = ghostController.copy(ghostPO);
 
         while (!game.gameOver()) {
@@ -328,6 +341,11 @@ public class CustomExecutor {
             if (visuals) {
             	gv.setPO(setPO);
                 gv.repaint();
+                // Added to allow PO and non-PO viewing side by side
+                if(secondViewer) {
+                	gv2.setPO(!setPO);
+                	gv2.repaint();
+                }
             }
         }
         System.out.println(game.getScore());
@@ -364,9 +382,20 @@ public class CustomExecutor {
      * @param ghostController  The Ghosts controller
      */
     public void runGameTimed(Controller<MOVE> pacManController, MASController ghostController) {
+    	runGameTimed(pacManController, ghostController, false);
+    }
+    /**
+     * Same as above, but allows PO and non-PO viewing side by side
+     * @param pacManController
+     * @param ghostController
+     * @param secondViewer
+     */
+    public void runGameTimed(Controller<MOVE> pacManController, MASController ghostController, boolean secondViewer) {
         Game game = setupGame();
 
         GameView gv = (visuals) ? setupGameView(pacManController, game) : null;
+        GameView gv2 = (visuals && secondViewer) ? setupGameView(pacManController, game) : null;
+
         MASController ghostControllerCopy = ghostController.copy(ghostPO);
 
         new Thread(pacManController).start();
@@ -391,6 +420,11 @@ public class CustomExecutor {
             if (visuals) {
             	gv.setPO(setPO);
                 gv.repaint();
+                // Allow side by side viewing
+                if(secondViewer) {
+                	gv2.setPO(!setPO);
+                	gv2.repaint();
+                }
             }
         }
 

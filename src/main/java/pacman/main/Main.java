@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
     	
     	//Decide whether or not to use the competition executor or our custom debug executor
-    	boolean debug = false;
+    	boolean debug = true;
     	if(debug) {
     		CustomExecutor executor = new CustomExecutor.Builder()
 	    			.setVisual(true)
@@ -36,7 +36,8 @@ public class Main {
             controllers.put(GHOST.PINKY, new POGhost(GHOST.PINKY));
             controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
             
-            executor.runGameTimed(badboy, new MASController(controllers));
+            boolean secondViewer = true; // View in PO and non-PO mode
+            executor.runGameTimed(badboy, new MASController(controllers), secondViewer);
 	        System.out.println("Evaluation over");
     	} else {
     		
