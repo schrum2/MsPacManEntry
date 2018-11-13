@@ -89,8 +89,13 @@ public class MyPacMan extends PacmanController implements Drawable{
 		GameFacade informedGameFacade = updateModels(game, timeDue);
 		//get the action to be made
 		int action = oldpacman.getAction(informedGameFacade, timeDue);
-		// If the game is over, then the action is nothing.
-		if(action == NewPacManController.END_GAME_CODE) return MOVE.NEUTRAL;
+		// This is triggered if Pac-Man beats the 4th level. However, if the
+		// Parameter pacmanMaxLevel is set to a higher value, then the levels will
+		// repeat in a loop.
+		if(action == NewPacManController.END_GAME_CODE) {
+			System.out.println("Final Score: " + game.getScore());
+			System.exit(0);
+		}		
 		//converts an action to an entrants.pacman.Squillyprice01.oldpacman move to a popacman move to be returned
 		return moveConverterOldToPO(GameFacade.indexToMove(action));
 		
