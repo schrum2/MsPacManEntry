@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.data;
 
 import java.awt.Color;

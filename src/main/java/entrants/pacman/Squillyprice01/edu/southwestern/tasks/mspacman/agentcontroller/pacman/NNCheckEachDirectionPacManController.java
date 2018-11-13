@@ -1,14 +1,10 @@
 package entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.agentcontroller.pacman;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
 
 import entrants.pacman.Squillyprice01.edu.southwestern.MMNEAT.MMNEAT;
 import entrants.pacman.Squillyprice01.edu.southwestern.evolution.genotypes.Genotype;
-import entrants.pacman.Squillyprice01.edu.southwestern.evolution.genotypes.TWEANNGenotype;
 import entrants.pacman.Squillyprice01.edu.southwestern.networks.Network;
 import entrants.pacman.Squillyprice01.edu.southwestern.networks.TWEANN;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.CommonConstants;
@@ -18,7 +14,6 @@ import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.facades.Ga
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.VariableDirectionBlockLoadedInputOutputMediator;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.directional.VariableDirectionBlock;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.graphics.DrawingPanel;
-import entrants.pacman.Squillyprice01.edu.southwestern.util.graphics.Plot;
 import entrants.pacman.Squillyprice01.edu.southwestern.util.stats.StatisticsUtilities;
 import entrants.pacman.Squillyprice01.oldpacman.Executor;
 
@@ -115,7 +110,7 @@ public class NNCheckEachDirectionPacManController extends NNDirectionalPacManCon
 //			}
 		}
 		if (Parameters.parameters.booleanParameter("modePheremone")) {
-			System.out.println("Set up scent path for modes");
+			System.out.println("Set up scent path for modes: "+ directionalNetworks[0].numModules());
 			ScentPath.resetAll(directionalNetworks[0].numModules());
 			this.scentMode = Parameters.parameters.integerParameter("scentMode");
 //			if (CommonConstants.recordPacman) {

@@ -13,6 +13,7 @@ import entrants.pacman.Squillyprice01.edu.southwestern.evolution.genotypes.*;
 import entrants.pacman.Squillyprice01.edu.southwestern.networks.TWEANN;
 import entrants.pacman.Squillyprice01.edu.southwestern.parameters.Parameters;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.agentcontroller.pacman.NNMsPacMan;
+import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.data.ScentPath;
 import entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.facades.GameFacade;
 import entrants.pacman.Squillyprice01.oldpacman.controllers.*;
 import entrants.pacman.Squillyprice01.pacman.prediction.GhostLocation;
@@ -52,7 +53,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 	
     // This is Piers' fix
 	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(String file) {
-		Parameters.initializeParameterCollections("drawGhostPredictions:true io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
+		Parameters.initializeParameterCollections("drawGhostPredictions:true io:false netio:false highLevel:true modePheremone:true watch:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
 		MMNEAT.loadClasses();
 		TWEANNGenotype genotype = (TWEANNGenotype) Easy.load(file);
 		System.out.println(genotype);
@@ -85,7 +86,6 @@ public class MyPacMan extends PacmanController implements Drawable{
 	 * Used for popacman
 	 */
 	public MOVE getMove(Game game, long timeDue) {
-        
 		GameFacade informedGameFacade = updateModels(game, timeDue);
 		//get the action to be made
 		int action = oldpacman.getAction(informedGameFacade, timeDue);
@@ -99,7 +99,9 @@ public class MyPacMan extends PacmanController implements Drawable{
 	//This method clears all stored information about a game
 	public void clearStoredInformation() {
 		pillModel = null;
-		ghostPredictions = null;
+		synchronized(ghostPredictions) {
+			ghostPredictions = null;
+		}
 	}
 	
 	/**
@@ -131,7 +133,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 	//draws the red blocks representing a predicted ghost location
     public void draw(Graphics2D graphics) {
     	//Draw Pill Model based on parameter
-    	if(Parameters.parameters.booleanParameter("drawPillModel")) {
+    	if(Parameters.parameters.booleanParameter("drawPillModel") && mostRecentGame != null) {
     		
     		
     		for (int i = 0; i < mostRecentGame.getNumberOfNodes(); i++) {
@@ -184,27 +186,29 @@ public class MyPacMan extends PacmanController implements Drawable{
     	//Draw predicted Ghost Locations based on parameter
     	if(Parameters.parameters.booleanParameter("drawGhostPredictions")) {
     		if(ghostPredictions != null) {
-	        	for (int i = 0; i < mostRecentGame.getNumberOfNodes(); i++) {      	
-	                double probability = ghostPredictions.calculate(i);
-	                if (probability >= GHOST_THRESHOLD) {
-	                	double edibleProbability = ghostPredictions.calculateEdible(i);
-	                	if(edibleProbability > 0.0) {
-	                    	graphics.setColor(new Color(0,0, 255, 255));
-		                    graphics.fillRect(
-		                            mostRecentGame.getNodeXCood(i) * MAG - 1,
-		                            mostRecentGame.getNodeYCood(i) * MAG + 3,
-		                            14, 14
-		                    );
-	                	} else {
-	                    	graphics.setColor(redAlphas[(int) Math.min(255 * probability, 255)]);
-		                    graphics.fillRect(
-		                            mostRecentGame.getNodeXCood(i) * MAG - 1,
-		                            mostRecentGame.getNodeYCood(i) * MAG + 3,
-		                            14, 14
-		                    );	
-	                	}
-	                }
-	            }
+    			synchronized(ghostPredictions) {
+		        	for (int i = 0; i < mostRecentGame.getNumberOfNodes(); i++) {      	
+		                double probability = ghostPredictions.calculate(i);
+		                if (probability >= GHOST_THRESHOLD) {
+		                	double edibleProbability = ghostPredictions.calculateEdible(i);
+		                	if(edibleProbability > 0.0) {
+		                    	graphics.setColor(new Color(0,0, 255, 255));
+			                    graphics.fillRect(
+			                            mostRecentGame.getNodeXCood(i) * MAG - 1,
+			                            mostRecentGame.getNodeYCood(i) * MAG + 3,
+			                            14, 14
+			                    );
+		                	} else {
+		                    	graphics.setColor(redAlphas[(int) Math.min(255 * probability, 255)]);
+			                    graphics.fillRect(
+			                            mostRecentGame.getNodeXCood(i) * MAG - 1,
+			                            mostRecentGame.getNodeYCood(i) * MAG + 3,
+			                            14, 14
+			                    );	
+		                	}
+		                }
+		            }
+    			}
     		}
        	}
     }
@@ -221,8 +225,13 @@ public class MyPacMan extends PacmanController implements Drawable{
 	public GameFacade updateModels(Game game, long timeDue) {
         //If we switched mazes, we need new models
 		if(currentMaze != game.getCurrentMaze()){
+			ScentPath.resetAll(); // Clear scent paths when level changes
             currentMaze = game.getCurrentMaze();
-            ghostPredictions = null;
+            if(ghostPredictions != null) {
+            	synchronized(ghostPredictions) {
+            		ghostPredictions = null;
+            	}
+            }
             pillModel = null;
             lastPillEatenTime = -1;
             lastPowerPillEatenTime = -1;
@@ -301,7 +310,9 @@ public class MyPacMan extends PacmanController implements Drawable{
 		if(useGhostModel) {
 			//if pacman was eaten, ghosts are in the lair
 			if (informedGameFacade.poG.wasPacManEaten()) {
-	            ghostPredictions = null;
+				synchronized(ghostPredictions) {
+					ghostPredictions = null;
+				}
 	        }
 			
 			//init the ghost predictions
