@@ -321,7 +321,9 @@ public class CustomExecutor {
 
         GameView gv = (visuals) ? setupGameView(pacManController, game) : null;
         GameView gv2 = (visuals && secondViewer) ? setupGameView(pacManController, game) : null;
-        
+        gv.getFrame().setLocation(10, 10);
+        gv2.getFrame().setLocation(10 + gv.getWidth(), 10);
+
         MASController ghostControllerCopy = ghostController.copy(ghostPO);
 
         while (!game.gameOver()) {
@@ -395,7 +397,9 @@ public class CustomExecutor {
 
         GameView gv = (visuals) ? setupGameView(pacManController, game) : null;
         GameView gv2 = (visuals && secondViewer) ? setupGameView(pacManController, game) : null;
-
+        gv.getFrame().setLocation(10, 10);
+        gv2.getFrame().setLocation(10 + gv.getWidth(), 10);
+        
         MASController ghostControllerCopy = ghostController.copy(ghostPO);
 
         new Thread(pacManController).start();
