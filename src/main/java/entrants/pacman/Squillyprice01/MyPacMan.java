@@ -24,6 +24,7 @@ import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
 import pacman.game.Drawable;
 import pacman.game.internal.Maze;
+import pacman.main.StatsRun;
 import pacman.game.Game;
 import pacman.controllers.PacmanController;
 /**
@@ -142,8 +143,12 @@ public class MyPacMan extends PacmanController implements Drawable{
 		// Parameter pacmanMaxLevel is set to a higher value, then the levels will
 		// repeat in a loop.
 		if(action == NewPacManController.END_GAME_CODE) {
-			System.out.println("Final Score: " + game.getScore());
-			System.exit(0);
+			if(!StatsRun.doStats) {
+				System.out.println("Final Score: " + game.getScore());
+				System.exit(0);
+			} else {
+				return MOVE.NEUTRAL; // Do neutral action if running stats so other trials continue
+			}
 		}		
 		//converts an action to an entrants.pacman.Squillyprice01.oldpacman move to a popacman move to be returned
 		return moveConverterOldToPO(GameFacade.indexToMove(action));
