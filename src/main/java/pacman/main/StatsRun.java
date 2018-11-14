@@ -21,7 +21,7 @@ public class StatsRun {
 
     	EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);
     	doStats = true;
-        MyPacMan badboy = new MyPacMan(true, MyPacMan.MODULE_TYPE.THREE_MULTITASK, 0);
+        MyPacMan badboy = new MyPacMan(true, MyPacMan.MODULE_TYPE.THREE_MULTITASK, 2);
         
         controllers.put(GHOST.INKY, new POGhost(GHOST.INKY));
         controllers.put(GHOST.BLINKY, new POGhost(GHOST.BLINKY));
