@@ -400,6 +400,7 @@ public class CustomExecutor {
      */
     public void runGameTimed(Controller<MOVE> pacManController, MASController ghostController, boolean secondViewer) {
     	usingCustom = true;
+    	boolean nonNullMoveOccurred = false;
     	Game game = setupGame();
 
         GameView gv = (visuals) ? setupGameView(pacManController, game) : null;
@@ -427,7 +428,12 @@ public class CustomExecutor {
             }
 
             MOVE pacMove = pacManController.getMove();
-            if(pacMove == null) break; // Game can give up once it beats the last level
+            if(pacMove == null) {
+            	if(nonNullMoveOccurred)
+            		break; // Game can give up once it beats the last level
+            } else {
+            	nonNullMoveOccurred = true; // Initial move might be null ... give chance to make first move
+            }
             game.advanceGame(pacMove, ghostControllerCopy.getMove());
 
             if (visuals) {
