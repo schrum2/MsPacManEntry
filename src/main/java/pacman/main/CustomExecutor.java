@@ -247,7 +247,10 @@ public class CustomExecutor {
                     }
                     handlePeek(game);
                     MOVE pacMove = pacManController.getMove(getPacmanCopy(game), System.currentTimeMillis() + timeLimit);
-                    if(pacMove == null) break; // End eval if last level beaten
+                    if(pacMove == null) {
+                    	System.out.println("End at "+game.getTotalTime());
+                    	break; // End eval if last level beaten
+                    }
                     game.advanceGame(
                             pacMove,
                             ghostControllerCopy.getMove(game.copy(), System.currentTimeMillis() + timeLimit));
