@@ -28,6 +28,9 @@ import static pacman.game.Constants.*;
  */
 @SuppressWarnings("unused")
 public class CustomExecutor {
+	
+	public static boolean usingCustom = false;
+	
     private final boolean pacmanPO;
     private final boolean ghostPO;
     private final boolean ghostsMessage;
@@ -227,7 +230,8 @@ public class CustomExecutor {
      * @return Stats[] containing the scores in index 0 and the ticks in position 1
      */
     public Stats[] runExperiment(Controller<MOVE> pacManController, MASController ghostController, int trials, String description) {
-        Stats stats = new Stats(description);
+    	usingCustom = true; // So the game will exit once max level is beaten
+    	Stats stats = new Stats(description);
         Stats ticks = new Stats(description + " Ticks");
         MASController ghostControllerCopy = ghostController.copy(ghostPO);
         Game game;
@@ -242,8 +246,10 @@ public class CustomExecutor {
                         break;
                     }
                     handlePeek(game);
+                    MOVE pacMove = pacManController.getMove(getPacmanCopy(game), System.currentTimeMillis() + timeLimit);
+                    if(pacMove == null) break; // End eval if last level beaten
                     game.advanceGame(
-                            pacManController.getMove(getPacmanCopy(game), System.currentTimeMillis() + timeLimit),
+                            pacMove,
                             ghostControllerCopy.getMove(game.copy(), System.currentTimeMillis() + timeLimit));
                 }
                 stats.add(game.getScore());
@@ -393,7 +399,8 @@ public class CustomExecutor {
      * @param secondViewer
      */
     public void runGameTimed(Controller<MOVE> pacManController, MASController ghostController, boolean secondViewer) {
-        Game game = setupGame();
+    	usingCustom = true;
+    	Game game = setupGame();
 
         GameView gv = (visuals) ? setupGameView(pacManController, game) : null;
         GameView gv2 = (visuals && secondViewer) ? setupGameView(pacManController, game) : null;
@@ -419,7 +426,9 @@ public class CustomExecutor {
                 e.printStackTrace();
             }
 
-            game.advanceGame(pacManController.getMove(), ghostControllerCopy.getMove());
+            MOVE pacMove = pacManController.getMove();
+            if(pacMove == null) break; // Game can give up once it beats the last level
+            game.advanceGame(pacMove, ghostControllerCopy.getMove());
 
             if (visuals) {
             	gv.setPO(setPO);

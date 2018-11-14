@@ -24,6 +24,7 @@ import pacman.game.Constants.GHOST;
 import pacman.game.Constants.MOVE;
 import pacman.game.Drawable;
 import pacman.game.internal.Maze;
+import pacman.main.CustomExecutor;
 import pacman.main.StatsRun;
 import pacman.game.Game;
 import pacman.controllers.PacmanController;
@@ -143,6 +144,11 @@ public class MyPacMan extends PacmanController implements Drawable{
 		// Parameter pacmanMaxLevel is set to a higher value, then the levels will
 		// repeat in a loop.
 		if(action == NewPacManController.END_GAME_CODE) {
+			if(CustomExecutor.usingCustom) {
+				System.out.println("Final Score: " + game.getScore());
+				return null; // The CustomExecutor can handle this and end the eval
+			}
+			// The standard Executor doesn't allow this level of control
 			if(!StatsRun.doStats) {
 				System.out.println("Final Score: " + game.getScore());
 				System.exit(0);

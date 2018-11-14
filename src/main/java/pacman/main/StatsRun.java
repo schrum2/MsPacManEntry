@@ -3,7 +3,6 @@ package pacman.main;
 import java.util.EnumMap;
 
 import entrants.pacman.Squillyprice01.MyPacMan;
-import pacman.Executor;
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
 import pacman.examples.StarterGhost.POGhost;
@@ -14,7 +13,7 @@ public class StatsRun {
 	public static boolean doStats = false;
 	
 	public static void main(String[] args) {
-        Executor executor = new Executor.Builder()
+        CustomExecutor executor = new CustomExecutor.Builder()
         		//.setVisual(true)
         	  	.setTickLimit(8000)
         	  	.build();		
