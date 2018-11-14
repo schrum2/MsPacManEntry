@@ -35,7 +35,6 @@ public class MyPacMan extends PacmanController implements Drawable{
 
 	protected final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController oldpacman;
 
-	public static final String CHAMPION_FILE = "PO-3MMultitask0.xml";
 	public PillModel pillModel = null;
 	public Maze currentMaze;
 	public GhostPredictionsFast ghostPredictions = null;
@@ -50,9 +49,50 @@ public class MyPacMan extends PacmanController implements Drawable{
 	public boolean useGhostModel = Parameters.parameters.booleanParameter("useGhostModel");
 	public final double GHOST_THRESHOLD = Parameters.parameters.doubleParameter("probabilityThreshold");
 	
-    // This is Piers' fix
-	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(String file) {
-		Parameters.initializeParameterCollections("drawGhostPredictions:true io:false netio:false highLevel:true modePheremone:true watch:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 ghostPO:true rawScorePacMan:true".split(" "));
+	public enum MODULE_TYPE {ONE_MODULE, TWO_MODULES, THREE_MODULES, THREE_MULTITASK, MMD};
+
+	/**
+	 * An easy way to load all of the possible saved network files
+	 * @param poGhosts Whether evolved using PO Ghosts (alternative is complete observability)
+	 * @param modules Module type
+	 * @param num Evolution experiment number
+	 * @return File name to load from the resources subdir
+	 */
+	public static final String getChampionNetworkFile(boolean poGhosts, MODULE_TYPE modules, int num) {
+		String result = (poGhosts ? "PO" : "CO") + "-";
+		switch(modules) {
+		case ONE_MODULE:
+			result += "1M";
+			break;
+		case TWO_MODULES:
+			result += "2MPref";
+			break;
+		case THREE_MODULES:
+			result += "3MPref";
+			break;
+		case THREE_MULTITASK:
+			result += "3MMultitask";
+			break;
+		case MMD:
+			result += "MMD";
+			break;
+		}
+		result += num + ".xml";
+		return result;
+	}
+	
+	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(boolean poGhosts, MODULE_TYPE modules, int num) {
+		String file = getChampionNetworkFile(poGhosts, modules, num);
+		System.out.println("Load " + file);
+		String params = "drawGhostPredictions:true io:false netio:false highLevel:true watch:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false "+
+				"partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 rawScorePacMan:true "+
+				(poGhosts ? "ghostPO:true" : "ghostPO:false")+
+				(modules.equals(MODULE_TYPE.ONE_MODULE) ? "" : " modePheremone:true")+ // Don't color modules if there is only one
+				(modules.equals(MODULE_TYPE.THREE_MULTITASK) ? 
+					" multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod" : 
+					(modules.equals(MODULE_TYPE.ONE_MODULE) ? "" : " mmdRate:0.1")); // This will not actually mutate anything, but it will cause preference neurons to be detected
+		System.out.println(params);
+		Parameters.initializeParameterCollections(params.split(" "));
 		MMNEAT.loadClasses();
 		TWEANNGenotype genotype = (TWEANNGenotype) Easy.load(file);
 		System.out.println(genotype);
@@ -60,11 +100,21 @@ public class MyPacMan extends PacmanController implements Drawable{
 	}
 		
 	public MyPacMan() {
-		this(CHAMPION_FILE);
+		this(true, MODULE_TYPE.THREE_MULTITASK, 0); // Type used in the CEC 2018 competition
+		//this(true, MODULE_TYPE.THREE_MODULES, 0);
+		//this(true, MODULE_TYPE.TWO_MODULES, 0);
+		//this(true, MODULE_TYPE.MMD, 0);
+		//this(true, MODULE_TYPE.ONE_MODULE, 0);
+
+		//this(false, MODULE_TYPE.THREE_MULTITASK, 0);
+		//this(false, MODULE_TYPE.THREE_MODULES, 0);
+		//this(false, MODULE_TYPE.TWO_MODULES, 0);
+		//this(false, MODULE_TYPE.MMD, 0);
+		//this(false, MODULE_TYPE.ONE_MODULE, 0);
 	}
 	
-	public MyPacMan(String file) {
-		this(getController(file));
+	public MyPacMan(boolean poGhosts, MODULE_TYPE modules, int num) {
+		this(getController(poGhosts, modules, num));
 	}
 		
 	public MyPacMan(entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController oldpacman) {
