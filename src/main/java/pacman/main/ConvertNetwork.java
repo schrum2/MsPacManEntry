@@ -1,5 +1,6 @@
 package pacman.main;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -19,17 +20,29 @@ public class ConvertNetwork {
 	private static String submissionVersion = "entrants.pacman." + submissionUserName + "." + MMNEATVersion;
 
 	public static void main(String args[]) throws IOException {
-		
-		if(args.length != 2) {
-			System.out.println("Two command line parameters are required."); 
-			System.out.println("The first is the source xml file.");
-			System.out.println("The second is the target xml file.");
-			System.exit(0);
+		// Convert all original MM-NEAT files into MsPacManEntry versions
+		File originalDir = new File("OriginalMMNEATChampions");
+		File[] files = originalDir.listFiles();
+		for(File f : files) {
+			String source = f.getPath();
+			if(source.endsWith("xml")) { // Only convert xml files
+				String target = source.replace("OriginalMMNEATChampions", "src\\main\\resources\\entrants\\pacman\\Squillyprice01");
+				convertFromTo(source, target);
+			}
 		}
 		
-		String originalPath = args[0]; // Original xml file
-		String newPath = args[1]; // New xml file
-		
+		// Converts one file
+//		if(args.length != 2) {
+//			System.out.println("Two command line parameters are required."); 
+//			System.out.println("The first is the source xml file.");
+//			System.out.println("The second is the target xml file.");
+//			System.exit(0);
+//		}
+//		convertFromTo(args[0],args[1]);		
+	}
+	
+	public static void convertFromTo(String originalPath, String newPath) throws FileNotFoundException {		
+		System.out.println("Convert " + originalPath + " to " + newPath);
 		File fds = new File(originalPath);
 		
 		Scanner s = new Scanner(fds);		
