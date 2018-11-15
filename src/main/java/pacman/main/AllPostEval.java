@@ -16,12 +16,14 @@ public class AllPostEval {
 				.setTickLimit(8000)
 				.build();		
 
+		StatsRun.doStats = true;
+		
 		boolean[] ghostsArePO = new boolean[] {true, false};
 		for(boolean poGhosts : ghostsArePO) {
 			for(MyPacMan.MODULE_TYPE modules: MyPacMan.MODULE_TYPE.values()) {        	
 				for(int run = 0; run < 20; run++) {
 					EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);
-					StatsRun.doStats = true;
+					
 					MyPacMan badboy = new MyPacMan(poGhosts, modules, run);
 
 					controllers.put(GHOST.INKY, new POGhost(GHOST.INKY));

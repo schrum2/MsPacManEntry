@@ -86,10 +86,11 @@ public class MyPacMan extends PacmanController implements Drawable{
 	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(boolean poGhosts, MODULE_TYPE modules, int num) {
 		String file = getChampionNetworkFile(poGhosts, modules, num);
 		System.out.println("Load " + file);
-		String params = "drawGhostPredictions:true io:false netio:false highLevel:true watch:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false "+
+		String params = "drawGhostPredictions:true io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false "+
 				"partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 rawScorePacMan:true "+
 				(poGhosts ? "ghostPO:true" : "ghostPO:false")+
 				(modules.equals(MODULE_TYPE.ONE_MODULE) ? "" : " modePheremone:true")+ // Don't color modules if there is only one
+				(StatsRun.doStats ? "" : " watch:true") +
 				(modules.equals(MODULE_TYPE.THREE_MULTITASK) ? 
 						" multitaskModes:3 pacmanMultitaskScheme:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.multitask.po.POProbableGhostStateModeSelector3Mod" : 
 							(modules.equals(MODULE_TYPE.ONE_MODULE) ? "" : " mmdRate:0.1")); // This will not actually mutate anything, but it will cause preference neurons to be detected
