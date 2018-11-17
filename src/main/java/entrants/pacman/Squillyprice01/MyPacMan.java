@@ -201,7 +201,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 	//draws the red blocks representing a predicted ghost location
 	public void draw(Graphics2D graphics) {
 		//Draw Pill Model based on parameter
-		if(Parameters.parameters.booleanParameter("drawPillModel") && mostRecentGame != null) {
+		if(Parameters.parameters.booleanParameter("drawPillModel") && mostRecentGame != null && pillModel != null) {
 
 
 			for (int i = 0; i < mostRecentGame.getNumberOfNodes(); i++) {
