@@ -3,6 +3,7 @@ package pacman.main;
 import java.util.EnumMap;
 
 import entrants.pacman.Squillyprice01.MyPacMan;
+import entrants.pacman.Squillyprice01.MyPacMan.MODULE_TYPE;
 import pacman.Executor;
 import pacman.controllers.IndividualGhostController;
 import pacman.controllers.MASController;
@@ -29,7 +30,7 @@ public class Main {
     		
         	EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);
 
-            MyPacMan badboy = new MyPacMan();
+            MyPacMan badboy = new MyPacMan(true, MODULE_TYPE.THREE_MULTITASK, 2);
             
             controllers.put(GHOST.INKY, new POGhost(GHOST.INKY));
             controllers.put(GHOST.BLINKY, new POGhost(GHOST.BLINKY));
