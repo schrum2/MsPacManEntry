@@ -87,7 +87,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 		String file = getChampionNetworkFile(poGhosts, modules, num);
 		System.out.println("Load " + file);
 		String params = "drawGhostPredictions:true io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false "+
-				"partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 rawScorePacMan:true pacmanMaxLevel:20 "+
+				"partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 rawScorePacMan:true pacmanMaxLevel:4 "+ // Max 4 levels during evolution
 				(poGhosts ? "ghostPO:true" : "ghostPO:false")+
 				(modules.equals(MODULE_TYPE.ONE_MODULE) ? "" : " modePheremone:true")+ // Don't color modules if there is only one
 				(StatsRun.doStats ? "" : " watch:true") +
