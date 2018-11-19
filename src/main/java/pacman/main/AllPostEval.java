@@ -16,7 +16,8 @@ public class AllPostEval {
 	public static void main(String[] args) throws FileNotFoundException {
 		CustomExecutor executor = new CustomExecutor.Builder()
 				//.setVisual(true)
-				.setTickLimit(8000)
+				.setTickLimit(4000) // 4000 is the default value: Used in competition?
+				//.setTickLimit(200000) // So high it will never be reached
 				.build();		
 
 		StatsRun.doStats = true;
