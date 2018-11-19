@@ -22,6 +22,8 @@ public class AllPostEval {
 		StatsRun.doStats = true;
 		
 		PrintStream ps = new PrintStream(new File("ChampionPostEvals.txt"));
+		ps.printf("%10s, %15s, %4s, %10s, %10s, %10s, %10s, %10s, %10s, %14s, %10s\n", "Ghosts", "Modules", "Run", "AVG", "StdDev", "Min", "Max", "StdErr", "Sum", "SumSq", "SD");
+		System.out.printf("%10s, %15s, %4s, %10s, %10s, %10s, %10s, %10s, %10s, %14s, %10s\n", "Ghosts", "Modules", "Run", "AVG", "StdDev", "Min", "Max", "StdErr", "Sum", "SumSq", "SD");
 		
 		boolean[] ghostsArePO = new boolean[] {true, false};
 		for(boolean poGhosts : ghostsArePO) {
@@ -37,8 +39,8 @@ public class AllPostEval {
 					controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
 
 					Stats[] stats = executor.runExperiment(badboy, new MASController(controllers), 100, "post evals");
-					System.out.println((poGhosts ? "POGhosts" : "COGhosts") + " " + modules.name() + " " + run + ": " + stats[0]);
-					ps.println((poGhosts ? "POGhosts" : "COGhosts") + " " + modules.name() + " " + run + ": " + stats[0]);
+					System.out.printf("%10s, %15s, %4d, %10.4f, %10.4f, %10.1f, %10.1f, %10.1f, %10.1f, %14.1f, %10.4f\n", (poGhosts ? "POGhosts" : "COGhosts"), modules.name(), run, stats[0].getAverage(), stats[0].getStandardDeviation(), stats[0].getMin(), stats[0].getMax(), stats[0].getStandardError(), stats[0].getSum(), stats[0].getSumsq(), stats[0].getSd());
+					ps.printf("%10s, %15s, %4d, %10.4f, %10.4f, %10.1f, %10.1f, %10.1f, %10.1f, %14.1f, %10.4f\n", (poGhosts ? "POGhosts" : "COGhosts"), modules.name(), run, stats[0].getAverage(), stats[0].getStandardDeviation(), stats[0].getMin(), stats[0].getMax(), stats[0].getStandardError(), stats[0].getSum(), stats[0].getSumsq(), stats[0].getSd());
 				}
 			}
 		}

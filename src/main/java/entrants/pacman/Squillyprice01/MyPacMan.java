@@ -389,7 +389,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 		//GHOST MODEL CODE
 		if(useGhostModel) {
 			//if pacman was eaten, ghosts are in the lair
-			if (informedGameFacade.poG.wasPacManEaten()) {
+			if (informedGameFacade.poG.wasPacManEaten() && ghostPredictions != null) {
 				synchronized(ghostPredictions) {
 					ghostPredictions = null;
 				}
