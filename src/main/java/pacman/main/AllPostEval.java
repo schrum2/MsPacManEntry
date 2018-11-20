@@ -16,8 +16,9 @@ public class AllPostEval {
 	public static void main(String[] args) throws FileNotFoundException {
 		CustomExecutor executor = new CustomExecutor.Builder()
 				//.setVisual(true)
-				//.setTickLimit(4000) // 4000 is the default value: Used in competition?
-				.setTickLimit(8000) // Time limit used during evolution
+				.setTickLimit(4000) // 4000 is the default value used in competition
+				//.setTickLimit(8000) // Time limit used during evolution
+				.setGhostPO(false) // Makes ghosts CO (complete observability)
 				.build();		
 
 		StatsRun.doStats = true;
