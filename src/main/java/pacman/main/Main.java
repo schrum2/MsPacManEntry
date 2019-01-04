@@ -31,6 +31,7 @@ public class Main {
         	EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);
 
             MyPacMan badboy = new MyPacMan(true, MODULE_TYPE.THREE_MULTITASK, 2);
+            //MyPacMan badboy = new MyPacMan(true, MODULE_TYPE.TWO_MODULES, 15);
             
             controllers.put(GHOST.INKY, new POGhost(GHOST.INKY));
             controllers.put(GHOST.BLINKY, new POGhost(GHOST.BLINKY));
