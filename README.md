@@ -14,3 +14,7 @@ The paper describing the agent is a WIP. More to come soon!
 
 # Screenshots
 ![screenshot 46](https://user-images.githubusercontent.com/15305479/46963246-b8c79b00-d06a-11e8-8b1a-43888be2249d.png)
+
+# Videos and other content
+
+https://people.southwestern.edu/~schrum2/SCOPE/popacman.php
