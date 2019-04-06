@@ -1,10 +1,13 @@
-MyData <- read.csv(file="ChampionPostEvals-vsPO-8000ticks-4Levels.csv", header=TRUE, sep=",")
 
-po1m  <- subset(MyData, Modules == "      ONE_MODULE" & Ghosts == "  POGhosts")
-po2m  <- subset(MyData, Modules == "     TWO_MODULES" & Ghosts == "  POGhosts")
-po3m  <- subset(MyData, Modules == "   THREE_MODULES" & Ghosts == "  POGhosts")
-po3mt <- subset(MyData, Modules == " THREE_MULTITASK" & Ghosts == "  POGhosts")
-pommd <- subset(MyData, Modules == "             MMD" & Ghosts == "  POGhosts")
+pairWiseTTests <- function(fileName,ghostType) {
+
+MyData <- read.csv(file=fileName, header=TRUE, sep=",")
+
+po1m  <- subset(MyData, Modules == "      ONE_MODULE" & Ghosts == ghostType)
+po2m  <- subset(MyData, Modules == "     TWO_MODULES" & Ghosts == ghostType)
+po3m  <- subset(MyData, Modules == "   THREE_MODULES" & Ghosts == ghostType)
+po3mt <- subset(MyData, Modules == " THREE_MULTITASK" & Ghosts == ghostType)
+pommd <- subset(MyData, Modules == "             MMD" & Ghosts == ghostType)
 
 po <- data.frame(
 	group  = rep(c("1M","2M","3M","3MT","MMD"), each = 20),
@@ -12,3 +15,14 @@ po <- data.frame(
 )
 
 pairwise.t.test(po$AVG, po$group, p.adjust.method="bonferroni")
+
+}
+
+pairWiseTTests("ChampionPostEvals-vsPO-8000ticks-4Levels.csv","  POGhosts")
+pairWiseTTests("ChampionPostEvals-vsPO-8000ticks-4Levels.csv","  COGhosts")
+pairWiseTTests("ChampionPostEvals-vsCO-8000ticks-4Levels.csv","  POGhosts")
+pairWiseTTests("ChampionPostEvals-vsCO-8000ticks-4Levels.csv","  COGhosts")
+pairWiseTTests("ChampionPostEvals-vsPO-4000ticks-UnlimitedLevels.csv","  POGhosts")
+pairWiseTTests("ChampionPostEvals-vsPO-4000ticks-UnlimitedLevels.csv","  COGhosts")
+pairWiseTTests("ChampionPostEvals-vsCO-4000ticks-UnlimitedLevels.csv","  POGhosts")
+pairWiseTTests("ChampionPostEvals-vsCO-4000ticks-UnlimitedLevels.csv","  COGhosts")
