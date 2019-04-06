@@ -1,0 +1,14 @@
+MyData <- read.csv(file="ChampionPostEvals-vsPO-8000ticks-4Levels.csv", header=TRUE, sep=",")
+
+po1m  <- subset(MyData, Modules == "      ONE_MODULE" & Ghosts == "  POGhosts")
+po2m  <- subset(MyData, Modules == "     TWO_MODULES" & Ghosts == "  POGhosts")
+po3m  <- subset(MyData, Modules == "   THREE_MODULES" & Ghosts == "  POGhosts")
+po3mt <- subset(MyData, Modules == " THREE_MULTITASK" & Ghosts == "  POGhosts")
+pommd <- subset(MyData, Modules == "             MMD" & Ghosts == "  POGhosts")
+
+po <- data.frame(
+	group  = rep(c("1M","2M","3M","3MT","MMD"), each = 20),
+	avg    = rbind(po1m["AVG"], po2m["AVG"], po3m["AVG"], po3mt["AVG"], pommd["AVG"])
+)
+
+pairwise.t.test(po$AVG, po$group, p.adjust.method="bonferroni")
