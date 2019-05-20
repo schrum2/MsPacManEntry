@@ -15,31 +15,30 @@ import pacman.game.Constants.GHOST;
  */
 public class Main {
 	
-	
-
     public static void main(String[] args) {
     	
     	//Decide whether or not to use the competition executor or our custom debug executor
     	boolean debug = true;
     	if(debug) {
     		CustomExecutor executor = new CustomExecutor.Builder()
-	    			.setVisual(true)
+    			.setVisual(true)
 	              	.setTickLimit(8000)
-	    			.setPO(true)
+    			.setPO(true)
 	              	.build();
     		
-        	EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);
+	       	EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);
 
-            MyPacMan badboy = new MyPacMan(true, MODULE_TYPE.THREE_MULTITASK, 2);
+            MyPacMan agent = new MyPacMan(true, MODULE_TYPE.THREE_MULTITASK, 2);
             //MyPacMan badboy = new MyPacMan(true, MODULE_TYPE.TWO_MODULES, 15);
             
+	    //create ghost controllers
             controllers.put(GHOST.INKY, new POGhost(GHOST.INKY));
             controllers.put(GHOST.BLINKY, new POGhost(GHOST.BLINKY));
             controllers.put(GHOST.PINKY, new POGhost(GHOST.PINKY));
             controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
             
             boolean secondViewer = true; // View in PO and non-PO mode
-            executor.runGameTimed(badboy, new MASController(controllers), secondViewer);
+            executor.runGameTimed(agent, new MASController(controllers), secondViewer);
 	        System.out.println("Evaluation over");
     	} else {
     		
@@ -50,14 +49,14 @@ public class Main {
 	        
 	    	EnumMap<GHOST, IndividualGhostController> controllers = new EnumMap<>(GHOST.class);
 
-	        MyPacMan badboy = new MyPacMan();
+	        MyPacMan agent = new MyPacMan();
 	        
 	        controllers.put(GHOST.INKY, new POGhost(GHOST.INKY));
 	        controllers.put(GHOST.BLINKY, new POGhost(GHOST.BLINKY));
 	        controllers.put(GHOST.PINKY, new POGhost(GHOST.PINKY));
 	        controllers.put(GHOST.SUE, new POGhost(GHOST.SUE));
 	        
-	        executor.runGameTimed(badboy, new MASController(controllers));
+	        executor.runGameTimed(agent, new MASController(controllers));
 	        System.out.println("Evaluation over");
 	        
     	}
