@@ -86,6 +86,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 	private static final entrants.pacman.Squillyprice01.oldpacman.controllers.NewPacManController getController(boolean poGhosts, MODULE_TYPE modules, int num) {
 		String file = getChampionNetworkFile(poGhosts, modules, num);
 		System.out.println("Load " + file);
+		//string of parameters for the agent
 		String params = "drawGhostPredictions:true io:false netio:false highLevel:true infiniteEdibleTime:false imprisonedWhileEdible:false pacManLevelTimeLimit:2147483647 pacmanInputOutputMediator:entrants.pacman.Squillyprice01.edu.southwestern.tasks.mspacman.sensors.mediators.po.POCheckEachDirectionMediator edibleTime:200 trapped:true specificGhostEdibleThreatSplit:true specificGhostProximityOrder:true specific:false "+
 				"partiallyObservablePacman:true pacmanPO:true useGhostModel:true usePillModel:true probabilityThreshold:0.125 rawScorePacMan:true pacmanMaxLevel:20"+ // Max 4 levels during evolution
 				//(poGhosts ? "ghostPO:true" : "ghostPO:false")+ // This is not relevant. It is set directly in the Executor/CustomExecutor
@@ -203,7 +204,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 		//Draw Pill Model based on parameter
 		if(Parameters.parameters.booleanParameter("drawPillModel") && mostRecentGame != null && pillModel != null) {
 
-
+			//DRAW PILLS KNOWN TO THE MODEL
 			for (int i = 0; i < mostRecentGame.getNumberOfNodes(); i++) {
 				boolean isPillAvailable = false;
 				synchronized(pillModel) {
@@ -221,7 +222,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 				}
 			}
 
-
+			//DRAW POWER PILLS
 			for (int i = 0; i < mostRecentGame.getNumberOfNodes(); i++) {
 				boolean isPillAvailable = false;
 				synchronized(pillModel) {
@@ -316,7 +317,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 			Arrays.fill(ghostEdibleTime, -1);
 		}
 
-		if(game.wasPacManEaten()) {
+		if(game.wasPacManEaten()) {//if we were eaten, reset times
 			lastPillEatenTime = -1;
 			lastPowerPillEatenTime = -1;
 		}
@@ -330,7 +331,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 
 		//PILL MODEL CODE
 		if(usePillModel) {
-			if(pillModel == null) {
+			if(pillModel == null) {//create the pill model
 
 				//Piers' Code
 				pillModel = new PillModel(game.getNumberOfPills());
@@ -361,7 +362,7 @@ public class MyPacMan extends PacmanController implements Drawable{
 			int pillIndex = informedGameFacade.poG.getPillIndex(informedGameFacade.poG.getPacmanCurrentNodeIndex());				        
 			if (pillIndex != -1) {
 				Boolean pillState = informedGameFacade.poG.isPillStillAvailable(pillIndex);
-				if (pillState != null && !pillState) {
+				if (pillState != null && !pillState) {//we can see the pill spot and it has been eaten
 					pillModel.update(informedGameFacade.poG.getPacmanCurrentNodeIndex());
 					eatenPills.add(informedGameFacade.poG.getPacmanCurrentNodeIndex());
 					lastPillEatenTime = informedGameFacade.getCurrentLevelTime();
@@ -408,12 +409,12 @@ public class MyPacMan extends PacmanController implements Drawable{
 			// Get observations of ghosts and pass them in to the predictor
 			//Credit to piers InformationSetMCTSPacmMan.java, cited 6/4/18
 			for (GHOST ghost : GHOST.values()) {
-				if (ghostEdibleTime[ghost.ordinal()] != -1) {
-					ghostEdibleTime[ghost.ordinal()]--;
+				if (ghostEdibleTime[ghost.ordinal()] != -1) { //ghost is edible
+					ghostEdibleTime[ghost.ordinal()]--; //tick the edible time down
 				}
 
 				int ghostIndex = game.getGhostCurrentNodeIndex(ghost);
-				if (ghostIndex != -1) {
+				if (ghostIndex != -1) { //we have a line of sight on the ghost
 					try {
 						ghostPredictions.observe(ghost, ghostIndex, informedGameFacade.poG.getGhostLastMoveMade(ghost), informedGameFacade);
 					} catch (java.lang.ArrayIndexOutOfBoundsException e) {
@@ -421,8 +422,9 @@ public class MyPacMan extends PacmanController implements Drawable{
 					}
 					ghostEdibleTime[ghost.ordinal()] = game.getGhostEdibleTime(ghost);
 				} else {
-					List<GhostLocation> locations = ghostPredictions.getGhostLocations(ghost);
+					List<GhostLocation> locations = ghostPredictions.getGhostLocations(ghost); //get our predicted ghost location
 					locations.stream().filter(location -> informedGameFacade.poG.isNodeObservable(location.getIndex())).forEach(location -> {
+						//observe the ghost as not present where it isn't to update probabilities
 						ghostPredictions.observeNotPresent(ghost, location.getIndex(), informedGameFacade);
 					});
 				}
