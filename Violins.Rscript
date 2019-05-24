@@ -1,0 +1,43 @@
+library(ggplot2)
+library(plyr)
+
+violinPlots <- function(fileName,topTitle,filename) {
+
+MyData <- read.csv(file=fileName, header=TRUE, sep=",")
+
+MyData$Modules <- factor(MyData$Modules,
+						 levels = c("      ONE_MODULE","     TWO_MODULES","   THREE_MODULES"," THREE_MULTITASK","             MMD"),
+						 labels = c("1M", "2M", "3M", "3MT", "MM(D)"))
+
+MyData$Ghosts  <- factor(MyData$Ghosts,
+						 levels = c("  POGhosts","  COGhosts"),
+						 labels = c("Evolved Against Partial Observability","Evolved Against Full Observability"))
+						 
+
+pdf(filename, width=14, height=7)						 
+v <- ggplot(MyData, aes(x=Modules, y=AVG, by=Ghosts, color=Modules)) +
+	geom_violin(aes(fill=Modules)) +
+	stat_summary(fun.y=mean, geom="point", shape=23, size=2, color="black") +
+	geom_boxplot(width=0.1, color="black") +
+	facet_wrap(~Ghosts) +
+	ggtitle(paste(topTitle," (Each Champion Evaluated 100 Times)")) +
+	xlab("Modularity") + 
+	ylab("Average Score") +
+	scale_y_continuous(breaks = seq(0, 20000, by = 1000))
+print(v)
+dev.off()
+	
+}
+
+violinPlots("ChampionPostEvals-vsPO-8000ticks-4Levels.csv","Champion Evaluations Against Partial Observability Ghosts With Level Limit of Four, Time Limit of 8000","PO-8000.pdf")
+violinPlots("ChampionPostEvals-vsCO-8000ticks-4Levels.csv","Champion Evaluations Against Full Observability Ghosts With Level Limit of Four, Time Limit of 8000","FO-8000.pdf")
+violinPlots("ChampionPostEvals-vsPO-4000ticks-UnlimitedLevels.csv","Champion Evaluations Against Partial Observability Ghosts With Competition Time Limit of 4000 Steps","PO-4000.pdf")
+violinPlots("ChampionPostEvals-vsCO-4000ticks-UnlimitedLevels.csv","Champion Evaluations Against Full Observability Ghosts With Competition Time Limit of 4000 Steps","FO-4000.pdf")
+
+
+
+
+
+
+
+
